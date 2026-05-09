@@ -1,14 +1,28 @@
 import type { Metadata, Viewport } from "next";
+import { Inter, Poppins } from "next/font/google";
 import { AnalyticsIdentity } from "@/components/seo/analytics-identity";
 import { SiteFooter } from "@/components/site/footer";
 import { SiteHeader } from "@/components/site/header";
 import { siteConfig } from "@/lib/site-config";
 import "./globals.css";
 
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap"
+});
+
+const poppins = Poppins({
+  weight: ["500", "600", "700", "800"],
+  subsets: ["latin"],
+  variable: "--font-poppins",
+  display: "swap"
+});
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: siteConfig.name,
+    default: `${siteConfig.name} | Industrial Pump Engineering & Export`,
     template: `%s | ${siteConfig.name}`
   },
   description: siteConfig.description,
@@ -34,23 +48,20 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0a4fb4",
+  themeColor: "#0f6cbd",
   width: "device-width",
   initialScale: 1
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" dir="ltr" suppressHydrationWarning>
-      <body>
+    <html lang="en" dir="ltr" suppressHydrationWarning className={`${inter.variable} ${poppins.variable}`}>
+      <body className="min-h-dvh bg-primary-50 font-sans text-navy-700 antialiased">
         <AnalyticsIdentity />
-        <div className="min-h-dvh bg-white text-gray-900">
-          <SiteHeader />
-          <main>{children}</main>
-          <SiteFooter />
-        </div>
+        <SiteHeader />
+        <main>{children}</main>
+        <SiteFooter />
       </body>
     </html>
   );
 }
-

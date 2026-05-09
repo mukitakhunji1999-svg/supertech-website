@@ -160,12 +160,12 @@ export function HomeExportSection() {
     { flag: "🌍", name: "Africa", sub: "Export project supply" }
   ];
   return (
-    <section className="section-navy">
+    <section className="section-white border-y border-primary-700/10">
       <div className="container py-14 md:py-20">
-        <div className="text-center mb-10">
-          <div className="text-xs font-black tracking-widest text-primary-400 uppercase mb-2">Global Reach</div>
-          <h2 className="text-2xl font-black md:text-3xl">India · Middle East · Africa Export Markets</h2>
-          <p className="mt-3 text-gray-400 max-w-2xl mx-auto text-sm">
+        <div className="mb-10 text-center">
+          <div className="mb-2 text-xs font-black uppercase tracking-widest text-primary-700">Global reach</div>
+          <h2 className="text-2xl font-black text-navy-700 md:text-3xl">India · Middle East · Africa export markets</h2>
+          <p className="mx-auto mt-3 max-w-2xl text-sm text-gray-600">
             Export-ready documentation, stable supply chain, and project-focused selection support for procurement
             teams across GCC and Africa.
           </p>
@@ -176,21 +176,21 @@ export function HomeExportSection() {
             <Link
               key={m.name}
               href="/locations"
-              className="group flex flex-col items-center gap-2 rounded-xl border border-white/10 bg-white/5 p-4 text-center transition hover:bg-primary-700/60 hover:border-primary-500/40"
+              className="group flex flex-col items-center gap-2 rounded-xl border border-gray-200 bg-primary-50/60 p-4 text-center shadow-card transition hover:border-primary-300 hover:bg-white hover:shadow-card-hover"
             >
               <span className="text-2xl">{m.flag}</span>
-              <div className="text-sm font-bold text-white">{m.name}</div>
-              <div className="text-[11px] text-gray-400 group-hover:text-primary-200 transition-colors">{m.sub}</div>
+              <div className="text-sm font-bold text-navy-700">{m.name}</div>
+              <div className="text-[11px] text-gray-500 transition-colors group-hover:text-primary-700">{m.sub}</div>
             </Link>
           ))}
         </div>
 
-        <div className="mt-10 flex flex-col sm:flex-row gap-3 justify-center">
-          <Button asChild variant="white">
-            <Link href="/rfq">Request Export Quotation</Link>
+        <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
+          <Button asChild size="lg">
+            <Link href="/rfq">Request export quotation</Link>
           </Button>
-          <Button asChild variant="outline" className="border-white/30 bg-transparent text-white hover:bg-white/10">
-            <Link href="/locations">View Location Pages</Link>
+          <Button asChild size="lg" variant="outline" className="border-primary-300 bg-white">
+            <Link href="/locations">View location pages</Link>
           </Button>
         </div>
       </div>

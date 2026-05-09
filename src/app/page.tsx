@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { HomeHero } from "@/components/home/hero";
+import { HomeQuoteSection } from "@/components/home/quote-section";
 import {
   HomeCounterStrip,
   HomeCtaBanner,
@@ -25,6 +26,7 @@ export default function HomePage() {
     <>
       <HomeHero />
       <HomeCounterStrip />
+      <HomeQuoteSection />
       <HomeProductCategories />
       <HomeManufacturingExcellence />
       <HomeExportSection />

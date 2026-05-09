@@ -12,53 +12,59 @@ export default {
       },
       colors: {
         primary: {
-          50:  "#eef6ff",
+          50: "#f5faff",
           100: "#d9ecff",
-          200: "#b9dcff",
-          300: "#88c5ff",
-          400: "#4aa6ff",
-          500: "#1e86ff",
-          600: "#0b66e6",
-          700: "#0a4fb4",
-          800: "#0b3f8a",
-          900: "#0b356f",
-          950: "#061a39"
+          200: "#b8d9f5",
+          300: "#7eb8eb",
+          400: "#4a9ee8",
+          500: "#2e90fa",
+          600: "#1a7ad9",
+          700: "#0f6cbd",
+          800: "#0c5499",
+          900: "#0a4277",
+          950: "#062a4d"
         },
         navy: {
-          700: "#1b3a5f",
-          800: "#0f2540",
-          900: "#0a1e3c",
-          950: "#060f1e"
+          700: "#0f2744",
+          800: "#0c1f36",
+          900: "#09182a",
+          950: "#050f1a"
         },
         gray: {
-          50:  "#f8f9fb",
-          100: "#f0f2f5",
-          200: "#e5e7eb",
-          300: "#d1d5db",
-          400: "#9ca3af",
-          500: "#6b7280",
-          600: "#4b5563",
-          700: "#374151",
-          800: "#1f2937",
-          900: "#111827"
+          50: "#f8fafc",
+          100: "#f1f5f9",
+          200: "#e2e8f0",
+          300: "#cbd5e1",
+          400: "#94a3b8",
+          500: "#64748b",
+          600: "#475569",
+          700: "#334155",
+          800: "#1e293b",
+          900: "#0f172a"
         }
       },
       fontFamily: {
-        sans: ["Segoe UI", "Inter", "Roboto", "Arial", "sans-serif"]
+        sans: ["var(--font-inter)", "Inter", "system-ui", "sans-serif"],
+        display: ["var(--font-poppins)", "Poppins", "system-ui", "sans-serif"]
       },
       boxShadow: {
-        card:   "0 4px 16px rgba(0,0,0,0.08)",
-        "card-hover": "0 8px 32px rgba(0,0,0,0.14)",
-        nav:    "0 2px 12px rgba(0,0,0,0.07)"
-      },
-      backgroundImage: {
-        "hero-overlay": "linear-gradient(90deg,rgba(10,30,60,0.82) 0%,rgba(10,30,60,0.55) 55%,rgba(10,30,60,0.25) 100%)"
+        card: "0 8px 32px rgba(15, 39, 68, 0.08)",
+        "card-hover": "0 20px 48px rgba(15, 108, 189, 0.14)",
+        nav: "0 2px 16px rgba(15, 39, 68, 0.06)"
       },
       keyframes: {
-        "count-up": { "0%": { opacity: "0", transform: "translateY(8px)" }, "100%": { opacity: "1", transform: "none" } }
+        "ken-burns": {
+          "0%": { transform: "scale(1.06)" },
+          "100%": { transform: "scale(1.14)" }
+        },
+        "fade-up": {
+          "0%": { opacity: "0", transform: "translateY(16px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" }
+        }
       },
       animation: {
-        "count-up": "count-up 0.5s ease forwards"
+        "ken-burns": "ken-burns 16s ease-in-out infinite alternate",
+        "fade-up": "fade-up 0.6s ease forwards"
       }
     }
   },

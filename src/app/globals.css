@@ -1,52 +1,99 @@
 @import "tailwindcss";
 
 :root {
-  --font-sans: "Segoe UI", Inter, Roboto, Arial, sans-serif;
+  --header-stack: 7rem;
 }
 
-html { scroll-behavior: smooth; }
+@media (min-width: 640px) {
+  :root {
+    --header-stack: 7.25rem;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
-  background: #ffffff;
-  color: #1f2937;
-  font-family: var(--font-sans);
+  background: #f5faff;
+  color: #0f2744;
   -webkit-font-smoothing: antialiased;
 }
 
-/* Scrollbar */
 @media (min-width: 768px) {
-  ::-webkit-scrollbar { width: 8px; }
-  ::-webkit-scrollbar-track { background: #f0f2f5; }
-  ::-webkit-scrollbar-thumb { background: #0a4fb4; border-radius: 999px; }
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #e8f2fc;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #0f6cbd;
+    border-radius: 999px;
+  }
 }
 
-/* Section alternation */
-.section-white  { background: #ffffff; }
-.section-gray   { background: #f0f2f5; }
-.section-navy   { background: #0a1e3c; color: #fff; }
-.section-primary { background: #0a4fb4; color: #fff; }
-
-/* Subtle grid for hero only */
-.bg-grid-hero {
-  background-image:
-    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
-    linear-gradient(90deg,rgba(255,255,255,0.04) 1px, transparent 1px);
-  background-size: 48px 48px;
+.section-white {
+  background: #ffffff;
+}
+.section-tint {
+  background: linear-gradient(180deg, #d9ecff 0%, #f5faff 100%);
+}
+.section-surface {
+  background: #f5faff;
 }
 
-/* Explore arrow link */
+.section-gray {
+  background: #f1f5f9;
+}
+
+.section-navy {
+  background: linear-gradient(180deg, #09182a 0%, #0c1f36 100%);
+  color: #ffffff;
+}
+
+.section-primary {
+  background: linear-gradient(135deg, #0f6cbd 0%, #0a4277 100%);
+  color: #ffffff;
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(15, 108, 189, 0.12);
+  box-shadow: 0 8px 32px rgba(15, 39, 68, 0.08);
+}
+
 .explore-link {
   display: inline-flex;
   align-items: center;
   gap: 6px;
   font-size: 0.875rem;
   font-weight: 600;
-  color: #0a4fb4;
+  color: #0f6cbd;
   transition: gap 0.2s;
 }
-.explore-link:hover { gap: 10px; }
+.explore-link:hover {
+  gap: 10px;
+}
 
-/* Product card image zoom */
-.card-img-wrap { overflow: hidden; }
-.card-img-wrap img { transition: transform 0.45s ease; }
-.card-img-wrap:hover img { transform: scale(1.05); }
+.card-img-wrap {
+  overflow: hidden;
+}
+.card-img-wrap img {
+  transition: transform 0.45s ease;
+}
+.card-img-wrap:hover img {
+  transform: scale(1.06);
+}
+
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: none;
+}
