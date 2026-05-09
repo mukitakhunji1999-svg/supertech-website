@@ -5,14 +5,18 @@ import {
   familyLineStaticParams
 } from "@/components/products/family-line-product-page";
 
+type SlugParams = { params: Promise<{ slug: string }> };
+
 export function generateStaticParams() {
   return familyLineStaticParams("solar-pumps");
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
-  return familyLineMetadata("solar-pumps", params.slug);
+export async function generateMetadata({ params }: SlugParams): Promise<Metadata> {
+  const { slug } = await params;
+  return familyLineMetadata("solar-pumps", slug);
 }
 
-export default function Page({ params }: { params: { slug: string } }) {
-  return <FamilyLineProductPage family="solar-pumps" slug={params.slug} />;
+export default async function Page({ params }: SlugParams) {
+  const { slug } = await params;
+  return <FamilyLineProductPage family="solar-pumps" slug={slug} />;
 }

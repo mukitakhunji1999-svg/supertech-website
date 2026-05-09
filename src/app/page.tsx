@@ -11,6 +11,7 @@ import {
   HomePartsShowcase,
   HomeProductCategories,
   HomeTestimonials,
+  HomeTrustStrip,
   HomeWhyChooseUs
 } from "@/components/home/sections";
 import { WhatsAppFloat } from "@/components/site/whatsapp-float";
@@ -34,6 +35,7 @@ export default function HomePage() {
       <HomeWhyChooseUs />
       <HomeIndustriesStrip />
       <HomeTestimonials />
+      <HomeTrustStrip />
       <HomeFAQ />
       <HomeCtaBanner />
       <WhatsAppFloat />

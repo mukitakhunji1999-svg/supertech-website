@@ -28,7 +28,7 @@ export function LeadForm({
   subtitle = "Share your requirement. We will respond quickly.",
   defaultMessage = ""
 }: {
-  type: "contact" | "rfq" | "distributor" | "tender" | "brochure";
+  type: "contact" | "rfq" | "distributor" | "tender" | "brochure" | "callback";
   title?: string;
   subtitle?: string;
   defaultMessage?: string;

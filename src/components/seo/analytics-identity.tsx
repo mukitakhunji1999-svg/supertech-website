@@ -1,16 +1,8 @@
-import Script from "next/script";
-import { organizationSchema } from "@/lib/seo/schema";
-
+/**
+ * Reserved for first-party analytics / consent hooks.
+ * Organization JSON-LD is emitted once from `src/app/layout.tsx` to avoid duplicate schema.
+ */
 export function AnalyticsIdentity() {
-  return (
-    <>
-      <Script
-        id="ld-org"
-        type="application/ld+json"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema()) }}
-      />
-    </>
-  );
+  return null;
 }
 

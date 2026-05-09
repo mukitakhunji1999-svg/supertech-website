@@ -1,18 +1,24 @@
 import type { Metadata } from "next";
 import { Mail, MapPin, Phone } from "lucide-react";
+import { JsonLd } from "@/components/seo/json-ld";
 import { PageHero } from "@/components/site/page-hero";
 import { LeadForm } from "@/components/forms/lead-form";
+import { buildPageMetadata } from "@/lib/seo/page-metadata";
+import { localBusinessSchema } from "@/lib/seo/schema";
 import { siteConfig } from "@/lib/site-config";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "Contact Us — Pump Inquiry & Export Sales",
   description:
-    "Contact SUPERTECH WATER SOLUTION for industrial pumps, motors, solar pumping solutions, export inquiries for India, Middle East and Africa."
-};
+    "Contact SUPERTECH WATER SOLUTION for industrial pumps, motors, solar pumping solutions, export inquiries for India, Middle East and Africa.",
+  path: "/contact",
+  keywords: ["pump manufacturer contact Ahmedabad", "industrial pump supplier Gujarat", "export pump inquiry"]
+});
 
 export default function ContactPage() {
   return (
     <>
+      <JsonLd id="ld-localbusiness-contact" data={localBusinessSchema()} />
       <PageHero
         eyebrow="Contact Us"
         title="Talk to Our Sales & Export Team"
@@ -54,6 +60,19 @@ export default function ContactPage() {
               <div className="mt-6 rounded-xl border border-primary-100 bg-primary-50 p-5">
                 <div className="text-xs font-black tracking-widest text-primary-700 uppercase mb-2">Export Markets</div>
                 <div className="text-sm text-gray-600">India • UAE • Saudi Arabia • Qatar • Oman • Kuwait • Bahrain • Africa</div>
+              </div>
+
+              <div className="mt-8 overflow-hidden rounded-xl border border-gray-200 bg-white shadow-card">
+                <div className="border-b border-gray-100 px-4 py-3 text-xs font-black uppercase tracking-widest text-primary-700">
+                  Local map — Ahmedabad, Gujarat
+                </div>
+                <iframe
+                  title="SUPERTECH WATER SOLUTION — Ahmedabad region map"
+                  className="h-64 w-full"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  src="https://www.google.com/maps?q=Ahmedabad%20Gujarat%20India&output=embed"
+                />
               </div>
             </div>
 

@@ -5,6 +5,8 @@ import { products } from "@/lib/products/catalog";
 import { locations } from "@/lib/locations/locations";
 import { blogCategories, blogPosts } from "@/lib/blog/posts";
 import { brochures } from "@/lib/resources/brochures";
+import { industrialLandingPages } from "@/lib/seo/industrial-pages-registry";
+import { PRODUCT_FAMILY_KEYS, productFamilies } from "@/lib/products/product-families";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = siteConfig.url;
@@ -27,7 +29,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/resources/brochures",
     "/resources/datasheets",
     "/privacy",
-    "/terms"
+    "/terms",
+    "/resources",
+    "/callback"
   ];
 
   const entries: MetadataRoute.Sitemap = staticRoutes.map((p) => ({
@@ -89,6 +93,32 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.4
     });
+  }
+
+  for (const p of industrialLandingPages) {
+    entries.push({
+      url: `${base}${p.path}`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.85
+    });
+  }
+
+  for (const family of PRODUCT_FAMILY_KEYS) {
+    entries.push({
+      url: `${base}/products/${family}`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.88
+    });
+    for (const slug of Object.keys(productFamilies[family].lineItems)) {
+      entries.push({
+        url: `${base}/products/${family}/${slug}`,
+        lastModified: now,
+        changeFrequency: "monthly",
+        priority: 0.86
+      });
+    }
   }
 
   return entries;

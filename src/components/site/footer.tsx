@@ -68,7 +68,9 @@ export function SiteFooter() {
                 { href: "/industries", label: "Industries Served" },
                 { href: "/distributor", label: "Distributor Inquiry" },
                 { href: "/compare", label: "Compare Products" },
-                { href: "/blog", label: "Blog" }
+                { href: "/blog", label: "Blog" },
+                { href: "/resources", label: "Technical resources" },
+                { href: "/callback", label: "Request callback" }
               ].map((l) => (
                 <Link key={l.href} href={l.href} className="block text-gray-600 transition-colors hover:text-primary-700">
                   {l.label}

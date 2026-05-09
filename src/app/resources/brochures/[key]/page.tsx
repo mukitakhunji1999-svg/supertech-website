@@ -7,18 +7,22 @@ import { Button } from "@/components/ui/button";
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { getBrochure, brochures } from "@/lib/resources/brochures";
 
+type BrochureParams = { params: Promise<{ key: string }> };
+
 export function generateStaticParams() {
   return brochures.map((b) => ({ key: b.key }));
 }
 
-export function generateMetadata({ params }: { params: { key: string } }): Metadata {
-  const b = getBrochure(params.key);
+export async function generateMetadata({ params }: BrochureParams): Promise<Metadata> {
+  const { key } = await params;
+  const b = getBrochure(key);
   if (!b) return {};
   return { title: b.title, description: b.description, alternates: { canonical: `/resources/brochures/${b.key}` } };
 }
 
-export default function BrochureDownloadPage({ params }: { params: { key: string } }) {
-  const b = getBrochure(params.key);
+export default async function BrochureDownloadPage({ params }: BrochureParams) {
+  const { key } = await params;
+  const b = getBrochure(key);
   if (!b) return notFound();
 
   return (

@@ -26,16 +26,20 @@ export function buildPageMetadata(input: PageMetaInput): Metadata {
         : new URL(input.ogImage, siteConfig.url).toString()
       : null;
 
-  const og: Metadata["openGraph"] = {
+  const og = {
     type: input.openGraphType ?? "website",
     url,
     siteName: siteConfig.name,
     title: input.title,
-    description: input.description
-  };
-  if (ogUrl) {
-    og.images = [{ url: ogUrl, width: 1200, height: 630, alt: siteConfig.name }];
-  }
+    description: input.description,
+    ...(input.openGraphType === "article" && input.publishedTime
+      ? {
+          publishedTime: input.publishedTime,
+          ...(input.modifiedTime ? { modifiedTime: input.modifiedTime } : {})
+        }
+      : {}),
+    ...(ogUrl ? { images: [{ url: ogUrl, width: 1200, height: 630, alt: siteConfig.name }] } : {})
+  } satisfies NonNullable<Metadata["openGraph"]>;
 
   const tw: Metadata["twitter"] = {
     card: "summary_large_image",

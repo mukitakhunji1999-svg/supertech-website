@@ -90,7 +90,7 @@ export const solarPumpSupplierIndia: IndustrialPageContent = {
   internalLinks: [
     { href: "/products/solar-pumps", label: "Solar pump family hub" },
     { href: "/products/solar-pumping-systems", label: "Solar pumping systems category" },
-    { href: "/blog/solar-pumping/best-solar-pumps-for-agriculture-what-matters-in-real-installations", label: "Solar agriculture blog" },
+    { href: "/blog/solar-pumping/best-solar-pumps-for-agriculture", label: "Solar agriculture blog" },
     { href: "/pump-exporter-india", label: "Pump exporter India" },
     { href: "/rfq", label: "Solar RFQ" }
   ]

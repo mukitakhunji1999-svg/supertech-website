@@ -118,7 +118,7 @@ export function SiteHeader() {
                 </div>
               </div>
 
-              <NavLink href="/resources/datasheets">Technical Resources</NavLink>
+              <NavLink href="/resources">Technical Resources</NavLink>
               <NavLink href="/blog">Blogs</NavLink>
               <Link
                 href="/#quote"
@@ -163,7 +163,7 @@ export function SiteHeader() {
                   { href: "/", label: "Home" },
                   { href: "/about", label: "About" },
                   { href: "/products", label: "Products" },
-                  { href: "/resources/datasheets", label: "Technical Resources" },
+                  { href: "/resources", label: "Technical Resources" },
                   { href: "/blog", label: "Blogs" },
                   { href: "/#quote", label: "Quote Builder" },
                   { href: "/industries", label: "Industries" },

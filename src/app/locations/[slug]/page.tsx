@@ -8,20 +8,24 @@ import { allCategories } from "@/lib/products/product-groups";
 import { getLocation, locations } from "@/lib/locations/locations";
 import { siteConfig } from "@/lib/site-config";
 
+type LocationParams = { params: Promise<{ slug: string }> };
+
 export function generateStaticParams() {
   return locations.map((l) => ({ slug: l.slug }));
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
-  const l = getLocation(params.slug);
+export async function generateMetadata({ params }: LocationParams): Promise<Metadata> {
+  const { slug } = await params;
+  const l = getLocation(slug);
   if (!l) return {};
   const title = `Industrial Pump Supplier & Exporter in ${l.name}`;
   const description = `${siteConfig.name} is a premium pump manufacturer and exporter serving ${l.name}, ${l.country}. Explore submersible pumps, borewell pumps, solar pumps, industrial pumps, valves, pipes, cables and control panels — export-ready documentation for EPC and government procurement.`;
   return { title, description, alternates: { canonical: `/locations/${l.slug}` } };
 }
 
-export default function LocationLandingPage({ params }: { params: { slug: string } }) {
-  const l = getLocation(params.slug);
+export default async function LocationLandingPage({ params }: LocationParams) {
+  const { slug } = await params;
+  const l = getLocation(slug);
   if (!l) return notFound();
 
   const keywordBlocks = [

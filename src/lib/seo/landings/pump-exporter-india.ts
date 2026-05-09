@@ -90,7 +90,7 @@ export const pumpExporterIndia: IndustrialPageContent = {
   internalLinks: [
     { href: "/locations", label: "Export location pages" },
     { href: "/products", label: "Full product catalogue" },
-    { href: "/blog/export-industry/export-quality-pumps-from-india-documentation-and-procurement-essentials", label: "Export procurement blog" },
+    { href: "/blog/export-industry/export-quality-pumps-from-india", label: "Export procurement blog" },
     { href: "/resources/brochures", label: "Brochure downloads" },
     { href: "/rfq", label: "Export RFQ" }
   ]

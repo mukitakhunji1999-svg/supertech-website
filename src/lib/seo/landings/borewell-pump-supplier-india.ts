@@ -91,7 +91,7 @@ export const borewellPumpSupplierIndia: IndustrialPageContent = {
     { href: "/products/borewell-submersible-pumps", label: "Borewell submersible category" },
     { href: "/products/submersible-pumps", label: "Submersible pump family hub" },
     { href: "/submersible-pump-manufacturer-ahmedabad", label: "Ahmedabad manufacturing page" },
-    { href: "/blog/pump-guides/how-to-choose-submersible-pumps-for-borewell-and-openwell-applications", label: "Borewell selection guide (blog)" },
+    { href: "/blog/pump-guides/how-to-choose-submersible-pumps", label: "Borewell selection guide (blog)" },
     { href: "/rfq", label: "RFQ for borewell selection" }
   ]
 };

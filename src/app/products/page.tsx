@@ -24,6 +24,26 @@ export default function ProductsIndexPage() {
 
       <div className="section-gray">
         <div className="container py-14 md:py-20">
+          <div className="mb-10 rounded-xl border border-primary-200 bg-primary-50/50 p-6 md:p-8">
+            <div className="text-xs font-black uppercase tracking-widest text-primary-700">SEO-friendly family hubs</div>
+            <h2 className="mt-2 text-xl font-black text-navy-700">Popular product lines</h2>
+            <p className="mt-2 max-w-3xl text-sm text-gray-600">
+              Marketing URLs for RFQ and search — technical selection remains duty-point driven. Each hub links to catalogue categories and featured configurations.
+            </p>
+            <div className="mt-5 flex flex-wrap gap-3">
+              {[
+                { href: "/products/submersible-pumps", label: "Submersible pumps" },
+                { href: "/products/centrifugal-pumps", label: "Centrifugal & self-priming" },
+                { href: "/products/solar-pumps", label: "Solar pumps" },
+                { href: "/products/fire-fighting-pumps", label: "Fire / booster duty" }
+              ].map((x) => (
+                <Button key={x.href} asChild variant="outline" className="border-primary-300 bg-white">
+                  <Link href={x.href}>{x.label}</Link>
+                </Button>
+              ))}
+            </div>
+          </div>
+
           <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between mb-8">
             <h2 className="text-xl font-black text-navy-700">Browse by Category</h2>
             <Button asChild size="sm">

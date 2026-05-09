@@ -6,13 +6,16 @@ import { getProductBySlug, getProductsByCategory, products } from "@/lib/product
 import { buildPageMetadata } from "@/lib/seo/page-metadata";
 import { siteConfig } from "@/lib/site-config";
 
+type ProductDetailParams = { params: Promise<{ category: string; slug: string }> };
+
 export function generateStaticParams() {
   return products.map((p) => ({ category: p.categorySlug, slug: p.slug }));
 }
 
-export function generateMetadata({ params }: { params: { category: string; slug: string } }): Metadata {
-  const product = getProductBySlug(params.slug);
-  const cat = allCategories.find((c) => c.slug === params.category);
+export async function generateMetadata({ params }: ProductDetailParams): Promise<Metadata> {
+  const { category, slug } = await params;
+  const product = getProductBySlug(slug);
+  const cat = allCategories.find((c) => c.slug === category);
   if (!product || !cat) return {};
   const title = `${product.name} | ${cat.name} Manufacturer & Exporter`;
   const description = `${siteConfig.name} — ${cat.name} manufacturer and exporter for India, Middle East (UAE, Saudi Arabia, Qatar, Oman, Kuwait, Bahrain) and Africa. Features, applications, specifications, FAQs and downloads for ${product.name}.`;
@@ -24,9 +27,10 @@ export function generateMetadata({ params }: { params: { category: string; slug:
   });
 }
 
-export default function ProductDetailPage({ params }: { params: { category: string; slug: string } }) {
-  const cat = allCategories.find((c) => c.slug === params.category);
-  const product = getProductBySlug(params.slug);
+export default async function ProductDetailPage({ params }: ProductDetailParams) {
+  const { category, slug } = await params;
+  const cat = allCategories.find((c) => c.slug === category);
+  const product = getProductBySlug(slug);
   if (!cat || !product || product.categorySlug !== cat.slug) return notFound();
 
   const related = getProductsByCategory(cat.slug).filter((p) => p.slug !== product.slug).slice(0, 6);

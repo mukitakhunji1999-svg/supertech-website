@@ -372,6 +372,66 @@ export function HomeIndustriesStrip() {
   );
 }
 
+/* ─── Trust & compliance strip ──────────────────────────────── */
+export function HomeTrustStrip() {
+  const items = [
+    {
+      title: "Government & tender supply",
+      body: "Structured technical submissions, schedules, and post-award support for public-sector and EPC procurement.",
+      href: "/government-supply",
+      cta: "Government supply"
+    },
+    {
+      title: "Quality system discipline",
+      body: "Inspection gates, traceable documentation, and export-oriented packing protocols aligned to industrial buyer expectations.",
+      href: "/quality",
+      cta: "Quality policy"
+    },
+    {
+      title: "Export lanes & logistics",
+      body: "GCC and Africa project coordination with documentation-first dispatch planning from Gujarat, India.",
+      href: "/pump-exporter-india",
+      cta: "Export hub"
+    },
+    {
+      title: "Technical resource center",
+      body: "Brochures, datasheets, manuals, curves, and tender-oriented downloads — searchable and RFQ-linked.",
+      href: "/resources",
+      cta: "Browse resources"
+    }
+  ];
+  return (
+    <section className="section-white border-y border-primary-700/10">
+      <div className="container py-14 md:py-16">
+        <div className="mb-10 text-center">
+          <div className="mb-2 text-xs font-black uppercase tracking-widest text-primary-700">Trust & capability</div>
+          <h2 className="text-2xl font-black text-navy-700 md:text-3xl">Built for industrial procurement, not retail impulse buys</h2>
+          <p className="mx-auto mt-3 max-w-2xl text-sm text-gray-600">
+            SUPERTECH WATER SOLUTION focuses on B2B reliability: documentation, export readiness, and engineering-led selection for pumps, motors, solar systems, valves, panels, pipes, and cables.
+          </p>
+        </div>
+        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+          {items.map((x) => (
+            <Card key={x.title} className="flex h-full flex-col border-primary-100 shadow-card">
+              <CardHeader>
+                <CardTitle className="text-base">{x.title}</CardTitle>
+                <CardDescription className="leading-relaxed">{x.body}</CardDescription>
+              </CardHeader>
+              <CardContent className="mt-auto pt-0">
+                <Button asChild variant="outline" size="sm" className="border-primary-300">
+                  <Link href={x.href}>
+                    {x.cta} <ArrowRight className="h-3.5 w-3.5" />
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /* ─── CTA Banner ─────────────────────────────────────────────── */
 export function HomeCtaBanner() {
   return (
