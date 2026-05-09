@@ -1,8 +1,10 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Poppins } from "next/font/google";
+import { JsonLd } from "@/components/seo/json-ld";
 import { AnalyticsIdentity } from "@/components/seo/analytics-identity";
 import { SiteFooter } from "@/components/site/footer";
 import { SiteHeader } from "@/components/site/header";
+import { organizationSchema, websiteSchema } from "@/lib/seo/schema";
 import { siteConfig } from "@/lib/site-config";
 import "./globals.css";
 
@@ -57,6 +59,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" dir="ltr" suppressHydrationWarning className={`${inter.variable} ${poppins.variable}`}>
       <body className="min-h-dvh bg-primary-50 font-sans text-navy-700 antialiased">
+        <JsonLd id="ld-organization" data={organizationSchema()} />
+        <JsonLd id="ld-website" data={websiteSchema()} />
         <AnalyticsIdentity />
         <SiteHeader />
         <main>{children}</main>
