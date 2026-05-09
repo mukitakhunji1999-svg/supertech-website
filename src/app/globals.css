@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+:root {
+  --font-sans: "Segoe UI", Inter, Roboto, Arial, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: #ffffff;
+  color: #1f2937;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar */
+@media (min-width: 768px) {
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: #f0f2f5; }
+  ::-webkit-scrollbar-thumb { background: #0a4fb4; border-radius: 999px; }
+}
+
+/* Section alternation */
+.section-white  { background: #ffffff; }
+.section-gray   { background: #f0f2f5; }
+.section-navy   { background: #0a1e3c; color: #fff; }
+.section-primary { background: #0a4fb4; color: #fff; }
+
+/* Subtle grid for hero only */
+.bg-grid-hero {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* Explore arrow link */
+.explore-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #0a4fb4;
+  transition: gap 0.2s;
+}
+.explore-link:hover { gap: 10px; }
+
+/* Product card image zoom */
+.card-img-wrap { overflow: hidden; }
+.card-img-wrap img { transition: transform 0.45s ease; }
+.card-img-wrap:hover img { transform: scale(1.05); }
