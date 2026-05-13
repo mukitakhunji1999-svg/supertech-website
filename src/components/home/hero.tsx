@@ -5,45 +5,55 @@ import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { siteConfig } from "@/lib/site-config";
 import { cn } from "@/lib/cn";
+
+const overlayClass =
+  "bg-[linear-gradient(105deg,rgba(245,250,255,0.94)_0%,rgba(245,250,255,0.78)_38%,rgba(217,236,255,0.45)_72%,rgba(255,255,255,0.2)_100%)]";
 
 const SLIDES = [
   {
     id: 1,
+    tag: "Pump engineering · Fluid systems",
     title: "Industrial Pump Solutions",
     sub:
-      "Hydraulic selection, duty-point engineering and export documentation for EPC contractors, infrastructure programmes and B2B buyers across India, Middle East and Africa.",
-    tag: "Pump engineering · Fluid systems",
+      "End-to-end hydraulic selection, duty-point matching and export-ready documentation for infrastructure, agriculture and process industries.",
     img: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1920&q=80",
-    alt: "Industrial pump and precision components"
+    alt: "Industrial pump engineering facility",
+    primary: { label: "Explore products", href: "/products" as const },
+    secondary: { label: "Request quotation", href: "/contact" as const }
   },
   {
     id: 2,
+    tag: "Technical authority",
     title: "Water Engineering Excellence",
     sub:
-      "Integrated fluid management: pumping, distribution, electrical coordination and control — engineered for reliability and lifecycle cost clarity.",
-    tag: "Technical authority",
+      "Integrated fluid management: pumping, distribution, control and electrical coordination — engineered for reliability and lifecycle cost clarity.",
     img: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=1920&q=80",
-    alt: "Industrial water engineering and piping"
+    alt: "Water engineering and industrial piping",
+    primary: { label: "Technical resources", href: "/resources" as const },
+    secondary: { label: "Contact engineering", href: "/contact" as const }
   },
   {
     id: 3,
+    tag: "Manufacturing discipline",
     title: "Export-Grade Manufacturing",
     sub:
-      "Traceable processes, inspection gates and packaging protocols aligned with international procurement and multimodal logistics.",
-    tag: "Manufacturing discipline",
+      "Traceable processes, inspection gates and packaging protocols aligned with international procurement expectations and multimodal logistics.",
     img: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1920&q=80",
-    alt: "Manufacturing and quality control environment"
+    alt: "Precision manufacturing and quality control",
+    primary: { label: "Export capabilities", href: "/#export" as const },
+    secondary: { label: "Our standards", href: "/about" as const }
   },
   {
     id: 4,
+    tag: "Public sector & EPC",
     title: "Government & Infrastructure Supply",
     sub:
       "Structured technical submissions, schedule discipline and post-award engineering support for tenders, SPVs and large-scale water projects.",
-    tag: "Public sector & EPC",
     img: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1920&q=80",
-    alt: "Infrastructure and construction project context"
+    alt: "Infrastructure and government project supply",
+    primary: { label: "Tender & RFQ desk", href: "/contact" as const },
+    secondary: { label: "Industries served", href: "/#industries" as const }
   }
 ];
 
@@ -58,16 +68,16 @@ export function HomeHero() {
     return () => window.clearInterval(t);
   }, [next]);
 
-  const slide = SLIDES[i];
+  const slide = SLIDES[i]!;
 
   return (
-    <section className="relative min-h-[min(88vh,52rem)] overflow-hidden bg-primary-100">
+    <section className="relative min-h-[min(88vh,820px)] overflow-hidden bg-[#d9ecff]" aria-label="Featured">
       {SLIDES.map((s, idx) => (
         <div
           key={s.id}
           className={cn(
-            "absolute inset-0 transition-opacity duration-700 ease-out",
-            idx === i ? "z-[1] opacity-100" : "z-0 opacity-0 pointer-events-none"
+            "absolute inset-0 transition-[opacity,visibility] duration-[850ms] ease-out",
+            idx === i ? "z-[1] opacity-100 visible" : "z-0 invisible opacity-0 pointer-events-none"
           )}
           aria-hidden={idx !== i}
         >
@@ -88,97 +98,71 @@ export function HomeHero() {
               />
             </div>
           </div>
-          <div
-            className="absolute inset-0 bg-gradient-to-br from-primary-50/95 via-white/85 to-primary-100/70"
-            aria-hidden
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-transparent to-primary-50/40" aria-hidden />
+          <div className={cn("absolute inset-0", overlayClass)} aria-hidden />
         </div>
       ))}
 
-      <div className="container relative z-[2] flex min-h-[min(88vh,52rem)] flex-col justify-center py-16 md:py-24">
-        <p className="font-display text-xs font-bold uppercase tracking-[0.22em] text-primary-700">{slide.tag}</p>
-        <h1 className="mt-4 max-w-3xl font-display text-4xl font-extrabold leading-[1.08] tracking-tight text-navy-700 sm:text-5xl lg:text-6xl">
-          {slide.title}
-        </h1>
-        <p className="mt-6 max-w-2xl text-lg leading-relaxed text-gray-600">{slide.sub}</p>
-        <div className="mt-10 flex flex-wrap gap-3">
-          <Button asChild size="lg" className="font-display shadow-md">
-            <Link href="/products">Explore products</Link>
-          </Button>
-          <Button asChild size="lg" variant="outline" className="border-primary-300 bg-white/90 font-display backdrop-blur-sm">
-            <Link href="/rfq">Request quotation</Link>
-          </Button>
-          <Button asChild size="lg" variant="outline" className="border-primary-300 bg-white/90 font-display backdrop-blur-sm">
-            <Link href="/contact">Contact us</Link>
-          </Button>
-        </div>
-        <div className="mt-12 flex flex-wrap gap-3">
-          {["Export quality", "Government supplier", "Technical support", "Fast dispatch"].map((b) => (
-            <span
-              key={b}
-              className="rounded-full border border-primary-200/80 bg-white/80 px-3 py-1 text-xs font-semibold text-navy-700 shadow-sm backdrop-blur-sm"
+      <div className="container relative z-[2] flex min-h-[min(88vh,820px)] items-center py-12 pb-28 md:py-16 md:pb-32">
+        <div className="max-w-[560px]">
+          <p className="font-display text-xs font-bold uppercase tracking-[0.2em] text-primary-700">{slide.tag}</p>
+          <h1 className="mt-4 font-display text-[clamp(2rem,4.5vw,3.25rem)] font-extrabold leading-[1.12] tracking-[-0.03em] text-navy-700">
+            {slide.title}
+          </h1>
+          <p className="mt-4 max-w-[520px] text-[1.05rem] leading-relaxed text-gray-600">{slide.sub}</p>
+          <div className="mt-7 flex flex-wrap gap-3">
+            <Button
+              asChild
+              size="lg"
+              className="font-display h-auto rounded-xl border-0 bg-gradient-to-br from-primary-700 to-sky-500 px-5 py-2.5 text-[0.8125rem] font-bold text-white shadow-[0_8px_24px_rgba(15,108,189,0.28)] hover:from-primary-800 hover:to-sky-600 hover:shadow-[0_12px_32px_rgba(15,108,189,0.38)] active:scale-[0.98]"
             >
-              {b}
-            </span>
-          ))}
-        </div>
-        <div className="mt-10 flex flex-wrap gap-8 border-t border-primary-700/10 pt-8">
-          {[
-            { n: "20+", l: "Product categories" },
-            { n: "900+", l: "Variants & SKUs" },
-            { n: "35+", l: "Export lanes" },
-            { n: "B2B", l: "Industrial focus" }
-          ].map((s) => (
-            <div key={s.l}>
-              <div className="font-display text-2xl font-extrabold text-primary-700">{s.n}</div>
-              <div className="text-xs font-medium uppercase tracking-wider text-gray-500">{s.l}</div>
-            </div>
-          ))}
+              <Link href={slide.primary.href}>{slide.primary.label}</Link>
+            </Button>
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="font-display h-auto rounded-xl border border-primary-700/25 bg-white/95 px-5 py-2.5 text-[0.8125rem] font-bold text-primary-700 shadow-sm backdrop-blur-sm hover:border-primary-600 hover:bg-primary-50 active:scale-[0.98]"
+            >
+              <Link href={slide.secondary.href}>{slide.secondary.label}</Link>
+            </Button>
+          </div>
         </div>
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 z-[3] border-t border-primary-700/10 bg-white/80 backdrop-blur-md">
-        <div className="container flex items-center justify-between gap-4 py-3">
-          <div className="flex items-center gap-2 text-xs font-medium text-gray-500">
-            <Link href="/" className="hover:text-primary-700">
-              Home
-            </Link>
-            <ChevronRight className="h-3 w-3 opacity-40" />
-            <span className="text-navy-700">{siteConfig.name}</span>
+      <div className="pointer-events-none absolute inset-x-0 bottom-8 z-[5] flex justify-center px-4">
+        <div className="pointer-events-auto flex items-center gap-4">
+          <button
+            type="button"
+            onClick={prev}
+            className="flex h-12 w-12 items-center justify-center rounded-full border border-primary-700/20 bg-white/90 text-primary-700 shadow-sm transition hover:border-primary-400 hover:shadow-md"
+            aria-label="Previous slide"
+          >
+            <ChevronLeft className="h-5 w-5" />
+          </button>
+          <div className="flex gap-2" role="tablist" aria-label="Slides">
+            {SLIDES.map((_, idx) => (
+              <button
+                key={idx}
+                type="button"
+                role="tab"
+                aria-selected={idx === i}
+                onClick={() => setI(idx)}
+                className={cn(
+                  "h-2.5 rounded-full transition-all",
+                  idx === i ? "w-8 bg-primary-700" : "w-2.5 bg-primary-300/90 hover:bg-primary-500"
+                )}
+                aria-label={`Slide ${idx + 1}`}
+              />
+            ))}
           </div>
-          <div className="flex items-center gap-2">
-            <button
-              type="button"
-              onClick={prev}
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-primary-200 bg-white text-primary-700 shadow-sm transition hover:border-primary-400 hover:shadow-md"
-              aria-label="Previous slide"
-            >
-              <ChevronLeft className="h-5 w-5" />
-            </button>
-            <div className="flex gap-1.5">
-              {SLIDES.map((_, idx) => (
-                <button
-                  key={idx}
-                  type="button"
-                  onClick={() => setI(idx)}
-                  className={cn(
-                    "h-2.5 rounded-full transition-all",
-                    idx === i ? "w-8 bg-primary-700" : "w-2.5 bg-primary-300/80 hover:bg-primary-400"
-                  )}
-                  aria-label={`Go to slide ${idx + 1}`}
-                />
-              ))}
-            </div>
-            <button
-              type="button"
-              onClick={next}
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-primary-200 bg-white text-primary-700 shadow-sm transition hover:border-primary-400 hover:shadow-md"
-              aria-label="Next slide"
-            >
-              <ChevronRight className="h-5 w-5" />
-            </button>
-          </div>
+          <button
+            type="button"
+            onClick={next}
+            className="flex h-12 w-12 items-center justify-center rounded-full border border-primary-700/20 bg-white/90 text-primary-700 shadow-sm transition hover:border-primary-400 hover:shadow-md"
+            aria-label="Next slide"
+          >
+            <ChevronRight className="h-5 w-5" />
+          </button>
         </div>
       </div>
     </section>

@@ -1,19 +1,20 @@
 import type { Metadata } from "next";
 import { HomeFeaturedProductTabs } from "@/components/home/featured-product-tabs";
 import { HomeHero } from "@/components/home/hero";
+import { HomeAboutIndustrial } from "@/components/home/home-about-industrial";
+import { HomeBlogPreview } from "@/components/home/home-blog-preview";
+import { HomeContactTeaser } from "@/components/home/home-contact-teaser";
+import { HomeExportCapabilities } from "@/components/home/home-export-capabilities";
+import { HomeIndustrialTrust } from "@/components/home/home-industrial-trust";
+import { HomeTechnicalPreview } from "@/components/home/home-technical-preview";
+import { HomeTestimonialsSlider } from "@/components/home/home-testimonials-slider";
 import { HomeQuoteSection } from "@/components/home/quote-section";
 import {
-  HomeCounterStrip,
   HomeCtaBanner,
   HomeExportSection,
   HomeFAQ,
   HomeIndustriesStrip,
-  HomeManufacturingExcellence,
-  HomePartsShowcase,
-  HomeProductCategories,
-  HomeTestimonials,
-  HomeTrustStrip,
-  HomeWhyChooseUs
+  HomeProductCategories
 } from "@/components/home/sections";
 import { WhatsAppFloat } from "@/components/site/whatsapp-float";
 
@@ -27,17 +28,18 @@ export default function HomePage() {
   return (
     <>
       <HomeHero />
-      <HomeCounterStrip />
-      <HomeQuoteSection />
+      <HomeIndustrialTrust />
+      <HomeAboutIndustrial />
       <HomeFeaturedProductTabs />
-      <HomeProductCategories />
-      <HomeManufacturingExcellence />
-      <HomeExportSection />
-      <HomePartsShowcase />
-      <HomeWhyChooseUs />
+      <HomeTechnicalPreview />
+      <HomeBlogPreview />
+      <HomeQuoteSection />
       <HomeIndustriesStrip />
-      <HomeTestimonials />
-      <HomeTrustStrip />
+      <HomeExportCapabilities />
+      <HomeExportSection />
+      <HomeProductCategories />
+      <HomeTestimonialsSlider />
+      <HomeContactTeaser />
       <HomeFAQ />
       <HomeCtaBanner />
       <WhatsAppFloat />

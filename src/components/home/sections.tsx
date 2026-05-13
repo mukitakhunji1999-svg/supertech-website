@@ -92,8 +92,7 @@ export function HomeManufacturingExcellence() {
   return (
     <section className="section-white">
       <div className="container py-14 md:py-20">
-        <div className="grid items-center gap-12 lg:grid-cols-2">
-          <div>
+        <div className="max-w-4xl">
             <div className="text-xs font-black tracking-widest text-primary-700 uppercase mb-2">Manufacturing Excellence</div>
             <h2 className="text-2xl font-black text-navy-700 md:text-3xl leading-snug">
               Built for Global Duty Cycles, Government Tenders & EPC Execution
@@ -124,23 +123,6 @@ export function HomeManufacturingExcellence() {
                 <Link href="/quality">Quality Policy</Link>
               </Button>
             </div>
-          </div>
-
-          {/* Parts image grid */}
-          <div className="grid grid-cols-2 gap-3">
-            {partImages.slice(0, 4).map((img, i) => (
-              <div key={img.src} className={`card-img-wrap rounded-xl overflow-hidden border border-gray-200 ${i === 0 ? "col-span-2" : ""}`}>
-                <Image
-                  src={img.src}
-                  alt={img.alt}
-                  width={600}
-                  height={i === 0 ? 300 : 220}
-                  className="w-full h-full object-cover"
-                  style={{ height: i === 0 ? "220px" : "160px" }}
-                />
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </section>
@@ -343,28 +325,37 @@ export function HomeFAQ() {
 /* ─── Industries strip ──────────────────────────────────────── */
 export function HomeIndustriesStrip() {
   const industries = [
-    { icon: "🏛️", name: "Government Departments" },
-    { icon: "🏗️", name: "EPC Contractors" },
-    { icon: "🌾", name: "Agriculture & Irrigation" },
-    { icon: "🏭", name: "Industrial Plants" },
-    { icon: "🏢", name: "Builders & Developers" },
-    { icon: "💧", name: "Water Treatment" },
-    { icon: "⚡", name: "Infrastructure Projects" },
-    { icon: "🌍", name: "Export Buyers" }
+    { icon: "🌾", name: "Agriculture", desc: "Irrigation, borewell and solar pumping at scale." },
+    { icon: "💧", name: "Water treatment", desc: "Process pumping, chemical dosing and panel integration." },
+    { icon: "🏭", name: "Industrial plants", desc: "Utilities, transfer and booster skids with OEM support." },
+    { icon: "🏛️", name: "Government projects", desc: "Tender documentation and compliance-first dispatch." },
+    { icon: "🛤️", name: "Infrastructure", desc: "Metro, township and highway corridor water systems." },
+    { icon: "🚿", name: "Irrigation", desc: "Canal-fed and pressurised distribution networks." },
+    { icon: "🔥", name: "Fire fighting", desc: "Hydrant and sprinkler pump packages — layout support." },
+    { icon: "☀️", name: "Solar projects", desc: "PV arrays, structures and pumping integration." }
   ];
   return (
-    <section className="section-gray">
+    <section
+      id="industries"
+      className="section-white scroll-mt-[5.5rem] border-y border-primary-700/10 sm:scroll-mt-[8rem]"
+    >
       <div className="container py-14 md:py-16">
-        <div className="text-center mb-8">
-          <div className="text-xs font-black tracking-widest text-primary-700 uppercase mb-2">Industries Served</div>
-          <h2 className="text-2xl font-black text-navy-700 md:text-3xl">Sectors We Power</h2>
+        <div className="mb-10 max-w-3xl">
+          <p className="font-display text-xs font-bold uppercase tracking-[0.2em] text-primary-700">Industries served</p>
+          <h2 className="mt-2 font-display text-2xl font-extrabold tracking-tight text-navy-700 md:text-3xl">
+            Vertical expertise across fluid and electrical domains
+          </h2>
         </div>
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 lg:grid-cols-8">
+        <div className="grid gap-4 [grid-template-columns:repeat(auto-fill,minmax(220px,1fr))]">
           {industries.map((i) => (
-            <div key={i.name} className="flex flex-col items-center gap-2 rounded-xl bg-white border border-gray-200 p-4 text-center shadow-card hover:shadow-card-hover hover:border-primary-200 transition-all">
-              <span className="text-2xl">{i.icon}</span>
-              <div className="text-xs font-semibold text-navy-700 leading-snug">{i.name}</div>
-            </div>
+            <article
+              key={i.name}
+              className="rounded-2xl border border-primary-700/10 bg-white p-6 shadow-card transition hover:border-primary-700/25 hover:shadow-card-hover"
+            >
+              <div className="mb-2 text-[1.75rem] leading-none">{i.icon}</div>
+              <h3 className="font-display text-[0.95rem] font-bold text-navy-700">{i.name}</h3>
+              <p className="mt-1.5 text-[0.82rem] leading-relaxed text-gray-600">{i.desc}</p>
+            </article>
           ))}
         </div>
       </div>

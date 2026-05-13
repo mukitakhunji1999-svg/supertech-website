@@ -53,7 +53,7 @@ export function SiteHeader() {
               <span className="rounded-full border border-white/30 bg-white/15 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-widest text-white">
                 Government supplier
               </span>
-              <Link href="/contact" className="font-semibold text-primary-100 hover:text-white">
+              <Link href="/#contact" className="font-semibold text-primary-100 hover:text-white">
                 Export inquiry →
               </Link>
             </div>
@@ -92,7 +92,7 @@ export function SiteHeader() {
 
             <nav className="hidden min-w-0 flex-1 items-center justify-center gap-1 lg:flex" aria-label="Primary">
               <NavLink href="/">Home</NavLink>
-              <NavLink href="/about">About</NavLink>
+              <NavLink href="/#about">About</NavLink>
 
               <div className="group relative">
                 <button
@@ -121,27 +121,38 @@ export function SiteHeader() {
                         </div>
                       ))}
                     </div>
-                    <div className="mt-4 flex items-center justify-between border-t border-primary-700/10 pt-3">
-                      <Link href="/products" className="text-sm font-semibold text-primary-700 hover:text-primary-800">
-                        Full catalogue →
-                      </Link>
+                    <div className="mt-4 flex flex-wrap items-center justify-between gap-3 border-t border-primary-700/10 pt-3">
+                      <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs">
+                        <Link href="/products" className="text-sm font-semibold text-primary-700 hover:text-primary-800">
+                          Full catalogue →
+                        </Link>
+                        <Link href="/#technical" className="font-medium text-gray-500 hover:text-primary-700">
+                          Technical resources
+                        </Link>
+                        <Link href="/#blog" className="font-medium text-gray-500 hover:text-primary-700">
+                          Engineering blog
+                        </Link>
+                        <Link href="/#quote" className="font-medium text-gray-500 hover:text-primary-700">
+                          Quote builder
+                        </Link>
+                      </div>
                       <span className="text-xs text-gray-400">Pump engineering · Export grade</span>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <NavLink href="/resources">Technical Resources</NavLink>
-              <NavLink href="/blog">Blogs</NavLink>
+              <NavLink href="/#technical">Technical Resources</NavLink>
+              <NavLink href="/#blog">Blogs</NavLink>
               <Link
                 href="/#quote"
                 className="rounded-lg px-2 py-2 text-sm font-semibold text-navy-700 transition-colors hover:bg-primary-100/80 hover:text-primary-700"
               >
                 Quote Builder
               </Link>
-              <NavLink href="/industries">Industries</NavLink>
-              <NavLink href="/locations">Export</NavLink>
-              <NavLink href="/contact">Contact</NavLink>
+              <NavLink href="/#industries">Industries</NavLink>
+              <NavLink href="/#export">Export</NavLink>
+              <NavLink href="/#contact">Contact</NavLink>
             </nav>
 
             <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
@@ -153,7 +164,7 @@ export function SiteHeader() {
                 <Search className="h-4 w-4" />
               </Link>
               <Button asChild size="sm" className="hidden shrink-0 font-display md:inline-flex">
-                <Link href="/rfq" className="gap-1.5 px-3 sm:gap-2 sm:px-4">
+                <Link href="/#contact" className="gap-1.5 px-3 sm:gap-2 sm:px-4">
                   <Send className="h-3.5 w-3.5 shrink-0" />
                   <span className="hidden sm:inline">Get quote</span>
                   <span className="sm:hidden">Quote</span>
@@ -175,14 +186,14 @@ export function SiteHeader() {
               <div className="container max-h-[70vh] space-y-1 overflow-y-auto py-4">
                 {[
                   { href: "/", label: "Home" },
-                  { href: "/about", label: "About" },
+                  { href: "/#about", label: "About" },
                   { href: "/products", label: "Products" },
-                  { href: "/resources", label: "Technical Resources" },
-                  { href: "/blog", label: "Blogs" },
+                  { href: "/#technical", label: "Technical Resources" },
+                  { href: "/#blog", label: "Blogs" },
                   { href: "/#quote", label: "Quote Builder" },
-                  { href: "/industries", label: "Industries" },
-                  { href: "/locations", label: "Export" },
-                  { href: "/contact", label: "Contact" }
+                  { href: "/#industries", label: "Industries" },
+                  { href: "/#export", label: "Export" },
+                  { href: "/#contact", label: "Contact" }
                 ].map((item) => (
                   <Link
                     key={item.href}
@@ -195,7 +206,7 @@ export function SiteHeader() {
                 ))}
                 <div className="pt-3">
                   <Button asChild className="w-full font-display">
-                    <Link href="/rfq" onClick={() => setMobileOpen(false)}>
+                    <Link href="/#contact" onClick={() => setMobileOpen(false)}>
                       Request quotation
                     </Link>
                   </Button>
