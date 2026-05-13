@@ -7,6 +7,7 @@ export function organizationSchema() {
     "@type": "Organization",
     name: siteConfig.legalName,
     url: siteConfig.url,
+    logo: `${siteConfig.url}${siteConfig.logoPath}`,
     email: siteConfig.contact.email,
     telephone: siteConfig.contact.phones,
     address: {
@@ -57,7 +58,7 @@ export function localBusinessSchema() {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     name: siteConfig.legalName,
-    image: siteConfig.url,
+    image: `${siteConfig.url}${siteConfig.logoPath}`,
     "@id": `${siteConfig.url}/#localbusiness`,
     url: siteConfig.url,
     telephone: siteConfig.contact.phones,
@@ -120,7 +121,7 @@ export function articleSchema(input: {
     publisher: {
       "@type": "Organization",
       name: siteConfig.legalName,
-      logo: { "@type": "ImageObject", url: siteConfig.url }
+      logo: { "@type": "ImageObject", url: `${siteConfig.url}${siteConfig.logoPath}` }
     },
     mainEntityOfPage: { "@type": "WebPage", "@id": input.url },
     keywords: input.keywords?.join(", ")

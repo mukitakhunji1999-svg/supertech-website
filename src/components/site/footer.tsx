@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
@@ -9,14 +10,17 @@ export function SiteFooter() {
       <div className="container py-14 md:py-16">
         <div className="grid gap-10 lg:grid-cols-12">
           <div className="lg:col-span-4">
-            <div className="mb-4 flex items-center gap-3">
-              <div className="flex h-10 w-10 select-none items-center justify-center rounded-lg bg-primary-700 font-display text-lg font-extrabold text-white">
-                S
-              </div>
-              <div>
-                <div className="text-sm font-black tracking-wide text-navy-700">SUPERTECH WATER SOLUTION</div>
-                <div className="text-[10px] font-semibold tracking-wider text-primary-700">SUPERTECH KAIZEN</div>
-              </div>
+            <div className="mb-5 flex flex-nowrap items-center gap-3 sm:gap-4">
+              <Image
+                src={siteConfig.logoPath}
+                alt=""
+                width={360}
+                height={96}
+                className="h-14 w-auto max-h-14 shrink-0 object-contain object-left sm:h-16 sm:max-h-16"
+              />
+              <span className="font-display min-w-0 bg-gradient-to-r from-primary-700 via-primary-600 to-navy-800 bg-clip-text text-sm font-extrabold leading-snug tracking-tight text-transparent sm:text-lg md:text-xl whitespace-nowrap">
+                {siteConfig.name}
+              </span>
             </div>
             <p className="mb-5 text-sm leading-relaxed text-gray-600">
               Premium manufacturer and exporter of pumps, motors, solar pumping systems, valves, pipes, cables, panels,

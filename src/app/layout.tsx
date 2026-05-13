@@ -47,6 +47,10 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true
+  },
+  icons: {
+    icon: siteConfig.logoPath,
+    apple: siteConfig.logoPath
   }
 };
 
