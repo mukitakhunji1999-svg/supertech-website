@@ -9,8 +9,6 @@ import { siteConfig } from "@/lib/site-config";
 import { productGroups } from "@/lib/products/product-groups";
 import { cn } from "@/lib/cn";
 
-let __agentMobileOpenLogCount = 0;
-
 function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
   return (
     <Link
@@ -33,104 +31,9 @@ export function SiteHeader() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // #region agent log
-  useEffect(() => {
-    let logCount = 0;
-    const maxLogs = 8;
-    let resizeTimer: ReturnType<typeof setTimeout> | null = null;
-    const postLog = (payload: Record<string, unknown>) => {
-      const body = JSON.stringify(payload);
-      fetch("http://127.0.0.1:7775/ingest/6e87c23f-0a8a-4a3f-b7fb-3d6e3af0bc87", {
-        method: "POST",
-        headers: { "Content-Type": "application/json", "X-Debug-Session-Id": "0ad9d3" },
-        body
-      }).catch(() => {});
-      fetch("/api/debug-session-log", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body
-      }).catch(() => {});
-    };
-
-    const send = (reason: string, hypothesisId: string, extra?: Record<string, unknown>) => {
-      if (logCount >= maxLogs) return;
-      logCount += 1;
-      const row = document.querySelector("[data-debug-header-nav-row]");
-      const nav = document.querySelector('nav[aria-label="Primary"]');
-      const mega = document.querySelector("[data-debug-mega-root]");
-      const fixedRoot = document.querySelector("[data-debug-fixed-header-root]");
-      const brand = document.querySelector("[data-debug-brand-link]");
-      const actions = document.querySelector("[data-debug-actions]");
-      const data = {
-        reason,
-        innerWidth: window.innerWidth,
-        innerHeight: window.innerHeight,
-        minSm: window.matchMedia("(min-width: 640px)").matches,
-        minMd: window.matchMedia("(min-width: 768px)").matches,
-        minLg: window.matchMedia("(min-width: 1024px)").matches,
-        scrollY: window.scrollY,
-        rowClientWidth: row instanceof HTMLElement ? row.clientWidth : null,
-        rowScrollWidth: row instanceof HTMLElement ? row.scrollWidth : null,
-        rowOverflow: row instanceof HTMLElement ? row.scrollWidth > row.clientWidth : null,
-        brandClientWidth: brand instanceof HTMLElement ? brand.clientWidth : null,
-        brandScrollWidth: brand instanceof HTMLElement ? brand.scrollWidth : null,
-        brandOverflow: brand instanceof HTMLElement ? brand.scrollWidth > brand.clientWidth : null,
-        actionsClientWidth: actions instanceof HTMLElement ? actions.clientWidth : null,
-        actionsScrollWidth: actions instanceof HTMLElement ? actions.scrollWidth : null,
-        navDisplay: nav instanceof HTMLElement ? getComputedStyle(nav).display : null,
-        megaPointerEvents: mega instanceof HTMLElement ? getComputedStyle(mega).pointerEvents : null,
-        fixedRootHeight: fixedRoot instanceof HTMLElement ? fixedRoot.getBoundingClientRect().height : null,
-        ...extra
-      };
-      postLog({
-        sessionId: "0ad9d3",
-        location: "src/components/site/header.tsx",
-        message: reason,
-        data,
-        timestamp: Date.now(),
-        hypothesisId,
-        runId: "dbg-header"
-      });
-    };
-
-    send("layout-probe-mount", "H-A");
-    const onResize = () => {
-      if (resizeTimer) clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(() => send("layout-probe-resize", "H-A"), 280);
-    };
-    window.addEventListener("resize", onResize, { passive: true });
-    return () => {
-      window.removeEventListener("resize", onResize);
-      if (resizeTimer) clearTimeout(resizeTimer);
-    };
-  }, []);
-
-  useEffect(() => {
-    __agentMobileOpenLogCount += 1;
-    if (__agentMobileOpenLogCount > 4) return;
-    const body = JSON.stringify({
-      sessionId: "0ad9d3",
-      location: "src/components/site/header.tsx",
-      message: "mobileOpen-state",
-      data: { mobileOpen, n: __agentMobileOpenLogCount },
-      timestamp: Date.now(),
-      hypothesisId: "H-D",
-      runId: "dbg-header"
-    });
-    fetch("http://127.0.0.1:7775/ingest/6e87c23f-0a8a-4a3f-b7fb-3d6e3af0bc87", {
-      method: "POST",
-      headers: { "Content-Type": "application/json", "X-Debug-Session-Id": "0ad9d3" },
-      body
-    }).catch(() => {});
-    fetch("/api/debug-session-log", { method: "POST", headers: { "Content-Type": "application/json" }, body }).catch(
-      () => {}
-    );
-  }, [mobileOpen]);
-  // #endregion
-
   return (
     <>
-      <div className="fixed inset-x-0 top-0 z-[100]" data-debug-fixed-header-root>
+      <div className="fixed inset-x-0 top-0 z-[100]">
         {/* Top strip */}
         <div className="hidden bg-gradient-to-r from-primary-700 via-primary-800 to-primary-600 text-white sm:block">
           <div className="container flex h-10 items-center justify-between gap-3 text-xs">
@@ -166,11 +69,9 @@ export function SiteHeader() {
         >
           <div
             className="container flex h-16 min-w-0 items-center justify-between gap-2 sm:h-[4.75rem] sm:gap-3 md:gap-4"
-            data-debug-header-nav-row
           >
             <Link
               href="/"
-              data-debug-brand-link
               aria-label={siteConfig.name}
               className="flex min-w-0 shrink-0 items-center gap-2 sm:gap-3 md:gap-3.5"
             >
@@ -193,7 +94,7 @@ export function SiteHeader() {
               <NavLink href="/">Home</NavLink>
               <NavLink href="/about">About</NavLink>
 
-              <div className="group relative" data-debug-mega-root>
+              <div className="group relative">
                 <button
                   type="button"
                   className="flex items-center gap-1 rounded-lg px-2 py-2 text-sm font-semibold text-navy-700 transition-colors hover:bg-primary-100/80 hover:text-primary-700"
@@ -243,7 +144,7 @@ export function SiteHeader() {
               <NavLink href="/contact">Contact</NavLink>
             </nav>
 
-            <div className="flex shrink-0 items-center gap-1.5 sm:gap-2" data-debug-actions>
+            <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
               <Link
                 href="/search"
                 className="hidden h-10 w-10 items-center justify-center rounded-lg border border-primary-700/10 bg-white text-gray-500 transition-colors hover:border-primary-300 hover:text-primary-700 md:flex"

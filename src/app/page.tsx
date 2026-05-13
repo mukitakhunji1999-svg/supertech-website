@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { HomeFeaturedProductTabs } from "@/components/home/featured-product-tabs";
 import { HomeHero } from "@/components/home/hero";
 import { HomeQuoteSection } from "@/components/home/quote-section";
 import {
@@ -28,6 +29,7 @@ export default function HomePage() {
       <HomeHero />
       <HomeCounterStrip />
       <HomeQuoteSection />
+      <HomeFeaturedProductTabs />
       <HomeProductCategories />
       <HomeManufacturingExcellence />
       <HomeExportSection />
