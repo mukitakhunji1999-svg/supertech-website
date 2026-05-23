@@ -6,8 +6,8 @@ import { useEffect, useState } from "react";
 import { siteConfig } from "@/lib/site-config";
 
 const SESSION_KEY = "supertech-splash-seen";
-const DISPLAY_MS = 3500;
-const FADE_MS = 900;
+const DISPLAY_MS = 2200;
+const FADE_MS = 600;
 
 export function SplashIntro() {
   const [show, setShow] = useState(true);
@@ -61,20 +61,12 @@ export function SplashIntro() {
             opacity: 0,
             transition: { duration: FADE_MS / 1000, ease: [0.22, 1, 0.36, 1] }
           }}
-          className="fixed inset-0 z-[9999] flex items-center justify-center overflow-hidden bg-[radial-gradient(120%_120%_at_50%_30%,#eaf4ff_0%,#f5faff_45%,#ffffff_100%)]"
+          className="fixed inset-0 z-[9999] flex items-center justify-center overflow-hidden bg-white"
         >
-          {/* Decorative ambient halos */}
+          {/* Single subtle ambient halo */}
           <div
             aria-hidden
-            className="pointer-events-none absolute -left-32 top-1/4 h-[28rem] w-[28rem] rounded-full bg-primary-300/30 blur-3xl"
-          />
-          <div
-            aria-hidden
-            className="pointer-events-none absolute -right-24 -top-24 h-[24rem] w-[24rem] rounded-full bg-sky-300/30 blur-3xl"
-          />
-          <div
-            aria-hidden
-            className="pointer-events-none absolute -bottom-32 left-1/3 h-[26rem] w-[26rem] rounded-full bg-primary-200/40 blur-3xl"
+            className="pointer-events-none absolute inset-0 bg-[radial-gradient(50%_50%_at_50%_45%,rgba(15,108,189,0.06)_0%,transparent_70%)]"
           />
 
           <motion.div

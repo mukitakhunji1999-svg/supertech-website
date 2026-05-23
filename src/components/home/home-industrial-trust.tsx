@@ -3,6 +3,7 @@
 import { animate, useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { RevealSection } from "@/components/home/reveal";
+import { SectionHead } from "@/components/home/section-head";
 
 const trustPills: { title: string; sub: string }[] = [
   { title: "Export quality", sub: "Documentation, packing & repeatability" },
@@ -13,11 +14,11 @@ const trustPills: { title: string; sub: string }[] = [
   { title: "Fast dispatch", sub: "Slotted production & logistics" }
 ];
 
-const stats: { end: number; label: string }[] = [
-  { end: 18, label: "Years focus" },
-  { end: 1200, label: "SKU breadth" },
+const stats: { end: number; label: string; suffix?: string }[] = [
+  { end: 18, label: "Years focus", suffix: "+" },
+  { end: 1200, label: "SKU breadth", suffix: "+" },
   { end: 35, label: "Export corridors" },
-  { end: 500, label: "Projects supplied" }
+  { end: 500, label: "Projects supplied", suffix: "+" }
 ];
 
 function useAnimatedCount(end: number, active: boolean) {
@@ -25,7 +26,7 @@ function useAnimatedCount(end: number, active: boolean) {
   useEffect(() => {
     if (!active) return;
     const ctrl = animate(0, end, {
-      duration: 1.35,
+      duration: 1.2,
       ease: [0.22, 1, 0.36, 1],
       onUpdate: (latest) => setValue(Math.round(latest))
     });
@@ -34,12 +35,25 @@ function useAnimatedCount(end: number, active: boolean) {
   return value;
 }
 
-function StatCell({ end, label, active }: { end: number; label: string; active: boolean }) {
+function StatCell({
+  end,
+  label,
+  suffix,
+  active
+}: {
+  end: number;
+  label: string;
+  suffix?: string;
+  active: boolean;
+}) {
   const n = useAnimatedCount(end, active);
   return (
-    <div className="rounded-2xl border border-primary-700/10 bg-white px-5 py-5 text-center shadow-card">
-      <div className="font-display text-3xl font-extrabold text-primary-700">{n}</div>
-      <div className="mt-1 text-[0.72rem] font-bold uppercase tracking-[0.1em] text-gray-500">{label}</div>
+    <div className="border-l border-slate-200 px-5 first:border-l-0 first:pl-0 sm:px-6">
+      <div className="font-display text-3xl font-bold tracking-tight text-primary-700 md:text-4xl">
+        {n}
+        {suffix && <span>{suffix}</span>}
+      </div>
+      <div className="mt-1 text-xs font-medium uppercase tracking-wider text-slate-500">{label}</div>
     </div>
   );
 }
@@ -49,32 +63,30 @@ export function HomeIndustrialTrust() {
   const active = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <RevealSection className="section-white scroll-mt-[5.5rem] sm:scroll-mt-[8rem] py-14 md:py-20">
+    <RevealSection className="section-padded scroll-mt-24 bg-slate-50/50">
       <div ref={ref} className="container">
-        <div className="mb-10 max-w-3xl">
-          <p className="font-display text-xs font-bold uppercase tracking-[0.2em] text-primary-700">
-            Why procurement teams choose us
-          </p>
-          <h2 className="mt-2 font-display text-2xl font-extrabold tracking-tight text-navy-700 md:text-3xl">
-            Trust built on technical depth and dispatch discipline
-          </h2>
-        </div>
+        <SectionHead
+          eyebrow="Why procurement teams choose us"
+          title="Trust built on technical depth and dispatch discipline"
+        />
 
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(160px,1fr))] gap-4">
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {trustPills.map((t) => (
             <div
               key={t.title}
-              className="glass-panel rounded-2xl px-5 py-5 text-center transition duration-300 hover:-translate-y-1 hover:shadow-card-hover"
+              className="group rounded-xl border border-slate-200 bg-white px-5 py-4 transition-colors hover:border-primary-200 hover:bg-blue-50/40"
             >
-              <strong className="font-display block text-[0.95rem] font-bold text-navy-700">{t.title}</strong>
-              <span className="mt-1.5 block text-[0.8rem] leading-snug text-gray-600">{t.sub}</span>
+              <strong className="font-display block text-[0.95rem] font-semibold tracking-tight text-navy-700 transition-colors group-hover:text-primary-800">
+                {t.title}
+              </strong>
+              <span className="mt-1 block text-[13px] leading-relaxed text-slate-500">{t.sub}</span>
             </div>
           ))}
         </div>
 
-        <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4">
+        <div className="mt-12 grid grid-cols-2 gap-y-6 rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-blue-50/40 px-6 py-7 sm:grid-cols-4 sm:gap-y-0">
           {stats.map((s) => (
-            <StatCell key={s.label} end={s.end} label={s.label} active={active} />
+            <StatCell key={s.label} {...s} active={active} />
           ))}
         </div>
       </div>

@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, FileText } from "lucide-react";
 import { PageHero } from "@/components/site/page-hero";
-import { Button } from "@/components/ui/button";
-import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { StickyFilterBar } from "@/components/products/sticky-filter-bar";
 import { productGroups } from "@/lib/products/product-groups";
 
 export const metadata: Metadata = {
@@ -13,6 +12,8 @@ export const metadata: Metadata = {
 };
 
 export default function ProductsIndexPage() {
+  const groups = productGroups.map((g) => ({ slug: g.slug, name: g.name }));
+
   return (
     <>
       <PageHero
@@ -22,55 +23,84 @@ export default function ProductsIndexPage() {
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Products" }]}
       />
 
-      <div className="section-gray">
-        <div className="container py-14 md:py-20">
-          <div className="mb-10 rounded-xl border border-primary-200 bg-primary-50/50 p-6 md:p-8">
-            <div className="text-xs font-black uppercase tracking-widest text-primary-700">SEO-friendly family hubs</div>
-            <h2 className="mt-2 text-xl font-black text-navy-700">Popular product lines</h2>
-            <p className="mt-2 max-w-3xl text-sm text-gray-600">
-              Marketing URLs for RFQ and search — technical selection remains duty-point driven. Each hub links to catalogue categories and featured configurations.
+      <StickyFilterBar groups={groups} />
+
+      <div className="bg-slate-50/50">
+        <div className="container py-12 md:py-16">
+          {/* Popular hubs — refined, less shouty */}
+          <div className="mb-10 rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-blue-50/40 p-6 md:p-8">
+            <p className="eyebrow">SEO-friendly family hubs</p>
+            <h2 className="section-title mt-2">Popular product lines</h2>
+            <p className="section-lede">
+              Marketing URLs for RFQ and search — technical selection remains duty-point driven. Each hub links to
+              catalogue categories and featured configurations.
             </p>
-            <div className="mt-5 flex flex-wrap gap-3">
+            <div className="mt-5 flex flex-wrap gap-2">
               {[
                 { href: "/products/submersible-pumps", label: "Submersible pumps" },
                 { href: "/products/centrifugal-pumps", label: "Centrifugal & self-priming" },
                 { href: "/products/solar-pumps", label: "Solar pumps" },
                 { href: "/products/fire-fighting-pumps", label: "Fire / booster duty" }
               ].map((x) => (
-                <Button key={x.href} asChild variant="outline" className="border-primary-300 bg-white">
-                  <Link href={x.href}>{x.label}</Link>
-                </Button>
+                <Link
+                  key={x.href}
+                  href={x.href}
+                  className="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3.5 py-2 font-display text-sm font-semibold text-navy-700 transition-colors hover:border-primary-300 hover:bg-blue-50 hover:text-primary-700"
+                >
+                  {x.label}
+                  <ArrowRight className="h-3.5 w-3.5" />
+                </Link>
               ))}
             </div>
           </div>
 
-          <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between mb-8">
-            <h2 className="text-xl font-black text-navy-700">Browse by Category</h2>
-            <Button asChild size="sm">
-              <Link href="/search">Search Products</Link>
-            </Button>
+          <div className="mb-8 flex flex-wrap items-end justify-between gap-3">
+            <h2 className="section-title">Browse by category</h2>
+            <Link
+              href="/rfq"
+              className="inline-flex items-center gap-1.5 rounded-lg bg-primary-700 px-4 py-2 font-display text-sm font-semibold text-white transition-colors hover:bg-primary-800"
+            >
+              <FileText className="h-3.5 w-3.5" />
+              Get RFQ support
+            </Link>
           </div>
 
-          <div className="grid gap-10">
+          <div className="space-y-10">
             {productGroups.map((g) => (
-              <section key={g.slug} className="bg-white rounded-xl border border-gray-200 p-6 md:p-8 shadow-card">
-                <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between mb-6">
+              <section
+                key={g.slug}
+                id={`group-${g.slug}`}
+                className="scroll-mt-44 rounded-2xl border border-slate-200 bg-white p-6 md:p-8"
+              >
+                <div className="mb-6 flex flex-wrap items-end justify-between gap-3">
                   <div>
-                    <div className="text-xs font-black tracking-widest text-primary-700 uppercase">{g.name}</div>
-                    <h3 className="text-lg font-black text-navy-700 mt-1">{g.name}</h3>
+                    <p className="eyebrow">{g.name}</p>
+                    <h3 className="mt-1.5 font-display text-xl font-bold tracking-tight text-navy-700 md:text-2xl">
+                      {g.name}
+                    </h3>
                   </div>
-                  <Button asChild variant="outline" size="sm">
-                    <Link href="/rfq">Get RFQ Support</Link>
-                  </Button>
+                  <Link
+                    href="/rfq"
+                    className="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3.5 py-2 font-display text-xs font-semibold text-navy-700 transition-colors hover:border-slate-300 hover:bg-slate-50"
+                  >
+                    RFQ support
+                    <ArrowRight className="h-3.5 w-3.5" />
+                  </Link>
                 </div>
 
-                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                   {g.categories.map((c) => (
                     <Link key={c.slug} href={`/products/${c.slug}`} className="group block">
-                      <div className="rounded-xl border border-gray-200 p-4 transition hover:border-primary-300 hover:shadow-card-hover bg-gray-50 hover:bg-white">
-                        <div className="text-sm font-bold text-navy-700 group-hover:text-primary-700 transition-colors mb-1">{c.name}</div>
-                        <div className="text-xs text-gray-500 leading-relaxed mb-3 line-clamp-2">{c.intro}</div>
-                        <span className="explore-link text-xs">Explore <ArrowRight className="h-3 w-3" /></span>
+                      <div className="card-soft p-4">
+                        <div className="font-display text-sm font-semibold tracking-tight text-navy-700 transition-colors group-hover:text-primary-700">
+                          {c.name}
+                        </div>
+                        <div className="mt-1 line-clamp-2 text-[12.5px] leading-relaxed text-slate-500">
+                          {c.intro}
+                        </div>
+                        <span className="explore-link mt-3 text-xs">
+                          Explore <ArrowRight className="h-3 w-3" />
+                        </span>
                       </div>
                     </Link>
                   ))}

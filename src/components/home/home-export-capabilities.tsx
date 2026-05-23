@@ -1,4 +1,6 @@
+import { Check } from "lucide-react";
 import { RevealSection } from "@/components/home/reveal";
+import { SectionHead } from "@/components/home/section-head";
 
 const items: { title: string; body: string }[] = [
   {
@@ -23,28 +25,30 @@ const items: { title: string; body: string }[] = [
 
 export function HomeExportCapabilities() {
   return (
-    <RevealSection id="export" className="section-tint scroll-mt-[5.5rem] sm:scroll-mt-[8rem] py-14 md:py-20">
+    <RevealSection id="export" className="section-padded scroll-mt-24 bg-white">
       <div className="container">
-        <div className="mb-10 max-w-3xl">
-          <p className="font-display text-xs font-bold uppercase tracking-[0.2em] text-primary-700">Export</p>
-          <h2 className="mt-2 font-display text-2xl font-extrabold tracking-tight text-navy-700 md:text-3xl">
-            Global logistics · International standards · OEM supply
-          </h2>
-        </div>
+        <SectionHead
+          eyebrow="Export"
+          title="Global logistics · International standards · OEM supply"
+        />
 
-        <div className="grid gap-4">
+        <div className="grid gap-3 md:grid-cols-2">
           {items.map((item) => (
             <div
               key={item.title}
-              className="flex gap-4 rounded-2xl border border-primary-700/10 bg-white px-6 py-5 shadow-card"
+              className="flex gap-4 rounded-xl border border-slate-200 bg-white px-5 py-4 transition-colors hover:border-slate-300"
             >
               <span
-                className="mt-1.5 h-2.5 w-2.5 shrink-0 rounded-full bg-gradient-to-br from-primary-700 to-sky-400 shadow-[0_0_12px_rgba(46,144,250,0.55)]"
+                className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-primary-50 text-primary-700"
                 aria-hidden
-              />
+              >
+                <Check className="h-3.5 w-3.5" />
+              </span>
               <div>
-                <strong className="font-display block text-[0.95rem] font-bold text-navy-700">{item.title}</strong>
-                <p className="mt-1.5 text-[0.9rem] leading-relaxed text-gray-600">{item.body}</p>
+                <strong className="font-display block text-[0.95rem] font-semibold tracking-tight text-navy-700">
+                  {item.title}
+                </strong>
+                <p className="mt-1 text-[13px] leading-relaxed text-slate-500">{item.body}</p>
               </div>
             </div>
           ))}

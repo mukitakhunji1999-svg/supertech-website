@@ -1,7 +1,8 @@
 import Link from "next/link";
+import { Download, FileText, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import { LeadForm } from "@/components/forms/lead-form";
 import { RevealSection } from "@/components/home/reveal";
-import { Button } from "@/components/ui/button";
+import { SectionHead } from "@/components/home/section-head";
 import { siteConfig } from "@/lib/site-config";
 
 const mapSrc =
@@ -9,19 +10,19 @@ const mapSrc =
 
 export function HomeContactTeaser() {
   const wa = `https://wa.me/${siteConfig.social.whatsapp}`;
+  const firstPhone = siteConfig.contact.phones[0]?.replace(/\D/g, "") ?? "";
 
   return (
-    <RevealSection id="contact" className="section-tint scroll-mt-[5.5rem] sm:scroll-mt-[8rem] py-14 md:py-20">
+    <RevealSection id="contact" className="section-padded scroll-mt-24 bg-slate-50/50">
       <div className="container">
-        <div className="mb-10 max-w-3xl">
-          <p className="font-display text-xs font-bold uppercase tracking-[0.2em] text-primary-700">Contact</p>
-          <h2 className="mt-2 font-display text-2xl font-extrabold tracking-tight text-navy-700 md:text-3xl">
-            Engineering desk · Export inquiry · Government supply
-          </h2>
-        </div>
+        <SectionHead
+          eyebrow="Contact"
+          title="Engineering desk · Export inquiry · Government supply"
+          lede="Tell us your duty point, standards and destination. Our team responds with selection notes and ready-to-quote pricing."
+        />
 
-        <div className="grid gap-10 lg:grid-cols-2">
-          <div className="glass-panel rounded-[22px] p-6 md:p-8">
+        <div className="grid gap-6 lg:grid-cols-[1.1fr_1fr]">
+          <div className="card-soft p-6 md:p-8">
             <LeadForm
               type="contact"
               title="Inquiry form"
@@ -30,60 +31,92 @@ export function HomeContactTeaser() {
             />
           </div>
 
-          <div className="glass-panel flex flex-col rounded-[22px] p-6 md:p-8">
-            <h3 className="font-display text-lg font-bold text-navy-700">{siteConfig.name}</h3>
-            <p className="mt-2 text-[0.9rem] leading-relaxed text-gray-600">
-              Manufacturer · Industrial pump supplier · Exporter · Government supplier · Industrial water engineering
-            </p>
-            <div className="mt-4 space-y-2 text-sm text-gray-700">
-              <p>
-                <strong className="text-navy-700">Phone:</strong>{" "}
-                {siteConfig.contact.phones.map((p, i) => (
-                  <span key={p}>
-                    {i > 0 ? " · " : null}
-                    <Link href={`tel:${p.replace(/\D/g, "")}`} className="font-medium text-primary-700 hover:underline">
+          <div className="space-y-6">
+            <div className="card-soft p-6 md:p-8">
+              <h3 className="font-display text-lg font-semibold tracking-tight text-navy-700">
+                {siteConfig.name}
+              </h3>
+              <p className="mt-2 text-[13px] leading-relaxed text-slate-500">
+                Manufacturer · Industrial pump supplier · Exporter · Government supplier
+              </p>
+
+              <ul className="mt-5 space-y-3 text-sm">
+                {siteConfig.contact.phones.map((p) => (
+                  <li key={p} className="flex items-center gap-3">
+                    <span className="flex h-8 w-8 items-center justify-center rounded-md bg-slate-100 text-slate-500">
+                      <Phone className="h-3.5 w-3.5" />
+                    </span>
+                    <Link
+                      href={`tel:${p.replace(/\D/g, "")}`}
+                      className="font-medium text-navy-700 transition-colors hover:text-primary-700"
+                    >
                       {p}
                     </Link>
-                  </span>
+                  </li>
                 ))}
-              </p>
-              <p>
-                <strong className="text-navy-700">Email:</strong>{" "}
-                <Link href={`mailto:${siteConfig.contact.email}`} className="font-medium text-primary-700 hover:underline">
-                  {siteConfig.contact.email}
+                <li className="flex items-center gap-3">
+                  <span className="flex h-8 w-8 items-center justify-center rounded-md bg-slate-100 text-slate-500">
+                    <Mail className="h-3.5 w-3.5" />
+                  </span>
+                  <Link
+                    href={`mailto:${siteConfig.contact.email}`}
+                    className="font-medium text-navy-700 transition-colors hover:text-primary-700"
+                  >
+                    {siteConfig.contact.email}
+                  </Link>
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="flex h-8 w-8 items-center justify-center rounded-md bg-slate-100 text-slate-500">
+                    <MapPin className="h-3.5 w-3.5" />
+                  </span>
+                  <span className="font-medium text-navy-700">{siteConfig.contact.location}</span>
+                </li>
+              </ul>
+
+              <div className="mt-6 grid grid-cols-2 gap-2">
+                <Link
+                  href="/#quote"
+                  className="inline-flex items-center justify-center gap-1.5 rounded-lg bg-primary-700 px-4 py-2.5 font-display text-sm font-semibold text-white transition-colors hover:bg-primary-800"
+                >
+                  <FileText className="h-3.5 w-3.5" />
+                  Get quote
                 </Link>
-              </p>
-              <p>
-                <strong className="text-navy-700">Location:</strong> {siteConfig.contact.location}
-              </p>
-              <p>
-                <strong className="text-navy-700">GST:</strong> 24AFMFS2359P1Z9
-              </p>
-            </div>
-            <div className="mt-6 flex flex-wrap gap-2">
-              <Button asChild className="font-display">
-                <Link href={`tel:${siteConfig.contact.phones[0]?.replace(/\D/g, "") ?? ""}`}>Call now</Link>
-              </Button>
-              <Button asChild variant="outline" className="border-primary-300 font-display">
-                <Link href={`mailto:${siteConfig.contact.email}`}>Email export desk</Link>
-              </Button>
-              <Button asChild variant="outline" className="border-primary-300 font-display">
-                <Link href={wa} target="_blank" rel="noopener noreferrer">
+                <Link
+                  href={`tel:${firstPhone}`}
+                  className="inline-flex items-center justify-center gap-1.5 rounded-lg bg-navy-700 px-4 py-2.5 font-display text-sm font-semibold text-white transition-colors hover:bg-navy-800"
+                >
+                  <Phone className="h-3.5 w-3.5" />
+                  Call now
+                </Link>
+                <Link
+                  href={wa}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-1.5 rounded-lg border border-emerald-200 bg-emerald-50 px-4 py-2.5 font-display text-sm font-semibold text-emerald-700 transition-colors hover:border-emerald-300 hover:bg-emerald-100"
+                >
+                  <MessageCircle className="h-3.5 w-3.5" />
                   WhatsApp
                 </Link>
-              </Button>
+                <Link
+                  href="/resources/brochures"
+                  className="inline-flex items-center justify-center gap-1.5 rounded-lg border border-slate-200 bg-white px-4 py-2.5 font-display text-sm font-semibold text-navy-700 transition-colors hover:border-slate-300 hover:bg-slate-50"
+                >
+                  <Download className="h-3.5 w-3.5" />
+                  Catalog
+                </Link>
+              </div>
+            </div>
+
+            <div className="overflow-hidden rounded-2xl border border-slate-200 [height:280px]">
+              <iframe
+                title="SUPERTECH WATER SOLUTION location map"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                src={mapSrc}
+                className="h-full w-full border-0 grayscale-[40%]"
+              />
             </div>
           </div>
-        </div>
-
-        <div className="mt-10 overflow-hidden rounded-[22px] border border-primary-700/10 shadow-card [height:360px]">
-          <iframe
-            title="SUPERTECH WATER SOLUTION location map"
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            src={mapSrc}
-            className="h-full w-full border-0 grayscale-[20%] contrast-[1.02]"
-          />
         </div>
       </div>
     </RevealSection>

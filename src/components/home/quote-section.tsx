@@ -5,14 +5,12 @@ import { LeadForm } from "@/components/forms/lead-form";
 
 export function HomeQuoteSection() {
   return (
-    <section id="quote" className="scroll-mt-[5.5rem] sm:scroll-mt-[8rem] section-tint">
-      <div className="container py-14 md:py-20">
+    <section id="quote" className="section-padded scroll-mt-24 bg-slate-50/50">
+      <div className="container">
         <div className="mx-auto mb-10 max-w-2xl text-center">
-          <div className="mb-2 text-xs font-black uppercase tracking-widest text-primary-700">Quote builder</div>
-          <h2 className="font-display text-2xl font-extrabold tracking-tight text-navy-700 md:text-3xl">
-            Request a configuration-specific quotation
-          </h2>
-          <p className="mt-3 text-sm leading-relaxed text-gray-600">
+          <p className="eyebrow">Quote builder</p>
+          <h2 className="section-title mt-2">Request a configuration-specific quotation</h2>
+          <p className="section-lede mx-auto">
             Share duty point, voltage, installation context, and destination. Our team responds with selection notes
             and export-ready pricing. For a guided layout, open the{" "}
             <Link href="/rfq" className="font-semibold text-primary-700 underline-offset-2 hover:underline">

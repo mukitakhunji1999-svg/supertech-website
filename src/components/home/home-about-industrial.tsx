@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { RevealSection } from "@/components/home/reveal";
+import { SectionHead } from "@/components/home/section-head";
 
 const cards: { title: string; body: ReactNode; wide?: boolean }[] = [
   {
@@ -11,11 +12,11 @@ const cards: { title: string; body: ReactNode; wide?: boolean }[] = [
     title: "Mission & vision",
     body: (
       <>
-        <strong>Mission:</strong> deliver export-grade products with transparent engineering data and responsive
-        after-sales support.
+        <strong className="font-semibold text-navy-700">Mission:</strong> deliver export-grade products
+        with transparent engineering data and responsive after-sales support.
         <br />
-        <strong>Vision:</strong> be the reference supplier for fluid and power integration projects across domestic and
-        international corridors.
+        <strong className="font-semibold text-navy-700">Vision:</strong> be the reference supplier for
+        fluid and power integration projects across domestic and international corridors.
       </>
     )
   },
@@ -49,34 +50,24 @@ const cards: { title: string; body: ReactNode; wide?: boolean }[] = [
 
 export function HomeAboutIndustrial() {
   return (
-    <RevealSection
-      id="about"
-      className="section-tint scroll-mt-[5.5rem] sm:scroll-mt-[8rem] py-14 md:py-20"
-    >
+    <RevealSection id="about" className="section-padded scroll-mt-24 bg-white">
       <div className="container">
-        <div className="mb-10 max-w-3xl">
-          <p className="font-display text-xs font-bold uppercase tracking-[0.2em] text-primary-700">
-            About SUPERTECH WATER SOLUTION
-          </p>
-          <h2 className="mt-2 font-display text-2xl font-extrabold tracking-tight text-navy-700 md:text-3xl">
-            Pump engineering experts · Industrial fluid management specialists
-          </h2>
-          <p className="mt-4 text-[1.05rem] leading-relaxed text-gray-600">
-            We position every engagement as a technical partnership: from duty-point definition through material
-            selection, electrical coordination and field-proven reliability.
-          </p>
-        </div>
+        <SectionHead
+          eyebrow="About SUPERTECH WATER SOLUTION"
+          title="Pump engineering experts · Industrial fluid management specialists"
+          lede="We position every engagement as a technical partnership: from duty-point definition through material selection, electrical coordination and field-proven reliability."
+        />
 
-        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {cards.map((c) => (
             <article
               key={c.title}
-              className={`rounded-[22px] border border-primary-700/10 bg-white p-7 shadow-card transition duration-300 hover:border-primary-700/20 hover:shadow-card-hover ${
-                c.wide ? "xl:col-span-3" : ""
-              }`}
+              className={`card-soft p-6 ${c.wide ? "xl:col-span-3" : ""}`}
             >
-              <h3 className="font-display text-[1.05rem] font-bold text-navy-700">{c.title}</h3>
-              <p className="mt-2 text-[0.92rem] leading-relaxed text-gray-600">{c.body}</p>
+              <h3 className="font-display text-[0.95rem] font-semibold tracking-tight text-navy-700">
+                {c.title}
+              </h3>
+              <p className="mt-2 text-[0.9rem] leading-relaxed text-slate-500">{c.body}</p>
             </article>
           ))}
         </div>

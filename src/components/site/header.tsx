@@ -3,29 +3,30 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { ChevronDown, Menu, Phone, Search, Send, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ChevronDown, Menu, Phone, Search, X } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
 import { productGroups } from "@/lib/products/product-groups";
 import { cn } from "@/lib/cn";
 
-function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
-  return (
-    <Link
-      href={href}
-      className="rounded-lg px-2 py-2 text-sm font-semibold text-navy-700 transition-colors hover:bg-primary-100/80 hover:text-primary-700"
-    >
-      {children}
-    </Link>
-  );
-}
+type NavItem = { href: string; label: string; hasMenu?: boolean };
+
+const primaryNav: NavItem[] = [
+  { href: "/", label: "Home" },
+  { href: "/#about", label: "About" },
+  { href: "/products", label: "Products", hasMenu: true },
+  { href: "/#technical", label: "Resources" },
+  { href: "/#blog", label: "Blog" },
+  { href: "/#industries", label: "Industries" },
+  { href: "/#export", label: "Export" },
+  { href: "/#contact", label: "Contact" }
+];
 
 export function SiteHeader() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12);
+    const onScroll = () => setScrolled(window.scrollY > 8);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -34,196 +35,194 @@ export function SiteHeader() {
   return (
     <>
       <div className="fixed inset-x-0 top-0 z-[100]">
-        {/* Top strip */}
-        <div className="hidden bg-gradient-to-r from-primary-700 via-primary-800 to-primary-600 text-white sm:block">
-          <div className="container flex h-10 items-center justify-between gap-3 text-xs">
-            <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
-              <a href={`mailto:${siteConfig.contact.email}`} className="font-medium hover:text-primary-100">
+        {/* ─── Slim utility strip (hidden when scrolled) ───────────────── */}
+        <div
+          className={cn(
+            "hidden border-b border-slate-200 bg-white text-xs text-slate-500 transition-[max-height,opacity] duration-300 sm:block",
+            scrolled ? "max-h-0 overflow-hidden opacity-0" : "max-h-10 opacity-100"
+          )}
+        >
+          <div className="container flex h-10 items-center justify-between gap-4">
+            <div className="flex items-center gap-5">
+              <a
+                href={`mailto:${siteConfig.contact.email}`}
+                className="font-medium transition-colors hover:text-navy-700"
+              >
                 {siteConfig.contact.email}
               </a>
-              <span className="hidden text-primary-200/80 md:inline">|</span>
-              {siteConfig.contact.phones.map((p) => (
-                <a key={p} href={`tel:${p}`} className="inline-flex items-center gap-1 hover:text-primary-100">
+              {siteConfig.contact.phones.slice(0, 1).map((p) => (
+                <a
+                  key={p}
+                  href={`tel:${p}`}
+                  className="inline-flex items-center gap-1.5 font-medium transition-colors hover:text-navy-700"
+                >
                   <Phone className="h-3 w-3" />
                   {p}
                 </a>
               ))}
             </div>
-            <div className="flex items-center gap-3">
-              <span className="rounded-full border border-white/30 bg-white/15 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-widest text-white">
-                Government supplier
-              </span>
-              <Link href="/#contact" className="font-semibold text-primary-100 hover:text-white">
+            <div className="flex items-center gap-4">
+              <span className="font-medium text-emerald-700">Government supplier</span>
+              <Link
+                href="/#contact"
+                className="font-semibold text-primary-700 transition-colors hover:text-primary-800"
+              >
                 Export inquiry →
               </Link>
             </div>
           </div>
         </div>
 
-        {/* Main nav */}
+        {/* ─── Main nav ─────────────────────────────────────────────────── */}
         <header
           className={cn(
-            "border-b border-primary-700/10 transition-[background,box-shadow] duration-300",
-            scrolled ? "bg-white/95 shadow-nav backdrop-blur-md" : "bg-primary-50/90 backdrop-blur-sm"
+            "border-b transition-[background-color,border-color] duration-200",
+            scrolled
+              ? "border-slate-200 bg-white/90 backdrop-blur"
+              : "border-transparent bg-white"
           )}
         >
-          <div
-            className="container flex h-16 min-w-0 items-center justify-between gap-2 sm:h-[4.75rem] sm:gap-3 md:gap-4"
-          >
+          <div className="container flex h-16 items-center justify-between gap-4 lg:h-[4.5rem]">
+            {/* Brand */}
             <Link
               href="/"
               aria-label={siteConfig.name}
-              className="flex min-w-0 shrink-0 flex-nowrap items-center gap-2.5 sm:gap-3.5"
+              className="flex shrink-0 items-center gap-2.5"
             >
               <Image
                 src={siteConfig.logoPath}
                 alt=""
-                width={360}
-                height={96}
-                className="h-12 w-auto max-h-12 shrink-0 object-contain object-left sm:h-14 sm:max-h-14 md:h-16 md:max-h-16"
+                width={200}
+                height={56}
+                className="h-9 w-auto object-contain sm:h-10"
                 priority
               />
-              <span
-                className={cn(
-                  "font-display min-w-0 bg-clip-text text-transparent",
-                  "whitespace-nowrap text-[clamp(0.68rem,2.1vw,1.125rem)] font-extrabold leading-[1.15] tracking-[-0.03em]",
-                  "bg-[linear-gradient(90deg,#0f6cbd_0%,#2e90fa_42%,#0f2744_100%)]",
-                  "sm:text-[clamp(0.78rem,1.85vw,1.2rem)] md:text-[clamp(0.88rem,1.45vw,1.32rem)]"
-                )}
-              >
-                {siteConfig.name}
+              <span className="hidden font-display text-[0.95rem] font-bold tracking-tight text-navy-700 sm:inline">
+                Supertech
+                <span className="ml-1 font-medium text-slate-400">Water Solution</span>
               </span>
             </Link>
 
-            <nav className="hidden min-w-0 flex-1 items-center justify-center gap-1 lg:flex" aria-label="Primary">
-              <NavLink href="/">Home</NavLink>
-              <NavLink href="/#about">About</NavLink>
-
-              <div className="group relative">
-                <button
-                  type="button"
-                  className="flex items-center gap-1 rounded-lg px-2 py-2 text-sm font-semibold text-navy-700 transition-colors hover:bg-primary-100/80 hover:text-primary-700"
-                >
-                  Products <ChevronDown className="h-3.5 w-3.5 opacity-50 transition-transform group-hover:rotate-180" />
-                </button>
-                <div className="pointer-events-none absolute left-1/2 top-full z-50 mt-2 w-[min(56rem,calc(100vw-2rem)))] -translate-x-1/2 opacity-0 transition-opacity duration-200 group-hover:pointer-events-auto group-hover:opacity-100">
-                  <div className="glass-panel max-h-[min(70vh,520px)] overflow-y-auto rounded-2xl p-5">
-                    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                      {productGroups.map((g) => (
-                        <div key={g.slug}>
-                          <div className="mb-2 px-1 font-display text-[10px] font-bold uppercase tracking-widest text-primary-700">{g.name}</div>
-                          <div className="space-y-0.5">
-                            {g.categories.slice(0, 8).map((cat) => (
-                              <Link
-                                key={cat.slug}
-                                href={`/products/${cat.slug}`}
-                                className="block rounded-lg px-2 py-1.5 text-sm text-gray-600 transition-colors hover:bg-primary-50 hover:text-primary-700"
-                              >
-                                {cat.name}
-                              </Link>
-                            ))}
-                          </div>
+            {/* Center nav */}
+            <nav
+              className="hidden flex-1 items-center justify-center gap-0.5 lg:flex"
+              aria-label="Primary"
+            >
+              {primaryNav.map((item) =>
+                item.hasMenu ? (
+                  <div key={item.href} className="group relative">
+                    <button
+                      type="button"
+                      className="inline-flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-slate-50 hover:text-navy-700"
+                    >
+                      {item.label}
+                      <ChevronDown className="h-3.5 w-3.5 opacity-60 transition-transform group-hover:rotate-180" />
+                    </button>
+                    <div className="pointer-events-none absolute left-1/2 top-full z-50 mt-1 w-[min(56rem,calc(100vw-2rem))] -translate-x-1/2 opacity-0 transition-opacity duration-150 group-hover:pointer-events-auto group-hover:opacity-100">
+                      <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-[0_20px_48px_-20px_rgba(15,39,68,0.2)]">
+                        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+                          {productGroups.map((g) => (
+                            <div key={g.slug}>
+                              <p className="mb-2 px-2 text-[10px] font-semibold uppercase tracking-widest text-slate-400">
+                                {g.name}
+                              </p>
+                              <ul className="space-y-0.5">
+                                {g.categories.slice(0, 8).map((cat) => (
+                                  <li key={cat.slug}>
+                                    <Link
+                                      href={`/products/${cat.slug}`}
+                                      className="block rounded-md px-2 py-1.5 text-[13px] text-slate-600 transition-colors hover:bg-slate-50 hover:text-navy-700"
+                                    >
+                                      {cat.name}
+                                    </Link>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          ))}
                         </div>
-                      ))}
-                    </div>
-                    <div className="mt-4 flex flex-wrap items-center justify-between gap-3 border-t border-primary-700/10 pt-3">
-                      <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs">
-                        <Link href="/products" className="text-sm font-semibold text-primary-700 hover:text-primary-800">
-                          Full catalogue →
-                        </Link>
-                        <Link href="/#technical" className="font-medium text-gray-500 hover:text-primary-700">
-                          Technical resources
-                        </Link>
-                        <Link href="/#blog" className="font-medium text-gray-500 hover:text-primary-700">
-                          Engineering blog
-                        </Link>
-                        <Link href="/#quote" className="font-medium text-gray-500 hover:text-primary-700">
-                          Quote builder
-                        </Link>
+                        <div className="mt-4 flex flex-wrap items-center justify-between gap-3 border-t border-slate-200 pt-3 text-xs text-slate-500">
+                          <Link
+                            href="/products"
+                            className="font-semibold text-primary-700 transition-colors hover:text-primary-800"
+                          >
+                            View full catalogue →
+                          </Link>
+                          <span>Pump engineering · Export grade</span>
+                        </div>
                       </div>
-                      <span className="text-xs text-gray-400">Pump engineering · Export grade</span>
                     </div>
                   </div>
-                </div>
-              </div>
-
-              <NavLink href="/#technical">Technical Resources</NavLink>
-              <NavLink href="/#blog">Blogs</NavLink>
-              <Link
-                href="/#quote"
-                className="rounded-lg px-2 py-2 text-sm font-semibold text-navy-700 transition-colors hover:bg-primary-100/80 hover:text-primary-700"
-              >
-                Quote Builder
-              </Link>
-              <NavLink href="/#industries">Industries</NavLink>
-              <NavLink href="/#export">Export</NavLink>
-              <NavLink href="/#contact">Contact</NavLink>
+                ) : (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="rounded-md px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-slate-50 hover:text-navy-700"
+                  >
+                    {item.label}
+                  </Link>
+                )
+              )}
             </nav>
 
-            <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
+            {/* Right actions */}
+            <div className="flex shrink-0 items-center gap-2">
               <Link
                 href="/search"
-                className="hidden h-10 w-10 items-center justify-center rounded-lg border border-primary-700/10 bg-white text-gray-500 transition-colors hover:border-primary-300 hover:text-primary-700 md:flex"
+                className="hidden h-9 w-9 items-center justify-center rounded-md text-slate-500 transition-colors hover:bg-slate-50 hover:text-navy-700 md:flex"
                 aria-label="Search"
               >
                 <Search className="h-4 w-4" />
               </Link>
-              <Button asChild size="sm" className="hidden shrink-0 font-display md:inline-flex">
-                <Link href="/#contact" className="gap-1.5 px-3 sm:gap-2 sm:px-4">
-                  <Send className="h-3.5 w-3.5 shrink-0" />
-                  <span className="hidden sm:inline">Get quote</span>
-                  <span className="sm:hidden">Quote</span>
-                </Link>
-              </Button>
+              <Link
+                href="/#contact"
+                className="hidden h-9 items-center rounded-md bg-primary-700 px-4 font-display text-sm font-semibold text-white transition-colors hover:bg-primary-800 md:inline-flex"
+              >
+                Get quote
+              </Link>
               <button
                 type="button"
-                className="flex h-10 w-10 items-center justify-center rounded-lg border border-primary-700/10 bg-white text-navy-700 lg:hidden"
+                className="flex h-9 w-9 items-center justify-center rounded-md text-navy-700 hover:bg-slate-100 lg:hidden"
                 onClick={() => setMobileOpen((o) => !o)}
                 aria-label="Toggle menu"
+                aria-expanded={mobileOpen}
               >
                 {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
               </button>
             </div>
           </div>
 
+          {/* Mobile menu */}
           {mobileOpen && (
-            <div className="border-t border-primary-700/10 bg-white lg:hidden">
-              <div className="container max-h-[70vh] space-y-1 overflow-y-auto py-4">
-                {[
-                  { href: "/", label: "Home" },
-                  { href: "/#about", label: "About" },
-                  { href: "/products", label: "Products" },
-                  { href: "/#technical", label: "Technical Resources" },
-                  { href: "/#blog", label: "Blogs" },
-                  { href: "/#quote", label: "Quote Builder" },
-                  { href: "/#industries", label: "Industries" },
-                  { href: "/#export", label: "Export" },
-                  { href: "/#contact", label: "Contact" }
-                ].map((item) => (
+            <div className="border-t border-slate-200 bg-white lg:hidden">
+              <nav className="container max-h-[75vh] space-y-0.5 overflow-y-auto py-4">
+                {primaryNav.map((item) => (
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="block rounded-lg px-4 py-2.5 text-sm font-semibold text-navy-700 hover:bg-primary-50"
+                    className="block rounded-md px-3 py-2.5 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-50 hover:text-navy-700"
                     onClick={() => setMobileOpen(false)}
                   >
                     {item.label}
                   </Link>
                 ))}
-                <div className="pt-3">
-                  <Button asChild className="w-full font-display">
-                    <Link href="/#contact" onClick={() => setMobileOpen(false)}>
-                      Request quotation
-                    </Link>
-                  </Button>
+                <div className="pt-4">
+                  <Link
+                    href="/#contact"
+                    onClick={() => setMobileOpen(false)}
+                    className="flex h-10 w-full items-center justify-center rounded-md bg-primary-700 font-display text-sm font-semibold text-white transition-colors hover:bg-primary-800"
+                  >
+                    Request quotation
+                  </Link>
                 </div>
-              </div>
+              </nav>
             </div>
           )}
         </header>
       </div>
 
-      {/* Spacer for fixed header stack */}
-      <div className="h-16 shrink-0 sm:h-[7.25rem]" aria-hidden="true" />
+      {/* Spacer for fixed header — matches new heights */}
+      <div className="h-16 shrink-0 sm:h-[6.5rem]" aria-hidden="true" />
     </>
   );
 }

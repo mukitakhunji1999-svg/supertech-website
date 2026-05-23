@@ -3,6 +3,9 @@ node_modules
 dist
 .DS_Store
 data/leads.ndjson
+# Admin-uploaded product images (local dev only — uses /tmp on Vercel)
+public/uploads/products/*
+!public/uploads/products/.gitkeep
 .env
 .env.local
 .env.*.local

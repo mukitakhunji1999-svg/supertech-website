@@ -37,44 +37,48 @@ export function HomeCounterStrip() {
 export function HomeProductCategories() {
   const top = allCategories.slice(0, 12);
   return (
-    <section className="section-gray">
-      <div className="container py-14 md:py-20">
-        <div className="mb-10 flex items-end justify-between gap-4">
-          <div>
-            <div className="text-xs font-black tracking-widest text-primary-700 uppercase mb-2">Our Products</div>
-            <h2 className="text-2xl font-black text-navy-700 md:text-3xl">A Complete Industrial Portfolio</h2>
-            <p className="mt-2 max-w-2xl text-sm text-gray-500">
-              Pumps · Motors · Solar Pumping · Valves · Panels · Pipes & Cables · Spare Parts
+    <section className="section-padded bg-slate-50/50">
+      <div className="container">
+        <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
+          <div className="max-w-2xl">
+            <p className="eyebrow">Our products</p>
+            <h2 className="section-title mt-2">A complete industrial portfolio</h2>
+            <p className="section-lede">
+              Pumps · Motors · Solar pumping · Valves · Panels · Pipes &amp; Cables · Spare parts
             </p>
           </div>
-          <Button asChild variant="outline" size="sm" className="hidden md:inline-flex shrink-0">
-            <Link href="/products">View All <ArrowRight className="h-3.5 w-3.5" /></Link>
-          </Button>
+          <Link
+            href="/products"
+            className="hidden items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-4 py-2 font-display text-sm font-semibold text-navy-700 transition-colors hover:border-slate-300 hover:bg-slate-50 md:inline-flex"
+          >
+            View all <ArrowRight className="h-3.5 w-3.5" />
+          </Link>
         </div>
 
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {top.map((c) => (
-            <Link key={c.slug} href={`/products/${c.slug}`} className="group block">
-              <Card className="h-full flex flex-col">
-                <CardHeader className="pb-2">
-                  <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-lg bg-primary-50 group-hover:bg-primary-100 transition-colors">
-                    <Factory className="h-5 w-5 text-primary-700" />
-                  </div>
-                  <CardTitle className="group-hover:text-primary-700 transition-colors">{c.name}</CardTitle>
-                </CardHeader>
-                <CardContent className="flex-1 flex flex-col justify-between">
-                  <CardDescription className="mb-3">{c.intro}</CardDescription>
-                  <span className="explore-link">Explore <ArrowRight className="h-3.5 w-3.5" /></span>
-                </CardContent>
-              </Card>
+            <Link key={c.slug} href={`/products/${c.slug}`} className="card-soft group flex flex-col p-5">
+              <div className="mb-3 inline-flex h-9 w-9 items-center justify-center rounded-md bg-primary-50 text-primary-700">
+                <Factory className="h-4 w-4" />
+              </div>
+              <h3 className="font-display text-[0.95rem] font-semibold tracking-tight text-navy-700 transition-colors group-hover:text-primary-700">
+                {c.name}
+              </h3>
+              <p className="mt-1.5 line-clamp-2 text-[13px] leading-relaxed text-slate-500">{c.intro}</p>
+              <span className="explore-link mt-4">
+                Explore <ArrowRight className="h-3.5 w-3.5" />
+              </span>
             </Link>
           ))}
         </div>
 
-        <div className="mt-7 text-center md:hidden">
-          <Button asChild>
-            <Link href="/products">View All Products</Link>
-          </Button>
+        <div className="mt-8 flex justify-center md:hidden">
+          <Link
+            href="/products"
+            className="inline-flex items-center gap-1.5 rounded-lg bg-primary-700 px-5 py-2.5 font-display text-sm font-semibold text-white hover:bg-primary-800"
+          >
+            View all products <ArrowRight className="h-4 w-4" />
+          </Link>
         </div>
       </div>
     </section>
@@ -132,48 +136,54 @@ export function HomeManufacturingExcellence() {
 /* ─── Export section ────────────────────────────────────────── */
 export function HomeExportSection() {
   const markets = [
-    { flag: "🇮🇳", name: "India", sub: "Pan-India distribution & projects" },
-    { flag: "🇦🇪", name: "UAE", sub: "Dubai, Abu Dhabi, Sharjah" },
-    { flag: "🇸🇦", name: "Saudi Arabia", sub: "Infrastructure & agriculture" },
+    { flag: "🇮🇳", name: "India", sub: "Pan-India distribution" },
+    { flag: "🇦🇪", name: "UAE", sub: "Dubai · Abu Dhabi · Sharjah" },
+    { flag: "🇸🇦", name: "Saudi Arabia", sub: "Infrastructure & agri" },
     { flag: "🇶🇦", name: "Qatar", sub: "EPC & government supply" },
-    { flag: "🇴🇲", name: "Oman", sub: "Industrial & agriculture" },
-    { flag: "🇰🇼", name: "Kuwait", sub: "Utilities & infrastructure" },
+    { flag: "🇴🇲", name: "Oman", sub: "Industrial & agri" },
+    { flag: "🇰🇼", name: "Kuwait", sub: "Utilities & infra" },
     { flag: "🇧🇭", name: "Bahrain", sub: "Project-based supply" },
     { flag: "🌍", name: "Africa", sub: "Export project supply" }
   ];
   return (
-    <section className="section-white border-y border-primary-700/10">
-      <div className="container py-14 md:py-20">
-        <div className="mb-10 text-center">
-          <div className="mb-2 text-xs font-black uppercase tracking-widest text-primary-700">Global reach</div>
-          <h2 className="text-2xl font-black text-navy-700 md:text-3xl">India · Middle East · Africa export markets</h2>
-          <p className="mx-auto mt-3 max-w-2xl text-sm text-gray-600">
-            Export-ready documentation, stable supply chain, and project-focused selection support for procurement
+    <section className="section-padded border-y border-slate-100 bg-white">
+      <div className="container">
+        <div className="mx-auto mb-10 max-w-2xl text-center md:mb-12">
+          <p className="eyebrow">Global reach</p>
+          <h2 className="section-title mt-2">India · Middle East · Africa export markets</h2>
+          <p className="section-lede mx-auto">
+            Export-ready documentation, stable supply chain and project-focused selection support for procurement
             teams across GCC and Africa.
           </p>
         </div>
 
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 lg:grid-cols-8">
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-8">
           {markets.map((m) => (
             <Link
               key={m.name}
               href="/locations"
-              className="group flex flex-col items-center gap-2 rounded-xl border border-gray-200 bg-primary-50/60 p-4 text-center shadow-card transition hover:border-primary-300 hover:bg-white hover:shadow-card-hover"
+              className="group flex flex-col items-center gap-1 rounded-xl border border-slate-200 bg-white px-3 py-5 text-center transition-colors hover:border-slate-300 hover:bg-slate-50"
             >
-              <span className="text-2xl">{m.flag}</span>
-              <div className="text-sm font-bold text-navy-700">{m.name}</div>
-              <div className="text-[11px] text-gray-500 transition-colors group-hover:text-primary-700">{m.sub}</div>
+              <span className="text-2xl leading-none">{m.flag}</span>
+              <div className="mt-1.5 font-display text-sm font-semibold text-navy-700">{m.name}</div>
+              <div className="text-[11px] leading-tight text-slate-500">{m.sub}</div>
             </Link>
           ))}
         </div>
 
         <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
-          <Button asChild size="lg">
-            <Link href="/rfq">Request export quotation</Link>
-          </Button>
-          <Button asChild size="lg" variant="outline" className="border-primary-300 bg-white">
-            <Link href="/locations">View location pages</Link>
-          </Button>
+          <Link
+            href="/rfq"
+            className="inline-flex items-center justify-center gap-1.5 rounded-lg bg-primary-700 px-5 py-2.5 font-display text-sm font-semibold text-white transition-colors hover:bg-primary-800"
+          >
+            Request export quotation
+          </Link>
+          <Link
+            href="/locations"
+            className="inline-flex items-center justify-center gap-1.5 rounded-lg border border-slate-200 bg-white px-5 py-2.5 font-display text-sm font-semibold text-navy-700 transition-colors hover:border-slate-300 hover:bg-slate-50"
+          >
+            View location pages
+          </Link>
         </div>
       </div>
     </section>
@@ -293,29 +303,38 @@ export function HomeFAQ() {
     { q: "What is the typical lead time for export orders?", a: "Lead times vary by product and quantity. Contact us with your order details for a specific delivery schedule aligned to your project timeline." }
   ];
   return (
-    <section className="section-white">
-      <div className="container py-14 md:py-20">
-        <div className="grid gap-12 lg:grid-cols-2 items-start">
+    <section className="section-padded bg-white">
+      <div className="container">
+        <div className="grid items-start gap-10 lg:grid-cols-[1fr_1.4fr] lg:gap-16">
           <div>
-            <div className="text-xs font-black tracking-widest text-primary-700 uppercase mb-2">FAQs</div>
-            <h2 className="text-2xl font-black text-navy-700 md:text-3xl mb-4">Frequently Asked Questions</h2>
-            <p className="text-gray-500 text-sm leading-relaxed mb-6">
-              Quick answers for procurement teams, EPC contractors, government buyers, and export customers.
+            <p className="eyebrow">FAQs</p>
+            <h2 className="section-title mt-2">Frequently asked questions</h2>
+            <p className="section-lede">
+              Quick answers for procurement teams, EPC contractors, government buyers and export customers.
             </p>
-            <Button asChild>
-              <Link href="/contact">Talk to Our Team</Link>
-            </Button>
+            <Link
+              href="/contact"
+              className="mt-6 inline-flex items-center gap-1.5 rounded-lg bg-primary-700 px-5 py-2.5 font-display text-sm font-semibold text-white transition-colors hover:bg-primary-800"
+            >
+              Talk to our team
+            </Link>
           </div>
-          <div>
-            <Accordion type="single" collapsible className="space-y-3">
-              {faqs.map((f) => (
-                <AccordionItem key={f.q} value={f.q}>
-                  <AccordionTrigger>{f.q}</AccordionTrigger>
-                  <AccordionContent>{f.a}</AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </div>
+          <Accordion type="single" collapsible className="space-y-2">
+            {faqs.map((f) => (
+              <AccordionItem
+                key={f.q}
+                value={f.q}
+                className="overflow-hidden rounded-xl border border-slate-200 bg-white px-5"
+              >
+                <AccordionTrigger className="font-display text-[0.95rem] font-semibold text-navy-700 hover:no-underline">
+                  {f.q}
+                </AccordionTrigger>
+                <AccordionContent className="text-[13.5px] leading-relaxed text-slate-500">
+                  {f.a}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
       </div>
     </section>
@@ -335,26 +354,18 @@ export function HomeIndustriesStrip() {
     { icon: "☀️", name: "Solar projects", desc: "PV arrays, structures and pumping integration." }
   ];
   return (
-    <section
-      id="industries"
-      className="section-white scroll-mt-[5.5rem] border-y border-primary-700/10 sm:scroll-mt-[8rem]"
-    >
-      <div className="container py-14 md:py-16">
-        <div className="mb-10 max-w-3xl">
-          <p className="font-display text-xs font-bold uppercase tracking-[0.2em] text-primary-700">Industries served</p>
-          <h2 className="mt-2 font-display text-2xl font-extrabold tracking-tight text-navy-700 md:text-3xl">
-            Vertical expertise across fluid and electrical domains
-          </h2>
+    <section id="industries" className="section-padded scroll-mt-24 border-t border-slate-100 bg-white">
+      <div className="container">
+        <div className="mb-10 max-w-2xl">
+          <p className="eyebrow">Industries served</p>
+          <h2 className="section-title mt-2">Vertical expertise across fluid and electrical domains</h2>
         </div>
-        <div className="grid gap-4 [grid-template-columns:repeat(auto-fill,minmax(220px,1fr))]">
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {industries.map((i) => (
-            <article
-              key={i.name}
-              className="rounded-2xl border border-primary-700/10 bg-white p-6 shadow-card transition hover:border-primary-700/25 hover:shadow-card-hover"
-            >
-              <div className="mb-2 text-[1.75rem] leading-none">{i.icon}</div>
-              <h3 className="font-display text-[0.95rem] font-bold text-navy-700">{i.name}</h3>
-              <p className="mt-1.5 text-[0.82rem] leading-relaxed text-gray-600">{i.desc}</p>
+            <article key={i.name} className="card-soft p-5">
+              <div className="mb-2 text-2xl leading-none">{i.icon}</div>
+              <h3 className="font-display text-[0.95rem] font-semibold tracking-tight text-navy-700">{i.name}</h3>
+              <p className="mt-1 text-[13px] leading-relaxed text-slate-500">{i.desc}</p>
             </article>
           ))}
         </div>
@@ -426,22 +437,34 @@ export function HomeTrustStrip() {
 /* ─── CTA Banner ─────────────────────────────────────────────── */
 export function HomeCtaBanner() {
   return (
-    <section className="section-primary">
+    <section className="bg-navy-700">
       <div className="container py-14 md:py-16">
-        <div className="flex flex-col items-center text-center gap-6 md:flex-row md:text-left md:justify-between md:items-center">
+        <div className="flex flex-col items-start gap-6 md:flex-row md:items-center md:justify-between">
           <div className="max-w-xl">
-            <h2 className="text-2xl font-black text-white md:text-3xl">Ready for Your Project?</h2>
-            <p className="mt-2 text-primary-200 text-sm leading-relaxed">
-              Share your duty point, water source, head, discharge, voltage, and country. Our team responds with recommended product options and an export-ready quotation.
+            <p className="font-display text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-sky-300">
+              Ready for your project?
+            </p>
+            <h2 className="mt-2 font-display text-[clamp(1.5rem,2.4vw,2rem)] font-bold leading-tight tracking-tight text-white">
+              Talk to our engineering desk
+            </h2>
+            <p className="mt-3 max-w-lg text-sm leading-relaxed text-slate-300">
+              Share your duty point, water source, head, discharge, voltage and country. We respond with recommended
+              product options and an export-ready quotation.
             </p>
           </div>
-          <div className="flex gap-3 shrink-0">
-            <Button asChild variant="white" size="lg">
-              <Link href="/rfq">Request Quotation</Link>
-            </Button>
-            <Button asChild size="lg" variant="outline" className="border-white/40 bg-transparent text-white hover:bg-white/10">
-              <Link href="/contact">Contact Sales</Link>
-            </Button>
+          <div className="flex flex-wrap items-center gap-2 md:shrink-0">
+            <Link
+              href="/rfq"
+              className="inline-flex items-center gap-1.5 rounded-lg bg-white px-5 py-2.5 font-display text-sm font-semibold text-navy-700 transition-colors hover:bg-slate-100"
+            >
+              Request quotation
+            </Link>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-1.5 rounded-lg border border-white/20 bg-transparent px-5 py-2.5 font-display text-sm font-semibold text-white transition-colors hover:bg-white/10"
+            >
+              Contact sales
+            </Link>
           </div>
         </div>
       </div>

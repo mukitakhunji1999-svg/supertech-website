@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Newspaper } from "lucide-react";
 import { RevealSection } from "@/components/home/reveal";
+import { SectionHead } from "@/components/home/section-head";
 
 const topics = [
   {
@@ -31,23 +32,23 @@ const topics = [
 
 export function HomeBlogPreview() {
   return (
-    <RevealSection id="blog" className="section-white scroll-mt-[5.5rem] sm:scroll-mt-[8rem] py-14 md:py-20">
+    <RevealSection id="blog" className="section-padded scroll-mt-24 bg-white">
       <div className="container">
-        <div className="mb-10 max-w-3xl">
-          <p className="font-display text-xs font-bold uppercase tracking-[0.2em] text-primary-700">Engineering blog</p>
-          <h2 className="mt-2 font-display text-2xl font-extrabold tracking-tight text-navy-700 md:text-3xl">
-            Insights for technical buyers and project engineers
-          </h2>
-        </div>
+        <SectionHead
+          eyebrow="Engineering blog"
+          title="Insights for technical buyers and project engineers"
+        />
 
-        <div className="grid gap-5 [grid-template-columns:repeat(auto-fill,minmax(280px,1fr))]">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {topics.map((t) => (
-            <article
-              key={t.title}
-              className="rounded-[22px] border border-primary-700/10 bg-white p-6 shadow-card transition duration-300 hover:-translate-y-1 hover:shadow-card-hover"
-            >
-              <h3 className="font-display text-[1.05rem] font-bold text-navy-700">{t.title}</h3>
-              <p className="mt-2 text-[0.9rem] leading-relaxed text-gray-600">{t.desc}</p>
+            <article key={t.title} className="card-soft p-6">
+              <div className="mb-3 inline-flex h-9 w-9 items-center justify-center rounded-md bg-primary-50 text-primary-700">
+                <Newspaper className="h-4 w-4" />
+              </div>
+              <h3 className="font-display text-[0.95rem] font-semibold tracking-tight text-navy-700">
+                {t.title}
+              </h3>
+              <p className="mt-1.5 text-[13px] leading-relaxed text-slate-500">{t.desc}</p>
             </article>
           ))}
         </div>
@@ -55,9 +56,10 @@ export function HomeBlogPreview() {
         <div className="mt-10 flex justify-center">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 rounded-full border-2 border-primary-700 bg-white px-6 py-3 font-display text-sm font-bold text-primary-700 transition hover:bg-primary-50"
+            className="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-5 py-2.5 font-display text-sm font-semibold text-navy-700 transition-colors hover:border-slate-300 hover:bg-slate-50"
           >
-            Open engineering blog <ArrowRight className="h-4 w-4" />
+            Open engineering blog
+            <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </div>

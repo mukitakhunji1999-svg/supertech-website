@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, FileText } from "lucide-react";
 import { RevealSection } from "@/components/home/reveal";
+import { SectionHead } from "@/components/home/section-head";
 
 const resources = [
   {
@@ -31,28 +32,23 @@ const resources = [
 
 export function HomeTechnicalPreview() {
   return (
-    <RevealSection
-      id="technical"
-      className="section-tint scroll-mt-[5.5rem] sm:scroll-mt-[8rem] py-14 md:py-20"
-    >
+    <RevealSection id="technical" className="section-padded scroll-mt-24 bg-slate-50/50">
       <div className="container">
-        <div className="mb-10 max-w-3xl">
-          <p className="font-display text-xs font-bold uppercase tracking-[0.2em] text-primary-700">
-            Technical resources
-          </p>
-          <h2 className="mt-2 font-display text-2xl font-extrabold tracking-tight text-navy-700 md:text-3xl">
-            Knowledge assets that reinforce pump engineering authority
-          </h2>
-        </div>
+        <SectionHead
+          eyebrow="Technical resources"
+          title="Knowledge assets that reinforce pump engineering authority"
+        />
 
-        <div className="grid gap-5 [grid-template-columns:repeat(auto-fill,minmax(280px,1fr))]">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {resources.map((r) => (
-            <article
-              key={r.title}
-              className="rounded-[22px] border border-primary-700/10 bg-white p-6 shadow-card transition duration-300 hover:-translate-y-1 hover:shadow-card-hover"
-            >
-              <h3 className="font-display text-[1.05rem] font-bold text-navy-700">{r.title}</h3>
-              <p className="mt-2 text-[0.9rem] leading-relaxed text-gray-600">{r.desc}</p>
+            <article key={r.title} className="card-soft p-6">
+              <div className="mb-3 inline-flex h-9 w-9 items-center justify-center rounded-md bg-primary-50 text-primary-700">
+                <FileText className="h-4 w-4" />
+              </div>
+              <h3 className="font-display text-[0.95rem] font-semibold tracking-tight text-navy-700">
+                {r.title}
+              </h3>
+              <p className="mt-1.5 text-[13px] leading-relaxed text-slate-500">{r.desc}</p>
             </article>
           ))}
         </div>
@@ -60,9 +56,10 @@ export function HomeTechnicalPreview() {
         <div className="mt-10 flex justify-center">
           <Link
             href="/resources"
-            className="inline-flex items-center gap-2 rounded-full bg-primary-700 px-6 py-3 font-display text-sm font-bold text-white shadow-md transition hover:bg-primary-800"
+            className="inline-flex items-center gap-1.5 rounded-lg bg-primary-700 px-5 py-2.5 font-display text-sm font-semibold text-white transition-colors hover:bg-primary-800"
           >
-            Browse resource library <ArrowRight className="h-4 w-4" />
+            Browse resource library
+            <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </div>

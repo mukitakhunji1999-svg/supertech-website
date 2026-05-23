@@ -2,6 +2,18 @@
 
 :root {
   --header-stack: 7rem;
+
+  /* Refined surface palette — neutral first, blue used as accent */
+  --bg: #ffffff;
+  --bg-muted: #f8fafc;
+  --bg-tint: #f5f9fd;
+  --border: #e5e9f0;
+  --border-strong: #d6dce6;
+  --ink: #0f2744;
+  --ink-muted: #475569;
+  --ink-soft: #64748b;
+  --brand: #0f6cbd;
+  --brand-strong: #0a4277;
 }
 
 @media (min-width: 640px) {
@@ -15,15 +27,18 @@ html {
 }
 
 body {
-  background: #f5faff;
-  color: #0f2744;
+  background: var(--bg);
+  color: var(--ink);
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
-/* Global layout container used by every section component. */
+/* Global layout container — tighter max-width for a more refined column */
 .container {
   width: 100%;
-  max-width: 1280px;
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 1rem;
@@ -49,44 +64,106 @@ body {
     width: 8px;
   }
   ::-webkit-scrollbar-track {
-    background: #e8f2fc;
+    background: var(--bg-muted);
   }
   ::-webkit-scrollbar-thumb {
-    background: #0f6cbd;
+    background: var(--border-strong);
     border-radius: 999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
   }
 }
 
+/* ── Section surfaces ─────────────────────────────────────────────────────── */
 .section-white {
-  background: #ffffff;
+  background: var(--bg);
 }
 .section-tint {
-  background: linear-gradient(180deg, #d9ecff 0%, #f5faff 100%);
+  background: var(--bg-tint);
 }
 .section-surface {
-  background: #f5faff;
+  background: var(--bg-muted);
 }
-
 .section-gray {
   background: #f1f5f9;
 }
-
 .section-navy {
-  background: linear-gradient(180deg, #09182a 0%, #0c1f36 100%);
+  background: #0c1f36;
   color: #ffffff;
 }
-
 .section-primary {
-  background: linear-gradient(135deg, #0f6cbd 0%, #0a4277 100%);
+  background: var(--brand);
   color: #ffffff;
 }
 
+/* ── Section padding scale (consistent rhythm across the site) ───────────── */
+.section-padded {
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+}
+@media (min-width: 768px) {
+  .section-padded {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .section-padded {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+/* ── Cards — flat by default, lift on hover ───────────────────────────────── */
+.card-soft {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  transition: border-color 0.2s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+.card-soft:hover {
+  border-color: var(--border-strong);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px -16px rgba(15, 39, 68, 0.18);
+}
+
+/* Lighter glass panel — used sparingly, e.g. mega-menu */
 .glass-panel {
-  background: rgba(255, 255, 255, 0.72);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(15, 108, 189, 0.12);
-  box-shadow: 0 8px 32px rgba(15, 39, 68, 0.08);
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  box-shadow: 0 12px 32px -16px rgba(15, 39, 68, 0.18);
+}
+
+/* ── Typography helpers ──────────────────────────────────────────────────── */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-poppins), system-ui, sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--brand);
+}
+
+.section-title {
+  font-family: var(--font-poppins), system-ui, sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.section-lede {
+  margin-top: 0.75rem;
+  max-width: 56ch;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--ink-muted);
 }
 
 .explore-link {
@@ -95,29 +172,42 @@ body {
   gap: 6px;
   font-size: 0.875rem;
   font-weight: 600;
-  color: #0f6cbd;
-  transition: gap 0.2s;
+  color: var(--brand);
+  transition: gap 0.2s ease, color 0.2s ease;
 }
 .explore-link:hover {
   gap: 10px;
+  color: var(--brand-strong);
 }
 
 .card-img-wrap {
   overflow: hidden;
 }
 .card-img-wrap img {
-  transition: transform 0.45s ease;
+  transition: transform 0.5s ease;
 }
 .card-img-wrap:hover img {
-  transform: scale(1.06);
+  transform: scale(1.04);
 }
 
 .reveal-on-scroll {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.65s ease, transform 0.65s ease;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 .reveal-on-scroll.is-visible {
   opacity: 1;
   transform: none;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
