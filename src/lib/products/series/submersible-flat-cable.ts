@@ -82,7 +82,7 @@ export const submersibleFlatCable: TechnicalSpec = {
       ]
     }
   ],
-  drawingSrc: "/images/drawings/submersible-cable.svg",
+  drawingSrc: "/images/drawings/submersible-cable.png",
   drawingAlt: "Submersible flat cable — cross-section",
   footnotes: [
     "Select cable size to keep voltage drop ≤ 3% at pump full-load current over total drop length.",

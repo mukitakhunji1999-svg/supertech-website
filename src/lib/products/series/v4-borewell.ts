@@ -376,7 +376,7 @@ export const v4BorewellSubmersible: TechnicalSpec = {
       ]
     }
   ],
-  drawingSrc: "/images/drawings/v4-borewell-submersible.svg",
+  drawingSrc: "/images/drawings/v4-borewell-submersible.png",
   drawingAlt: "V4 4-inch borewell submersible pump set — schematic cross-section",
   footnotes: [
     "Note: OF — Single-phase motors are available up to 3 H.P. WF — Single-phase motors are available up to 5 H.P.",

@@ -87,7 +87,7 @@ export const gateValve: TechnicalSpec = {
       ]
     }
   ],
-  drawingSrc: "/images/drawings/gate-valve.svg",
+  drawingSrc: "/images/drawings/gate-valve.png",
   drawingAlt: "Gate valve — resilient seated, cross-section",
   footnotes: [
     "Not suitable for throttling / flow control — use only fully open or fully closed.",

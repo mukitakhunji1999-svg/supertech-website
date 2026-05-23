@@ -88,7 +88,7 @@ export const dewateringSubmersiblePump: TechnicalSpec = {
       ]
     }
   ],
-  drawingSrc: "/images/drawings/dewatering-submersible.svg",
+  drawingSrc: "/images/drawings/dewatering-submersible.png",
   drawingAlt: "Dewatering submersible pump — schematic",
   footnotes: [
     "For highly abrasive duty (sand mining), specify high-chrome metallurgy at RFQ stage.",

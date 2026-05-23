@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 720" role="img" aria-label="V4 borewell submersible pump set  schematic cross section">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 720" role="img" aria-label="V4 borewell submersible pump set — schematic cross section">
   <defs>
     <linearGradient id="g1" x1="0" x2="0" y1="0" y2="1">
       <stop offset="0%" stop-color="#f8fafc"/>
@@ -58,9 +58,9 @@
     <rect x="105" y="668" width="110" height="22" rx="4"/>
   </g>
 
-  <!-- Pump (top)  light cyan fill -->
+  <!-- Pump (top) — light cyan fill -->
   <rect x="103" y="63" width="114" height="274" rx="4" fill="url(#gPump)" opacity="0.12"/>
-  <!-- Motor (bottom)  navy fill -->
+  <!-- Motor (bottom) — navy fill -->
   <rect x="103" y="398" width="114" height="264" rx="6" fill="url(#gMotor)" opacity="0.14"/>
 
   <!-- Shaft -->

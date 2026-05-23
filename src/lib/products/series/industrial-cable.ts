@@ -91,7 +91,7 @@ export const industrialCable: TechnicalSpec = {
       ]
     }
   ],
-  drawingSrc: "/images/drawings/power-cable.svg",
+  drawingSrc: "/images/drawings/power-cable.png",
   drawingAlt: "Industrial XLPE armoured cable — cross-section",
   footnotes: [
     "Specify voltage grade, current rating, installation method (air / buried / duct), and short-circuit level for sizing.",

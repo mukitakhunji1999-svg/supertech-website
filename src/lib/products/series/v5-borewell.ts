@@ -95,7 +95,7 @@ export const v5BorewellSubmersible: TechnicalSpec = {
       ]
     }
   ],
-  drawingSrc: "/images/drawings/v5-borewell-submersible.svg",
+  drawingSrc: "/images/drawings/v5-borewell-submersible.png",
   drawingAlt: "V5 5-inch borewell submersible pump set — schematic cross-section",
   footnotes: [
     "Three-phase only. Star-delta starting recommended above 10 HP.",

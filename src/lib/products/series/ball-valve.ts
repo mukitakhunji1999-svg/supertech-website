@@ -89,7 +89,7 @@ export const ballValve: TechnicalSpec = {
       ]
     }
   ],
-  drawingSrc: "/images/drawings/ball-valve.svg",
+  drawingSrc: "/images/drawings/ball-valve.png",
   drawingAlt: "Ball valve — 2-piece floating, cross-section",
   footnotes: [
     "For fire-safe service, specify API 607 / ISO 10497 certification at RFQ stage.",

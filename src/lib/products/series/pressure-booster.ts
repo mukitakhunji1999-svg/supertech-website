@@ -84,7 +84,7 @@ export const pressureBoosterPump: TechnicalSpec = {
       ]
     }
   ],
-  drawingSrc: "/images/drawings/pressure-booster.svg",
+  drawingSrc: "/images/drawings/pressure-booster.png",
   drawingAlt: "Pressure booster pump system — skid assembly",
   footnotes: [
     "Specify required pressure, peak flow, simultaneous-use factor, and number of users for accurate sizing.",

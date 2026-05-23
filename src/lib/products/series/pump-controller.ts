@@ -88,7 +88,7 @@ export const pumpController: TechnicalSpec = {
       ]
     }
   ],
-  drawingSrc: "/images/drawings/control-panel.svg",
+  drawingSrc: "/images/drawings/control-panel.png",
   drawingAlt: "Smart pump controller — front view",
   footnotes: [
     "Use only with pump rating matched to controller capacity; oversized loads will trip on overload.",

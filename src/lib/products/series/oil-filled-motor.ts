@@ -82,7 +82,7 @@ export const oilFilledSubmersibleMotor: TechnicalSpec = {
       ]
     }
   ],
-  drawingSrc: "/images/drawings/submersible-motor.svg",
+  drawingSrc: "/images/drawings/submersible-motor.png",
   drawingAlt: "Oil filled submersible motor — schematic",
   footnotes: [
     "Use only specified food-grade / synthetic oil. Check oil level before installation and after major service.",

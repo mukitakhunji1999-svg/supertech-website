@@ -89,7 +89,7 @@ export const inductionMotor: TechnicalSpec = {
       ]
     }
   ],
-  drawingSrc: "/images/drawings/induction-motor.svg",
+  drawingSrc: "/images/drawings/induction-motor.png",
   drawingAlt: "3-phase squirrel cage induction motor — schematic side view",
   footnotes: [
     "Standard frame sizes follow IEC 60072. Specify frame size, mounting, and shaft details when ordering.",

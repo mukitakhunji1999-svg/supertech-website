@@ -84,7 +84,7 @@ export const pvcInsulatedCable: TechnicalSpec = {
       ]
     }
   ],
-  drawingSrc: "/images/drawings/power-cable.svg",
+  drawingSrc: "/images/drawings/power-cable.png",
   drawingAlt: "PVC insulated armoured cable — cross-section",
   footnotes: [
     "Select cable size based on rated current, voltage drop, and short-circuit withstand for the circuit.",

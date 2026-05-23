@@ -77,7 +77,7 @@ export const singlePhaseMotor: TechnicalSpec = {
       ]
     }
   ],
-  drawingSrc: "/images/drawings/induction-motor.svg",
+  drawingSrc: "/images/drawings/induction-motor.png",
   drawingAlt: "Single phase induction motor — schematic side view",
   footnotes: [
     "Single phase capacitors are consumables — keep replacement set as spares.",

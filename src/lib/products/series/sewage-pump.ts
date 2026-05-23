@@ -87,7 +87,7 @@ export const sewageSubmersiblePump: TechnicalSpec = {
       ]
     }
   ],
-  drawingSrc: "/images/drawings/sewage-submersible.svg",
+  drawingSrc: "/images/drawings/sewage-submersible.png",
   drawingAlt: "Sewage submersible pump — schematic cross-section",
   footnotes: [
     "Specify max solid size, liquid composition, temperature, and operating mode (continuous / intermittent).",

@@ -86,7 +86,7 @@ export const butterflyValve: TechnicalSpec = {
       ]
     }
   ],
-  drawingSrc: "/images/drawings/butterfly-valve.svg",
+  drawingSrc: "/images/drawings/butterfly-valve.png",
   drawingAlt: "Butterfly valve — wafer type, cross-section",
   footnotes: [
     "Specify line size, pressure, temperature, fluid, & end connection (wafer / lug / flanged) for selection.",

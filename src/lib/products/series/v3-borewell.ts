@@ -168,7 +168,7 @@ export const v3BorewellSubmersible: TechnicalSpec = {
       ]
     }
   ],
-  drawingSrc: "/images/drawings/v3-borewell-submersible.svg",
+  drawingSrc: "/images/drawings/v3-borewell-submersible.png",
   drawingAlt: "V3 3-inch borewell submersible pump set — schematic cross-section",
   footnotes: [
     "Performance data is approximate at 2880 RPM under nominal supply voltage. Site duty point selection via RFQ recommended.",

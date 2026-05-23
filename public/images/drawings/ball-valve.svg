@@ -23,7 +23,7 @@
   <circle cx="270" cy="190" r="55" fill="url(#gValve)" opacity="0.32"/>
   <circle cx="270" cy="190" r="22" fill="white"/>
   <g font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" fill="#0a4277">
-    <text x="150" y="200" font-weight="600">’ FLOW ’</text>
+    <text x="150" y="200" font-weight="600">â€™ FLOW â€™</text>
     <text x="40" y="195">Inlet</text>
     <text x="475" y="195">Outlet</text>
     <text x="320" y="50">Lever / handle</text>

@@ -90,7 +90,7 @@ export const centrifugalMonoblock: TechnicalSpec = {
       ]
     }
   ],
-  drawingSrc: "/images/drawings/centrifugal-monoblock.svg",
+  drawingSrc: "/images/drawings/centrifugal-monoblock.png",
   drawingAlt: "Centrifugal monoblock pump — schematic side view",
   footnotes: [
     "Pump must be primed before starting; install foot valve on suction line.",

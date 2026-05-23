@@ -85,7 +85,7 @@ export const verticalInlinePump: TechnicalSpec = {
       ]
     }
   ],
-  drawingSrc: "/images/drawings/vertical-inline.svg",
+  drawingSrc: "/images/drawings/vertical-inline.png",
   drawingAlt: "Vertical inline multi-stage pump — schematic",
   footnotes: [
     "Specify liquid temperature, SG, and dosing chemicals for correct material and seal selection.",

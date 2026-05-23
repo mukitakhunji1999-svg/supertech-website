@@ -70,7 +70,7 @@ export const solarPVModule: TechnicalSpec = {
       ]
     }
   ],
-  drawingSrc: "/images/drawings/solar-pv-module.svg",
+  drawingSrc: "/images/drawings/solar-pv-module.png",
   drawingAlt: "Solar PV module — front layout",
   footnotes: [
     "Always specify required wattage and module count; PV array Vmp must match controller MPPT window.",

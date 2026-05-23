@@ -84,7 +84,7 @@ export const waterFilledSubmersibleMotor: TechnicalSpec = {
       ]
     }
   ],
-  drawingSrc: "/images/drawings/submersible-motor.svg",
+  drawingSrc: "/images/drawings/submersible-motor.png",
   drawingAlt: "Water filled submersible motor — schematic",
   footnotes: [
     "Maintain motor fully submerged in clean borewell water at all times. Refill water through filling plug before installation.",

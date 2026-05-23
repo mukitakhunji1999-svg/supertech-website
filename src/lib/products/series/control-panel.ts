@@ -95,7 +95,7 @@ export const controlPanel: TechnicalSpec = {
       ]
     }
   ],
-  drawingSrc: "/images/drawings/control-panel.svg",
+  drawingSrc: "/images/drawings/control-panel.png",
   drawingAlt: "Pump control panel — typical layout",
   footnotes: [
     "Specify pump rating (HP / kW), supply voltage, starting method, and protection requirements at RFQ stage.",

@@ -87,7 +87,7 @@ export const selfPrimingPump: TechnicalSpec = {
       ]
     }
   ],
-  drawingSrc: "/images/drawings/centrifugal-monoblock.svg",
+  drawingSrc: "/images/drawings/centrifugal-monoblock.png",
   drawingAlt: "Self priming pump — typical schematic",
   footnotes: [
     "Suction lift performance derates with altitude; specify site elevation when ordering.",

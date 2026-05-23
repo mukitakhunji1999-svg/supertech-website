@@ -81,7 +81,7 @@ export const solarCable: TechnicalSpec = {
       ]
     }
   ],
-  drawingSrc: "/images/drawings/solar-cable.svg",
+  drawingSrc: "/images/drawings/solar-cable.png",
   drawingAlt: "Solar AC/DC cable — cross-section",
   footnotes: [
     "Specify cable size, length, and quantity per RFQ. Volume discounts apply on drum lots.",

@@ -91,7 +91,7 @@ export const endSuctionCentrifugal: TechnicalSpec = {
       ]
     }
   ],
-  drawingSrc: "/images/drawings/centrifugal-monoblock.svg",
+  drawingSrc: "/images/drawings/centrifugal-monoblock.png",
   drawingAlt: "End-suction centrifugal pump — typical schematic",
   footnotes: [
     "Specify duty point (flow, head), liquid type, temperature, NPSHa, and starting method for accurate selection.",

@@ -73,7 +73,7 @@ export const solarController: TechnicalSpec = {
       ]
     }
   ],
-  drawingSrc: "/images/drawings/solar-controller.svg",
+  drawingSrc: "/images/drawings/solar-controller.png",
   drawingAlt: "Solar pump controller (MPPT-VFD) — schematic",
   footnotes: [
     "Specify PV array size, pump rating, voltage class, and motor model for accurate selection.",

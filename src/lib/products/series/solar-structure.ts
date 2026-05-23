@@ -71,7 +71,7 @@ export const solarStructure: TechnicalSpec = {
       ]
     }
   ],
-  drawingSrc: "/images/drawings/solar-structure.svg",
+  drawingSrc: "/images/drawings/solar-structure.png",
   drawingAlt: "Solar mounting structure — typical isometric / ground-mount frame",
   footnotes: [
     "Specify site wind zone, snow load, module size and weight at RFQ stage for accurate engineering.",

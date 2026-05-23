@@ -77,7 +77,7 @@ export const solarPumpingSystem: TechnicalSpec = {
       ]
     }
   ],
-  drawingSrc: "/images/drawings/solar-pumping-system.svg",
+  drawingSrc: "/images/drawings/solar-pumping-system.png",
   drawingAlt: "Solar pumping system — PV modules, controller, and submersible pump schematic",
   footnotes: [
     "System sizing depends on solar insolation at site; specify location for accurate PV array selection.",

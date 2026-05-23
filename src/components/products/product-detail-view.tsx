@@ -72,6 +72,10 @@ export function ProductDetailView({
       <JsonLd id="ld-faq" data={faqSchema(faqs)} />
       <JsonLd id="ld-product" data={productSchema(product, canonicalProductUrl)} />
 
+      {/* Technical detail section appears first so visitors see the drawing,
+          characteristics table, MOC and performance curves immediately after the hero. */}
+      {technicalSpec && <TechnicalSpecsView spec={technicalSpec} />}
+
       <section className="section-gray">
         <div className="container py-12 md:py-16">
           <div className="grid gap-10 lg:grid-cols-12">
@@ -158,8 +162,6 @@ export function ProductDetailView({
           </div>
         </div>
       </section>
-
-      {technicalSpec && <TechnicalSpecsView spec={technicalSpec} />}
 
       <section className="section-white">
         <div className="container py-12 md:py-16">

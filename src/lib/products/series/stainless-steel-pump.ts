@@ -85,7 +85,7 @@ export const stainlessSteelPump: TechnicalSpec = {
       ]
     }
   ],
-  drawingSrc: "/images/drawings/v4-borewell-submersible.svg",
+  drawingSrc: "/images/drawings/v4-borewell-submersible.png",
   drawingAlt: "Stainless steel submersible pump — schematic",
   footnotes: [
     "Specify chloride / TDS content, pH, and free CO₂ for correct grade selection (SS 304 vs SS 316 vs duplex).",

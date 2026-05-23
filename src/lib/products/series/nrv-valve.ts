@@ -89,7 +89,7 @@ export const nrvValve: TechnicalSpec = {
       ]
     }
   ],
-  drawingSrc: "/images/drawings/nrv-valve.svg",
+  drawingSrc: "/images/drawings/nrv-valve.png",
   drawingAlt: "Non-return valve — swing / dual-plate, cross-section",
   footnotes: [
     "For pump discharge service with potential water hammer, prefer silent disc-lift or dual-plate spring-assisted variants.",

@@ -22,7 +22,7 @@
   <path d="M122 202 L418 202 L418 278 L122 278 Z" fill="url(#gValve)" opacity="0.12"/>
   <path d="M260 202 L260 258 L280 258 L280 202 Z" fill="url(#gValve)" opacity="0.5"/>
   <g font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" fill="#0a4277">
-    <text x="200" y="240" font-weight="600">FLOW î</text>
+    <text x="200" y="240" font-weight="600">FLOW ‚Äù</text>
     <text x="60" y="240">Inlet</text>
     <text x="445" y="240">Outlet</text>
     <text x="300" y="35">Hand-wheel</text>

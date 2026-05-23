@@ -99,7 +99,7 @@ export const v6BorewellSubmersible: TechnicalSpec = {
       ]
     }
   ],
-  drawingSrc: "/images/drawings/v6-borewell-submersible.svg",
+  drawingSrc: "/images/drawings/v6-borewell-submersible.png",
   drawingAlt: "V6 6-inch borewell submersible pump set — schematic cross-section",
   footnotes: [
     "Three-phase only. Star-delta or soft-starter strongly recommended above 15 HP.",

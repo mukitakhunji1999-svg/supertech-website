@@ -1,4 +1,7 @@
 @import "tailwindcss";
+/* Tailwind v4 does not auto-load legacy tailwind.config.ts — load it explicitly
+   so the custom `navy`, `primary` palettes, fonts, shadows and animations work. */
+@config "../../tailwind.config.ts";
 
 :root {
   --header-stack: 7rem;

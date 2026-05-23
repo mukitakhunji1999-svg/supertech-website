@@ -9,7 +9,7 @@
 
   <!-- Well outline -->
   <rect x="20" y="100" width="280" height="600" fill="url(#gWater)" stroke="#1e293b" stroke-width="2"/>
-  <text x="40" y="130" font-family="sans-serif" font-size="10" fill="#475569" font-style="italic">water level ’</text>
+  <text x="40" y="130" font-family="sans-serif" font-size="10" fill="#475569" font-style="italic">water level â€™</text>
   <line x1="20" y1="180" x2="300" y2="180" stroke="#0ea5e9" stroke-width="1.5" stroke-dasharray="4 4"/>
 
   <g fill="none" stroke="#0a4277" stroke-width="2.5">

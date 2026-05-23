@@ -73,7 +73,7 @@ export const upvcColumnPipe: TechnicalSpec = {
       ]
     }
   ],
-  drawingSrc: "/images/drawings/upvc-column-pipe.svg",
+  drawingSrc: "/images/drawings/upvc-column-pipe.png",
   drawingAlt: "uPVC column pipe — socket–spigot joint detail",
   footnotes: [
     "Select pressure class per pump setting depth: Class 1 ≤ 100 m, Class 2 ≤ 150 m, Class 3 ≤ 200 m, Class 4 ≤ 250 m.",

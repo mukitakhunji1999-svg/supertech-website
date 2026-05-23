@@ -90,7 +90,7 @@ export const horizontalSplitCasePump: TechnicalSpec = {
       ]
     }
   ],
-  drawingSrc: "/images/drawings/horizontal-split-case.svg",
+  drawingSrc: "/images/drawings/horizontal-split-case.png",
   drawingAlt: "Horizontal split-case pump — schematic side view",
   footnotes: [
     "Specify duty point, liquid temperature, fluid SG, and starting method for accurate selection.",

@@ -49,9 +49,9 @@
     <rect x="260" y="305" width="40" height="40" rx="4" fill="#fbbf24" stroke="#0a4277" stroke-width="1.5"/>
     <text x="280" y="330" text-anchor="middle" font-size="10" font-weight="700" fill="white" font-family="sans-serif">RSET</text>
     <rect x="310" y="305" width="40" height="40" rx="4" fill="#e2e8f0" stroke="#0a4277" stroke-width="1.5"/>
-    <text x="330" y="330" text-anchor="middle" font-size="11" font-weight="700" fill="#0a4277" font-family="sans-serif">‘</text>
+    <text x="330" y="330" text-anchor="middle" font-size="11" font-weight="700" fill="#0a4277" font-family="sans-serif">â€˜</text>
     <rect x="360" y="305" width="40" height="40" rx="4" fill="#e2e8f0" stroke="#0a4277" stroke-width="1.5"/>
-    <text x="380" y="330" text-anchor="middle" font-size="11" font-weight="700" fill="#0a4277" font-family="sans-serif">“</text>
+    <text x="380" y="330" text-anchor="middle" font-size="11" font-weight="700" fill="#0a4277" font-family="sans-serif">â€œ</text>
   </g>
 
   <!-- Brand badge -->
