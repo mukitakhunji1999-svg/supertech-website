@@ -115,10 +115,10 @@ export function SplashIntro() {
               className="mt-6 flex flex-col items-center gap-1.5"
             >
               <span
-                className="font-display text-[clamp(1.4rem,4.6vmin,2.6rem)] font-extrabold uppercase leading-none tracking-[0.18em] drop-shadow-[0_3px_10px_rgba(15,108,189,0.28)]"
+                className="font-display text-[clamp(1.4rem,4.6vmin,2.6rem)] font-extrabold uppercase leading-none tracking-[0.18em] drop-shadow-[0_3px_10px_rgba(27,182,230,0.28)]"
                 style={{
                   backgroundImage:
-                    "linear-gradient(90deg,#062a4d 0%,#0a4277 18%,#0f6cbd 45%,#1a7ad9 70%,#06b6d4 100%)",
+                    "linear-gradient(90deg,#062a4d 0%,#0a4277 22%,#0f6cbd 55%,#1bb6e6 100%)",
                   backgroundClip: "text",
                   WebkitBackgroundClip: "text",
                   color: "transparent",
@@ -127,8 +127,10 @@ export function SplashIntro() {
               >
                 SUPERTECH
               </span>
-              <span className="font-display text-[clamp(0.78rem,2.2vmin,1.25rem)] font-bold uppercase tracking-[0.34em] text-navy-700/80">
+              <span className="flex items-center gap-3 font-display text-[clamp(0.78rem,2.2vmin,1.25rem)] font-bold uppercase leading-none tracking-[0.34em] text-navy-700">
+                <span aria-hidden className="h-px w-6 bg-gradient-to-r from-transparent to-[#1bb6e6]" />
                 Water Solution
+                <span aria-hidden className="h-px w-6 bg-gradient-to-l from-transparent to-[#1bb6e6]" />
               </span>
             </motion.div>
 

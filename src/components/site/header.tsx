@@ -97,9 +97,43 @@ export function SiteHeader() {
                 className="h-9 w-auto object-contain sm:h-10"
                 priority
               />
-              <span className="hidden font-display text-[0.95rem] font-bold tracking-tight text-navy-700 sm:inline">
-                Supertech
-                <span className="ml-1 font-medium text-slate-400">Water Solution</span>
+              {/* Mobile: compact SUPERTECH only */}
+              <span
+                className="font-display text-[0.95rem] font-extrabold uppercase leading-none tracking-[0.06em] sm:hidden"
+                style={{
+                  backgroundImage:
+                    "linear-gradient(90deg,#062a4d 0%,#0f6cbd 55%,#1bb6e6 100%)",
+                  backgroundClip: "text",
+                  WebkitBackgroundClip: "text",
+                  color: "transparent",
+                  WebkitTextFillColor: "transparent"
+                }}
+              >
+                SUPERTECH
+              </span>
+
+              {/* Desktop: full wordmark in one line */}
+              <span className="hidden items-center font-display leading-none sm:inline-flex">
+                <span
+                  className="text-[0.95rem] font-extrabold uppercase tracking-[0.06em]"
+                  style={{
+                    backgroundImage:
+                      "linear-gradient(90deg,#062a4d 0%,#0f6cbd 55%,#1bb6e6 100%)",
+                    backgroundClip: "text",
+                    WebkitBackgroundClip: "text",
+                    color: "transparent",
+                    WebkitTextFillColor: "transparent"
+                  }}
+                >
+                  SUPERTECH
+                </span>
+                <span
+                  aria-hidden
+                  className="mx-2 inline-block h-[14px] w-px bg-slate-300"
+                />
+                <span className="text-[0.78rem] font-bold uppercase tracking-[0.22em] text-navy-700">
+                  WATER SOLUTION
+                </span>
               </span>
             </Link>
 
