@@ -108,7 +108,7 @@ export function HomeFeaturedProductTabsClient({ tabs }: { tabs: FeaturedTab[] })
                     <h3 className="font-display text-base font-semibold tracking-tight text-navy-700">
                       {item.title}
                     </h3>
-                    <p className="mt-1.5 line-clamp-2 text-[13px] leading-relaxed text-slate-500">
+                    <p className="mt-1.5 line-clamp-2 text-[13px] leading-relaxed text-slate-600">
                       {item.description}
                     </p>
                     <Link

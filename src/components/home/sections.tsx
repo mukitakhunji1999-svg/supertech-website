@@ -64,7 +64,7 @@ export function HomeProductCategories() {
               <h3 className="font-display text-[0.95rem] font-semibold tracking-tight text-navy-700 transition-colors group-hover:text-primary-700">
                 {c.name}
               </h3>
-              <p className="mt-1.5 line-clamp-2 text-[13px] leading-relaxed text-slate-500">{c.intro}</p>
+              <p className="mt-1.5 line-clamp-2 text-[13px] leading-relaxed text-slate-600">{c.intro}</p>
               <span className="explore-link mt-4">
                 Explore <ArrowRight className="h-3.5 w-3.5" />
               </span>
@@ -166,7 +166,7 @@ export function HomeExportSection() {
             >
               <span className="text-2xl leading-none">{m.flag}</span>
               <div className="mt-1.5 font-display text-sm font-semibold text-navy-700">{m.name}</div>
-              <div className="text-[11px] leading-tight text-slate-500">{m.sub}</div>
+              <div className="text-[11px] leading-tight text-slate-600">{m.sub}</div>
             </Link>
           ))}
         </div>
@@ -365,7 +365,7 @@ export function HomeIndustriesStrip() {
             <article key={i.name} className="card-soft p-5">
               <div className="mb-2 text-2xl leading-none">{i.icon}</div>
               <h3 className="font-display text-[0.95rem] font-semibold tracking-tight text-navy-700">{i.name}</h3>
-              <p className="mt-1 text-[13px] leading-relaxed text-slate-500">{i.desc}</p>
+              <p className="mt-1 text-[13px] leading-relaxed text-slate-600">{i.desc}</p>
             </article>
           ))}
         </div>

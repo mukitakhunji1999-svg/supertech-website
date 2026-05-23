@@ -54,8 +54,8 @@ export default async function BrochureDownloadPage({ params }: BrochureParams) {
                 <Button asChild><Link href="/rfq">Need Pricing? Request RFQ</Link></Button>
                 <Button asChild variant="outline"><Link href="/contact">Contact Sales</Link></Button>
               </div>
-              <p className="text-xs text-gray-400">
-                Note: Place PDF brochures in <code className="text-gray-600">public/brochures/</code> and map the file path in <code className="text-gray-600">src/lib/resources/brochures.ts</code>.
+              <p className="text-xs text-slate-500">
+                Note: Place PDF brochures in <code className="text-slate-700">public/brochures/</code> and map the file path in <code className="text-slate-700">src/lib/resources/brochures.ts</code>.
               </p>
             </div>
 

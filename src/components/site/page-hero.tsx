@@ -27,13 +27,13 @@ export function PageHero({
         )}
         <h1 className="text-3xl font-black text-white leading-tight md:text-4xl lg:text-5xl max-w-3xl">{title}</h1>
         {subtitle && (
-          <p className="mt-4 max-w-2xl text-gray-400 leading-relaxed">{subtitle}</p>
+          <p className="mt-4 max-w-2xl text-slate-200 leading-relaxed">{subtitle}</p>
         )}
       </div>
       {/* Breadcrumbs */}
       {breadcrumbs && breadcrumbs.length > 0 && (
         <div className="relative z-10 border-t border-white/10 bg-black/20">
-          <div className="container py-2.5 flex items-center gap-1.5 text-xs text-white/60 font-medium flex-wrap">
+          <div className="container py-2.5 flex items-center gap-1.5 text-xs text-white/80 font-medium flex-wrap">
             {breadcrumbs.map((crumb, i) => (
               <span key={i} className="flex items-center gap-1.5">
                 {i > 0 && <ChevronRight className="h-3 w-3" />}

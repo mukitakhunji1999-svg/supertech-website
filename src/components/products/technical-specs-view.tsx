@@ -36,7 +36,7 @@ export function TechnicalSpecsView({ spec }: Props) {
                 />
               </div>
             ) : (
-              <div className="grid aspect-[4/9] place-items-center rounded-xl bg-slate-50 text-sm text-slate-400">
+              <div className="grid aspect-[4/9] place-items-center rounded-xl bg-slate-50 text-sm text-slate-500">
                 Drawing not available
               </div>
             )}
@@ -149,10 +149,10 @@ export function TechnicalSpecsView({ spec }: Props) {
           <h3 className="font-display text-xl font-bold tracking-tight text-navy-700 md:text-2xl">
             Head vs. discharge — by series
           </h3>
-          <p className="mt-1 text-[13px] text-slate-500">
-            Approximate performance reference. For project duty point matching, share head, flow, voltage, and site
-            details via RFQ.
-          </p>
+            <p className="mt-1 text-[13px] text-slate-600">
+              Approximate performance reference. For project duty point matching, share head, flow, voltage, and site
+              details via RFQ.
+            </p>
         </div>
 
         <div className="grid gap-5">
@@ -175,7 +175,7 @@ export function TechnicalSpecsView({ spec }: Props) {
         <div className="mt-10 flex flex-wrap items-center gap-3 rounded-2xl border border-slate-200 bg-white p-5">
           <div className="min-w-[200px] flex-1">
             <p className="font-display text-base font-semibold text-navy-700">Need a configuration for your site?</p>
-            <p className="mt-0.5 text-[13px] text-slate-500">
+            <p className="mt-0.5 text-[13px] text-slate-600">
               Share your head, flow, voltage, and destination for an exact match and quotation.
             </p>
           </div>

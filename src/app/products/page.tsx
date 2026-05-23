@@ -95,7 +95,7 @@ export default function ProductsIndexPage() {
                         <div className="font-display text-sm font-semibold tracking-tight text-navy-700 transition-colors group-hover:text-primary-700">
                           {c.name}
                         </div>
-                        <div className="mt-1 line-clamp-2 text-[12.5px] leading-relaxed text-slate-500">
+                        <div className="mt-1 line-clamp-2 text-[12.5px] leading-relaxed text-slate-600">
                           {c.intro}
                         </div>
                         <span className="explore-link mt-3 text-xs">

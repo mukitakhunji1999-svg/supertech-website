@@ -68,7 +68,7 @@ export default async function AdminProductsPage() {
                     <div className="flex flex-1 flex-col p-4">
                       <h3 className="font-display text-base font-bold text-slate-900">{p.title}</h3>
                       <p className="mt-1 line-clamp-2 text-xs text-slate-600">{p.description}</p>
-                      <p className="mt-1.5 truncate text-[11px] font-mono text-slate-400">{p.id}</p>
+                      <p className="mt-1.5 truncate text-[11px] font-mono text-slate-500">{p.id}</p>
                       <div className="mt-3 flex items-center gap-2 border-t border-slate-100 pt-3">
                         <Link
                           href={`/admin/products/${p.id}/edit`}

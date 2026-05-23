@@ -79,7 +79,7 @@ export function HomeIndustrialTrust() {
               <strong className="font-display block text-[0.95rem] font-semibold tracking-tight text-navy-700 transition-colors group-hover:text-primary-800">
                 {t.title}
               </strong>
-              <span className="mt-1 block text-[13px] leading-relaxed text-slate-500">{t.sub}</span>
+              <span className="mt-1 block text-[13px] leading-relaxed text-slate-600">{t.sub}</span>
             </div>
           ))}
         </div>

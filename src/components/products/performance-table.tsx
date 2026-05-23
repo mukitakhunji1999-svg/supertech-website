@@ -9,7 +9,7 @@ export function PerformanceTable({ table }: Props) {
     <div className="overflow-hidden rounded-xl border border-slate-200 bg-white">
       <div className="border-b border-slate-200 bg-gradient-to-br from-white to-blue-50/50 px-5 py-4">
         <p className="font-display text-[15px] font-semibold tracking-tight text-navy-700">{table.title}</p>
-        <div className="mt-1 flex flex-wrap gap-x-4 gap-y-1 text-[12px] text-slate-500">
+        <div className="mt-1 flex flex-wrap gap-x-4 gap-y-1 text-[12px] text-slate-600">
           {table.outletSize && (
             <span>
               Outlet: <span className="font-medium text-navy-700">{table.outletSize}</span>
@@ -27,7 +27,7 @@ export function PerformanceTable({ table }: Props) {
             Head: <span className="font-medium text-navy-700">metres</span>
           </span>
         </div>
-        {table.caption && <p className="mt-1.5 text-[12.5px] leading-relaxed text-slate-500">{table.caption}</p>}
+        {table.caption && <p className="mt-1.5 text-[12.5px] leading-relaxed text-slate-600">{table.caption}</p>}
       </div>
 
       <div className="overflow-x-auto">
@@ -110,7 +110,7 @@ export function PerformanceTable({ table }: Props) {
       {table.notes && table.notes.length > 0 && (
         <div className="border-t border-slate-100 bg-slate-50/60 px-5 py-3">
           {table.notes.map((n, i) => (
-            <p key={i} className="text-[12px] leading-relaxed text-slate-500">
+            <p key={i} className="text-[12px] leading-relaxed text-slate-600">
               {n}
             </p>
           ))}

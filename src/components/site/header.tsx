@@ -157,7 +157,7 @@ export function SiteHeader() {
                         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
                           {productGroups.map((g) => (
                             <div key={g.slug}>
-                              <p className="mb-2 px-2 text-[10px] font-semibold uppercase tracking-widest text-slate-400">
+                              <p className="mb-2 px-2 text-[10px] font-semibold uppercase tracking-widest text-slate-500">
                                 {g.name}
                               </p>
                               <ul className="space-y-0.5">

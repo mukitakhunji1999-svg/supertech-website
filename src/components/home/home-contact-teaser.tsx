@@ -36,7 +36,7 @@ export function HomeContactTeaser() {
               <h3 className="font-display text-lg font-semibold tracking-tight text-navy-700">
                 {siteConfig.name}
               </h3>
-              <p className="mt-2 text-[13px] leading-relaxed text-slate-500">
+              <p className="mt-2 text-[13px] leading-relaxed text-slate-600">
                 Manufacturer · Industrial pump supplier · Exporter · Government supplier
               </p>
 

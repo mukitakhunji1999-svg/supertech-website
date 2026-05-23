@@ -31,7 +31,7 @@ export const AccordionTrigger = React.forwardRef<
       {...props}
     >
       <span>{children}</span>
-      <ChevronDown className="h-4 w-4 text-gray-400 shrink-0 transition group-data-[state=open]:rotate-180" />
+      <ChevronDown className="h-4 w-4 text-slate-500 shrink-0 transition group-data-[state=open]:rotate-180" />
     </AccordionPrimitive.Trigger>
   </AccordionPrimitive.Header>
 ));

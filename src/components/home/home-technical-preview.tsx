@@ -48,7 +48,7 @@ export function HomeTechnicalPreview() {
               <h3 className="font-display text-[0.95rem] font-semibold tracking-tight text-navy-700">
                 {r.title}
               </h3>
-              <p className="mt-1.5 text-[13px] leading-relaxed text-slate-500">{r.desc}</p>
+              <p className="mt-1.5 text-[13px] leading-relaxed text-slate-600">{r.desc}</p>
             </article>
           ))}
         </div>

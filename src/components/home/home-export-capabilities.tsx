@@ -48,7 +48,7 @@ export function HomeExportCapabilities() {
                 <strong className="font-display block text-[0.95rem] font-semibold tracking-tight text-navy-700">
                   {item.title}
                 </strong>
-                <p className="mt-1 text-[13px] leading-relaxed text-slate-500">{item.body}</p>
+                <p className="mt-1 text-[13px] leading-relaxed text-slate-600">{item.body}</p>
               </div>
             </div>
           ))}

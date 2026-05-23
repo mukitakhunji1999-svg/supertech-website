@@ -44,7 +44,7 @@ export default function ContactPage() {
                       <item.icon className="h-5 w-5 text-primary-700" />
                     </div>
                     <div>
-                      <div className="text-xs font-semibold text-gray-400 uppercase tracking-wide">{item.label}</div>
+                      <div className="text-xs font-semibold text-slate-500 uppercase tracking-wide">{item.label}</div>
                       {item.href ? (
                         <a href={item.href} className="text-sm font-semibold text-navy-700 hover:text-primary-700 transition-colors">
                           {item.value}

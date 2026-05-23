@@ -167,7 +167,7 @@ export function ProductForm({ mode, tabs, initial, action }: Props) {
                 unoptimized={previewSrc.startsWith("data:")}
               />
             ) : (
-              <div className="flex h-full flex-col items-center justify-center gap-2 text-slate-400">
+              <div className="flex h-full flex-col items-center justify-center gap-2 text-slate-500">
                 <ImagePlus className="h-8 w-8" />
                 <span className="text-xs">No image yet</span>
               </div>
