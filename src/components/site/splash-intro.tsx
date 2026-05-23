@@ -117,7 +117,7 @@ export function SplashIntro() {
               }}
               className="mt-6 flex flex-col items-center gap-1.5"
             >
-              <span className="bg-gradient-to-r from-primary-700 via-primary-600 to-sky-500 bg-clip-text font-display text-[clamp(1.4rem,4.6vmin,2.6rem)] font-extrabold uppercase leading-none tracking-[0.18em] text-transparent">
+              <span className="bg-gradient-to-r from-primary-700 via-sky-600 to-cyan-500 bg-clip-text text-transparent drop-shadow-[0_3px_10px_rgba(15,108,189,0.25)] font-display text-[clamp(1.4rem,4.6vmin,2.6rem)] font-extrabold uppercase leading-none tracking-[0.18em]">
                 SUPERTECH
               </span>
               <span className="font-display text-[clamp(0.78rem,2.2vmin,1.25rem)] font-bold uppercase tracking-[0.34em] text-navy-700/80">
