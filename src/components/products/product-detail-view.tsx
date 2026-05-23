@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { JsonLd } from "@/components/seo/json-ld";
 import { SpecTable } from "@/components/products/spec-table";
+import { TechnicalSpecsView } from "@/components/products/technical-specs-view";
 import { PageHero } from "@/components/site/page-hero";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -10,6 +11,7 @@ import type { ProductCategory } from "@/lib/products/product-groups";
 import { generateProductLongform } from "@/lib/seo/longform";
 import { breadcrumbSchema, faqSchema, productSchema } from "@/lib/seo/schema";
 import { siteConfig } from "@/lib/site-config";
+import { getTechnicalSpec } from "@/lib/products/technical-specs";
 
 export type BreadcrumbItem = { label: string; href?: string };
 
@@ -35,6 +37,7 @@ export function ProductDetailView({
 }) {
   const titleText = displayTitle ?? product.name;
   const longform = generateProductLongform(product);
+  const technicalSpec = product.technicalSpecKey ? getTechnicalSpec(product.technicalSpecKey) : undefined;
 
   const faqs = [
     {
@@ -155,6 +158,8 @@ export function ProductDetailView({
           </div>
         </div>
       </section>
+
+      {technicalSpec && <TechnicalSpecsView spec={technicalSpec} />}
 
       <section className="section-white">
         <div className="container py-12 md:py-16">

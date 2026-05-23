@@ -14,6 +14,8 @@ export type Product = {
   features: string[];
   specifications: SpecRow[];
   brochureKey?: string;
+  /** Optional reference into the technical-specs registry for rich "View more" tables + drawing. */
+  technicalSpecKey?: string;
   seo: {
     primaryKeyword: string;
     secondaryKeywords: string[];
@@ -28,6 +30,95 @@ function ensureCategory(slug: string) {
 }
 
 export const products: Product[] = [
+  // ─── V4 borewell submersible (4" — flagship pump line) ───────────────────
+  {
+    id: "v4-borewell-submersible-pump",
+    name: "V4 — 100 mm (4\") Borewell Submersible Pump Set",
+    slug: "v4-borewell-submersible-pump",
+    categorySlug: ensureCategory("borewell-submersible-pumps"),
+    shortDescription:
+      "Premium 4-inch borewell submersible pump set engineered for stable performance, sand resistance, and long service life. Available in Oil Filled (OF) and Water Filled (WF) motor configurations, suitable for 100 mm borewell or above.",
+    applications: [
+      "Domestic & municipal water supply",
+      "Agriculture water supply",
+      "Sprinkler & pressure boosting irrigation",
+      "Fire fighting systems",
+      "High-rise buildings",
+      "Civil & industrial applications"
+    ],
+    features: [
+      "Oil Filled (OF) and Water Filled (WF) motor variants",
+      "Stage range from 4 to 50 — head up to ~400 m with multi-stage selection",
+      "Glass-filled noryl impellers and bowls for sand resistance",
+      "Non-magnetic stainless steel 304 motor body",
+      "SS 304 hardware throughout for corrosion resistance",
+      "Compliant with IS:8034-2002 (WF motor pumpsets)"
+    ],
+    specifications: [
+      { label: "Bore size", value: "Suitable for 100 mm borewell or above" },
+      { label: "Speed", value: "2880 RPM" },
+      { label: "Power range", value: "0.37 kW (0.5 HP) to 7.5 kW (10 HP)" },
+      { label: "Outlet sizes", value: "32 mm • 38 mm • 50 mm • 65 mm (series-dependent)" },
+      { label: "Flow type", value: "Radial / Mixed (series-dependent)" },
+      { label: "Supply", value: "200–240 V 1Φ / 380–415 V 3Φ • 50 Hz" }
+    ],
+    brochureKey: "v4-borewell-submersible",
+    technicalSpecKey: "v4-borewell-submersible",
+    seo: {
+      primaryKeyword: "4 inch borewell submersible pump manufacturer",
+      secondaryKeywords: [
+        "v4 submersible pump exporter",
+        "100mm borewell pump supplier",
+        "4 inch submersible pump price",
+        "borewell submersible pump supplier in UAE",
+        "submersible pump set IS 8034 compliant"
+      ]
+    }
+  },
+  // ─── V3 borewell submersible (3" — narrow borewells) ─────────────────────
+  {
+    id: "v3-borewell-submersible-pump",
+    name: "V3 — 75 / 80 mm (3\") Borewell Submersible Pump Set",
+    slug: "v3-borewell-submersible-pump",
+    categorySlug: ensureCategory("borewell-submersible-pumps"),
+    shortDescription:
+      "Compact 3-inch borewell submersible pump set for narrow borewells. Engineered for sprinkler / drip irrigation, civil and domestic supply, pressure boosting, and small fire fighting systems. Oil Filled (OF) and Water Filled (WF) variants.",
+    applications: [
+      "Domestic water supply",
+      "Sprinkler & drip irrigation",
+      "Pressure boosting systems",
+      "Civil & industrial supply",
+      "Fire fighting systems",
+      "Fountains & gardens"
+    ],
+    features: [
+      "Oil Filled (OF) and Water Filled (WF) motor variants",
+      "Suitable for 75 mm or 80 mm borewells (motor OD 72 mm)",
+      "Stage range from 10 to 36 — multi-stage high-head variants",
+      "Glass-filled noryl impeller and bowl for sand resistance",
+      "CNC-machined components for reliable performance"
+    ],
+    specifications: [
+      { label: "Bore size", value: "75 mm or 80 mm" },
+      { label: "Speed", value: "2880 RPM" },
+      { label: "Power range", value: "0.37 kW (0.5 HP) to 0.94 kW (1.25 HP)" },
+      { label: "Outlet size", value: "32 mm" },
+      { label: "Flow type", value: "Radial" },
+      { label: "Supply", value: "200–240 V single phase • 50 Hz" }
+    ],
+    brochureKey: "v3-borewell-submersible",
+    technicalSpecKey: "v3-borewell-submersible",
+    seo: {
+      primaryKeyword: "3 inch borewell submersible pump",
+      secondaryKeywords: [
+        "v3 submersible pump manufacturer",
+        "75mm borewell pump supplier",
+        "narrow borewell pump exporter",
+        "3 inch submersible pump price",
+        "domestic submersible pump supplier"
+      ]
+    }
+  },
   {
     id: "openwell-submersible-pump",
     name: "Openwell Submersible Pump",

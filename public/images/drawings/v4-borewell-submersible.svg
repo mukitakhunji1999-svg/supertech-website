@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 720" role="img" aria-label="V4 borewell submersible pump set  schematic cross section">
+  <defs>
+    <linearGradient id="g1" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#e2e8f0"/>
+    </linearGradient>
+    <linearGradient id="gMotor" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0f6cbd"/>
+      <stop offset="100%" stop-color="#062a4d"/>
+    </linearGradient>
+    <linearGradient id="gPump" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#1bb6e6"/>
+      <stop offset="100%" stop-color="#0f6cbd"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background card -->
+  <rect width="320" height="720" fill="url(#g1)"/>
+
+  <!-- Outline -->
+  <g fill="none" stroke="#0a4277" stroke-width="2.5">
+    <!-- Delivery outlet/cap (top) -->
+    <path d="M120 30 L200 30 L210 60 L110 60 Z"/>
+    <line x1="155" y1="20" x2="165" y2="20" stroke-width="3"/>
+    <line x1="160" y1="0" x2="160" y2="30" stroke-width="3"/>
+
+    <!-- Pump body (top section) -->
+    <rect x="100" y="60" width="120" height="280" rx="6"/>
+
+    <!-- Stage separators (impeller stages) -->
+    <line x1="100" y1="100" x2="220" y2="100"/>
+    <line x1="100" y1="135" x2="220" y2="135"/>
+    <line x1="100" y1="170" x2="220" y2="170"/>
+    <line x1="100" y1="205" x2="220" y2="205"/>
+    <line x1="100" y1="240" x2="220" y2="240"/>
+    <line x1="100" y1="275" x2="220" y2="275"/>
+    <line x1="100" y1="310" x2="220" y2="310"/>
+
+    <!-- Suction casing + strainer -->
+    <path d="M105 340 L100 365 L220 365 L215 340 Z"/>
+    <g stroke="#0a4277" stroke-width="1.5">
+      <line x1="110" y1="345" x2="115" y2="358"/>
+      <line x1="125" y1="345" x2="130" y2="358"/>
+      <line x1="140" y1="345" x2="145" y2="358"/>
+      <line x1="155" y1="345" x2="160" y2="358"/>
+      <line x1="170" y1="345" x2="175" y2="358"/>
+      <line x1="185" y1="345" x2="190" y2="358"/>
+      <line x1="200" y1="345" x2="205" y2="358"/>
+    </g>
+
+    <!-- Motor coupling -->
+    <rect x="125" y="370" width="70" height="20" rx="2"/>
+
+    <!-- Motor body -->
+    <rect x="100" y="395" width="120" height="270" rx="8"/>
+
+    <!-- Motor base / cable entry -->
+    <rect x="105" y="668" width="110" height="22" rx="4"/>
+  </g>
+
+  <!-- Pump (top)  light cyan fill -->
+  <rect x="103" y="63" width="114" height="274" rx="4" fill="url(#gPump)" opacity="0.12"/>
+  <!-- Motor (bottom)  navy fill -->
+  <rect x="103" y="398" width="114" height="264" rx="6" fill="url(#gMotor)" opacity="0.14"/>
+
+  <!-- Shaft -->
+  <line x1="160" y1="60" x2="160" y2="370" stroke="#0a4277" stroke-width="2.5" stroke-dasharray="3 3"/>
+  <line x1="160" y1="395" x2="160" y2="660" stroke="#0a4277" stroke-width="2.5" stroke-dasharray="3 3"/>
+
+  <!-- Cable -->
+  <path d="M80 240 Q60 350 80 470 Q60 600 80 690" stroke="#0a4277" stroke-width="2" fill="none"/>
+  <circle cx="80" cy="240" r="3" fill="#0a4277"/>
+
+  <!-- Labels -->
+  <g font-family="ui-sans-serif, system-ui, -apple-system, sans-serif" font-size="11" fill="#0a4277">
+    <text x="230" y="40">Delivery outlet</text>
+    <line x1="227" y1="36" x2="215" y2="36" stroke="#0a4277" stroke-width="1"/>
+
+    <text x="230" y="105">Multi-stage</text>
+    <text x="230" y="120">pump bowls</text>
+    <text x="230" y="135" fill="#475569" font-size="10">(glass-filled noryl /</text>
+    <text x="230" y="148" fill="#475569" font-size="10">cast iron)</text>
+    <line x1="227" y1="103" x2="220" y2="160" stroke="#0a4277" stroke-width="1"/>
+
+    <text x="230" y="220">Impellers</text>
+    <text x="230" y="235" fill="#475569" font-size="10">abrasion-resistant</text>
+    <line x1="227" y1="218" x2="220" y2="240" stroke="#0a4277" stroke-width="1"/>
+
+    <text x="230" y="355">SS strainer</text>
+    <line x1="227" y1="353" x2="220" y2="358" stroke="#0a4277" stroke-width="1"/>
+
+    <text x="230" y="385">Coupling</text>
+    <line x1="227" y1="383" x2="200" y2="382" stroke="#0a4277" stroke-width="1"/>
+
+    <text x="230" y="475">Submersible motor</text>
+    <text x="230" y="490" fill="#475569" font-size="10">OF (oil filled) /</text>
+    <text x="230" y="503" fill="#475569" font-size="10">WF (water filled)</text>
+    <line x1="227" y1="475" x2="220" y2="500" stroke="#0a4277" stroke-width="1"/>
+
+    <text x="230" y="585">Stator + winding</text>
+    <text x="230" y="600" fill="#475569" font-size="10">EC copper, F class</text>
+    <line x1="227" y1="583" x2="220" y2="590" stroke="#0a4277" stroke-width="1"/>
+
+    <text x="230" y="680">Cable inlet</text>
+    <line x1="227" y1="678" x2="215" y2="678" stroke="#0a4277" stroke-width="1"/>
+
+    <text x="20" y="455" font-size="10">Power</text>
+    <text x="20" y="468" font-size="10">cable</text>
+    <line x1="58" y1="465" x2="70" y2="465" stroke="#0a4277" stroke-width="1"/>
+
+    <text x="20" y="40" font-weight="700" font-size="12">V4</text>
+    <text x="20" y="55" font-size="9" fill="#475569">100 mm (4")</text>
+    <text x="20" y="68" font-size="9" fill="#475569">borewell</text>
+
+    <text x="160" y="710" text-anchor="middle" font-weight="700" font-size="11">SUPERTECH V4 Series</text>
+  </g>
+</svg>

@@ -40,14 +40,19 @@ export const productFamilies: Record<
     ],
     lineItems: {
       "v4-5hp": {
-        productSlug: ssSlug("10VP-162/4"),
-        label: "Representative 4″ class stainless submersible configuration",
-        displayTitle: "4″ class stainless steel submersible pump (duty-matched selection)"
+        productSlug: "v4-borewell-submersible-pump",
+        label: "V4 4-inch borewell submersible pump set (OF & WF)",
+        displayTitle: "V4 — 100 mm (4″) Borewell Submersible Pump Set"
       },
       "v6-10hp": {
         productSlug: ssSlug("10VP-162/10"),
         label: "Representative 6″ class high-stage stainless submersible configuration",
         displayTitle: "6″ class stainless steel submersible pump (high-head selection)"
+      },
+      "v3-1hp": {
+        productSlug: "v3-borewell-submersible-pump",
+        label: "V3 3-inch borewell submersible pump set (OF & WF)",
+        displayTitle: "V3 — 75 / 80 mm (3″) Borewell Submersible Pump Set"
       }
     }
   },
