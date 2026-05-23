@@ -54,7 +54,7 @@ export function HomeHero() {
         }}
       />
 
-      <div className="container relative z-[2] grid min-h-[min(86vh,760px)] grid-cols-1 items-center gap-10 py-12 pb-28 md:py-16 md:pb-32 lg:grid-cols-[1.05fr_1fr] lg:gap-12">
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 relative z-[2] grid min-h-[min(86vh,760px)] grid-cols-1 items-center gap-10 py-12 pb-28 md:py-16 md:pb-32 lg:grid-cols-[1.05fr_1fr] lg:gap-12">
         {/* Left — copy */}
         <div className="max-w-[600px]">
           <AnimatePresence mode="wait">
