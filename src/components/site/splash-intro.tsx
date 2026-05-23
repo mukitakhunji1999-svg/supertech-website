@@ -96,15 +96,20 @@ export function SplashIntro() {
               }}
               className="relative"
             >
-              <div className="absolute inset-0 -z-10 scale-125 rounded-full bg-[radial-gradient(closest-side,rgba(15,108,189,0.42),transparent_70%)] blur-2xl" />
+              {/* Soft halo behind the logo — fully behind, so logo itself stays crisp */}
+              <div
+                aria-hidden
+                className="pointer-events-none absolute inset-0 -z-10 scale-150 rounded-full bg-sky-300/20 blur-3xl"
+              />
               <Image
                 src={siteConfig.logoPath}
                 alt={`${siteConfig.name} logo`}
-                width={512}
-                height={512}
+                width={420}
+                height={420}
                 priority
+                quality={100}
                 sizes="(max-width: 640px) 55vw, (max-width: 1024px) 40vw, 30vw"
-                className="h-[clamp(12rem,35vmin,24rem)] w-[clamp(12rem,35vmin,24rem)] object-contain drop-shadow-[0_12px_32px_rgba(15,108,189,0.32)]"
+                className="h-auto w-[clamp(12rem,35vmin,24rem)] object-contain"
               />
             </motion.div>
 
