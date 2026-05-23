@@ -83,9 +83,10 @@ export function HomeFeaturedProductTabs() {
                     <p className="mt-2 text-[0.875rem] leading-relaxed text-gray-600 line-clamp-3">{item.description}</p>
                     <Link
                       href={item.href}
-                      className="mt-3 inline-flex items-center gap-1 font-display text-[0.8rem] font-bold text-primary-700 transition-[gap,color] duration-200 hover:gap-1.5 hover:text-primary-800"
+                      aria-label={`View more about ${item.title}`}
+                      className="mt-4 inline-flex items-center gap-1.5 rounded-full border border-primary-700/15 bg-primary-50/60 px-3 py-1.5 font-display text-[0.78rem] font-bold text-primary-700 transition-[gap,background,border-color,color] duration-200 hover:gap-2 hover:border-primary-700/40 hover:bg-primary-100 hover:text-primary-800"
                     >
-                      {item.ctaLabel} <ArrowRight className="h-3.5 w-3.5 shrink-0" />
+                      View more <ArrowRight className="h-3.5 w-3.5 shrink-0" />
                     </Link>
                   </div>
                 </motion.article>

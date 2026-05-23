@@ -73,7 +73,7 @@ export function SiteHeader() {
             <Link
               href="/"
               aria-label={siteConfig.name}
-              className="flex min-w-0 shrink-0 items-center gap-2 sm:gap-3 md:gap-3.5"
+              className="flex min-w-0 shrink-0 flex-nowrap items-center gap-2.5 sm:gap-3.5"
             >
               <Image
                 src={siteConfig.logoPath}
@@ -84,7 +84,12 @@ export function SiteHeader() {
                 priority
               />
               <span
-                className="font-display min-w-0 bg-gradient-to-r from-primary-700 via-primary-600 to-navy-800 bg-clip-text text-[clamp(0.65rem,2.4vw,1.125rem)] font-extrabold leading-snug tracking-tight text-transparent sm:text-[clamp(0.75rem,1.8vw,1.25rem)] md:text-[clamp(0.875rem,1.5vw,1.35rem)] whitespace-nowrap"
+                className={cn(
+                  "font-display min-w-0 bg-clip-text text-transparent",
+                  "whitespace-nowrap text-[clamp(0.68rem,2.1vw,1.125rem)] font-extrabold leading-[1.15] tracking-[-0.03em]",
+                  "bg-[linear-gradient(90deg,#0f6cbd_0%,#2e90fa_42%,#0f2744_100%)]",
+                  "sm:text-[clamp(0.78rem,1.85vw,1.2rem)] md:text-[clamp(0.88rem,1.45vw,1.32rem)]"
+                )}
               >
                 {siteConfig.name}
               </span>
