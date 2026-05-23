@@ -44,9 +44,9 @@
     "@types/react-dom": "^19.1.7",
     "eslint": "^9.33.0",
     "eslint-config-next": "latest",
+    "pdf-to-png-converter": "^4.0.0",
     "postcss": "^8.5.6",
     "tailwindcss": "^4.1.12",
     "typescript": "^5.9.2"
   }
 }
-

@@ -26,7 +26,7 @@ export function TechnicalSpecsView({ spec }: Props) {
 
         {/* Drawing + sidebar */}
         <div className="grid gap-8 lg:grid-cols-[1fr_320px]">
-          <div>
+          <div className="space-y-6">
             <div className="overflow-hidden rounded-xl border border-slate-200 bg-gradient-to-b from-slate-50 to-blue-50/40">
               {spec.drawingSrc ? (
                 <div className="relative mx-auto aspect-[4/3] w-full max-w-[520px]">
@@ -42,6 +42,36 @@ export function TechnicalSpecsView({ spec }: Props) {
                 <div className="grid h-72 place-items-center text-sm text-slate-800">Drawing not available</div>
               )}
             </div>
+
+            {spec.catalogueDrawings && spec.catalogueDrawings.length > 0 && (
+              <div>
+                <p className="eyebrow mb-3">From the engineering catalogue</p>
+                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                  {spec.catalogueDrawings.map((d) => (
+                    <a
+                      key={d.src}
+                      href={d.src}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group block overflow-hidden rounded-lg border border-slate-200 bg-white transition hover:border-navy-700"
+                    >
+                      <div className="relative aspect-[4/3] w-full bg-slate-50">
+                        <Image
+                          src={d.src}
+                          alt={d.alt}
+                          fill
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 240px"
+                          className="object-contain p-2"
+                        />
+                      </div>
+                      <p className="px-3 py-2 text-[12.5px] font-medium leading-snug text-slate-800 group-hover:text-navy-900">
+                        {d.label}
+                      </p>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
 
           <aside className="space-y-4 lg:sticky lg:top-24 lg:self-start">

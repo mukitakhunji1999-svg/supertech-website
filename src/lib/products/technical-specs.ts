@@ -106,6 +106,16 @@ export type TechnicalSpec = {
   /** Path to a drawing/schematic asset under /public. */
   drawingSrc?: string;
   drawingAlt?: string;
+  /**
+   * Optional catalogue pages (cross-sections, exploded views, performance tables
+   * extracted from PDF catalogues). Rendered as a gallery below the main drawing.
+   */
+  catalogueDrawings?: Array<{
+    src: string;
+    alt: string;
+    /** Short label shown beneath the thumbnail, e.g. "4'' WL cross-section" */
+    label: string;
+  }>;
   /** Free-form footnote(s). */
   footnotes?: string[];
 };
