@@ -3,14 +3,28 @@ import { ArrowRight } from "lucide-react";
 import { PageHero } from "@/components/site/page-hero";
 import { Button } from "@/components/ui/button";
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { TechnicalSpecsView } from "@/components/products/technical-specs-view";
 import { allCategories } from "@/lib/products/product-groups";
-import { getProductsByCategory } from "@/lib/products/catalog";
+import { getProductBySlug, getProductsByCategory } from "@/lib/products/catalog";
 import { productFamilies, type ProductFamilyKey } from "@/lib/products/product-families";
+import { getTechnicalSpec } from "@/lib/products/technical-specs";
 
 export function FamilyHubPage({ family }: { family: ProductFamilyKey }) {
   const f = productFamilies[family];
   const categories = allCategories.filter((c) => f.categorySlugs.includes(c.slug));
   const lineEntries = Object.entries(f.lineItems);
+
+  // Find the flagship line-item that resolves to a product with technical specs.
+  const flagshipSpec = (() => {
+    for (const [, item] of lineEntries) {
+      const product = getProductBySlug(item.productSlug);
+      if (product?.technicalSpecKey) {
+        const spec = getTechnicalSpec(product.technicalSpecKey);
+        if (spec) return spec;
+      }
+    }
+    return undefined;
+  })();
 
   return (
     <>
@@ -25,12 +39,15 @@ export function FamilyHubPage({ family }: { family: ProductFamilyKey }) {
         ]}
       />
 
+      {/* Flagship technical data — shown immediately so visitors don't have to drill in */}
+      {flagshipSpec && <TechnicalSpecsView spec={flagshipSpec} />}
+
       <section className="section-gray">
         <div className="container py-12 md:py-16">
           <div className="mb-10 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <div>
               <h2 className="text-xl font-black text-navy-700">Featured configurations</h2>
-              <p className="mt-1 max-w-2xl text-sm text-gray-600">
+              <p className="mt-1 max-w-2xl text-sm text-slate-800">
                 Marketing-friendly URLs for RFQ and SEO. Technical sign-off is always duty-point matched to your project.
               </p>
             </div>
@@ -44,8 +61,8 @@ export function FamilyHubPage({ family }: { family: ProductFamilyKey }) {
               <Link key={slug} href={`/products/${family}/${slug}`} className="group block">
                 <Card className="h-full transition hover:border-primary-300 hover:shadow-card-hover">
                   <CardHeader>
-                    <div className="mb-1 text-xs font-black uppercase tracking-widest text-primary-700">{slug.replace(/-/g, " ")}</div>
-                    <CardTitle className="group-hover:text-primary-700">{item.displayTitle ?? item.label}</CardTitle>
+                    <div className="mb-1 text-xs font-black uppercase tracking-widest text-navy-800">{slug.replace(/-/g, " ")}</div>
+                    <CardTitle className="group-hover:text-navy-800">{item.displayTitle ?? item.label}</CardTitle>
                     <CardDescription>{item.label}</CardDescription>
                     <span className="explore-link mt-2 inline-flex text-sm">
                       View details <ArrowRight className="h-4 w-4" />
@@ -63,9 +80,9 @@ export function FamilyHubPage({ family }: { family: ProductFamilyKey }) {
               return (
                 <Link key={c.slug} href={`/products/${c.slug}`} className="group block">
                   <div className="rounded-xl border border-gray-200 bg-white p-4 shadow-card transition hover:border-primary-300">
-                    <div className="text-sm font-bold text-navy-700 group-hover:text-primary-700">{c.name}</div>
-                    <p className="mt-2 line-clamp-3 text-xs text-gray-500">{c.intro}</p>
-                    <div className="mt-2 text-xs font-semibold text-primary-700">{count ? `${count} SKU pages` : "RFQ selection"}</div>
+                    <div className="text-sm font-bold text-navy-700 group-hover:text-navy-800">{c.name}</div>
+                    <p className="mt-2 line-clamp-3 text-xs text-slate-800">{c.intro}</p>
+                    <div className="mt-2 text-xs font-semibold text-navy-800">{count ? `${count} SKU pages` : "RFQ selection"}</div>
                   </div>
                 </Link>
               );

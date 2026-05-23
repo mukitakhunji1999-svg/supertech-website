@@ -50,7 +50,7 @@ export function ProductSearch() {
   return (
     <div className="grid gap-4">
       <div className="relative max-w-2xl">
-        <Search className="pointer-events-none absolute left-4 top-3.5 h-4 w-4 text-gray-400" />
+        <Search className="pointer-events-none absolute left-4 top-3.5 h-4 w-4 text-slate-800" />
         <Input value={q} onChange={(e) => setQ(e.target.value)} className="pl-11" placeholder="Search pumps, motors, solar, valves, panels..." />
       </div>
 
@@ -59,7 +59,7 @@ export function ProductSearch() {
           <Link key={r.href} href={r.href}>
             <Card className="h-full hover:border-primary-300">
               <CardHeader>
-                <div className="text-xs font-black tracking-widest text-primary-700 uppercase">{r.kind}</div>
+                <div className="text-xs font-black tracking-widest text-navy-800 uppercase">{r.kind}</div>
                 <CardTitle className="mt-2">{r.title}</CardTitle>
                 <CardDescription>{r.description}</CardDescription>
               </CardHeader>

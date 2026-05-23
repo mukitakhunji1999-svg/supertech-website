@@ -30,7 +30,7 @@ export default function ContactPage() {
         <div className="container py-14 md:py-20">
           <div className="grid gap-10 lg:grid-cols-2">
             <div>
-              <div className="text-xs font-black tracking-widest text-primary-700 uppercase mb-2">Get in Touch</div>
+              <div className="text-xs font-black tracking-widest text-navy-800 uppercase mb-2">Get in Touch</div>
               <h2 className="text-2xl font-black text-navy-700 mb-6">We Respond Fast to Genuine Inquiries</h2>
 
               <div className="space-y-4">
@@ -41,12 +41,12 @@ export default function ContactPage() {
                 ].map((item, i) => (
                   <div key={i} className="flex items-start gap-4 rounded-xl border border-gray-200 bg-white p-4 shadow-card">
                     <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary-50">
-                      <item.icon className="h-5 w-5 text-primary-700" />
+                      <item.icon className="h-5 w-5 text-navy-800" />
                     </div>
                     <div>
-                      <div className="text-xs font-semibold text-slate-500 uppercase tracking-wide">{item.label}</div>
+                      <div className="text-xs font-semibold text-slate-800 uppercase tracking-wide">{item.label}</div>
                       {item.href ? (
-                        <a href={item.href} className="text-sm font-semibold text-navy-700 hover:text-primary-700 transition-colors">
+                        <a href={item.href} className="text-sm font-semibold text-navy-700 hover:text-navy-800 transition-colors">
                           {item.value}
                         </a>
                       ) : (
@@ -58,12 +58,12 @@ export default function ContactPage() {
               </div>
 
               <div className="mt-6 rounded-xl border border-primary-100 bg-primary-50 p-5">
-                <div className="text-xs font-black tracking-widest text-primary-700 uppercase mb-2">Export Markets</div>
-                <div className="text-sm text-gray-600">India • UAE • Saudi Arabia • Qatar • Oman • Kuwait • Bahrain • Africa</div>
+                <div className="text-xs font-black tracking-widest text-navy-800 uppercase mb-2">Export Markets</div>
+                <div className="text-sm text-slate-800">India • UAE • Saudi Arabia • Qatar • Oman • Kuwait • Bahrain • Africa</div>
               </div>
 
               <div className="mt-8 overflow-hidden rounded-xl border border-gray-200 bg-white shadow-card">
-                <div className="border-b border-gray-100 px-4 py-3 text-xs font-black uppercase tracking-widest text-primary-700">
+                <div className="border-b border-gray-100 px-4 py-3 text-xs font-black uppercase tracking-widest text-navy-800">
                   Local map — Ahmedabad, Gujarat
                 </div>
                 <iframe

@@ -42,13 +42,13 @@ export function HomeBlogPreview() {
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {topics.map((t) => (
             <article key={t.title} className="card-soft p-6">
-              <div className="mb-3 inline-flex h-9 w-9 items-center justify-center rounded-md bg-primary-50 text-primary-700">
+              <div className="mb-3 inline-flex h-9 w-9 items-center justify-center rounded-md bg-primary-50 text-navy-800">
                 <Newspaper className="h-4 w-4" />
               </div>
               <h3 className="font-display text-[0.95rem] font-semibold tracking-tight text-navy-700">
                 {t.title}
               </h3>
-              <p className="mt-1.5 text-[13px] leading-relaxed text-slate-600">{t.desc}</p>
+              <p className="mt-1.5 text-[13px] leading-relaxed text-slate-800">{t.desc}</p>
             </article>
           ))}
         </div>

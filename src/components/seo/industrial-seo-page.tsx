@@ -36,7 +36,7 @@ export function IndustrialSeoPage({ data }: { data: IndustrialPageContent }) {
               <section key={s.h2} className="mb-12">
                 <h2 className="mb-4 text-xl font-black tracking-tight text-navy-700 md:text-2xl">{s.h2}</h2>
                 {s.paragraphs.map((p, i) => (
-                  <p key={i} className="mb-4 text-sm leading-relaxed text-gray-600 md:text-base">
+                  <p key={i} className="mb-4 text-sm leading-relaxed text-slate-800 md:text-base">
                     {p}
                   </p>
                 ))}
@@ -78,7 +78,7 @@ export function IndustrialSeoPage({ data }: { data: IndustrialPageContent }) {
 
           <section className="mx-auto mt-14 max-w-3xl rounded-xl border border-gray-200 bg-white p-6 shadow-card">
             <h2 className="text-lg font-black text-navy-700">Technical inquiry</h2>
-            <p className="mt-2 text-sm text-gray-600">
+            <p className="mt-2 text-sm text-slate-800">
               Share duty points, destination, and tender references. Our team routes RFQs to engineering and export coordination.
             </p>
             <div className="mt-6">

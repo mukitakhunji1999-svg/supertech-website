@@ -14,7 +14,7 @@ export function SpecTable({ rows, className }: { rows: Row[]; className?: string
           {rows.map((row, i) => (
             <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-gray-50"}>
               <td className="py-2.5 px-5 font-semibold text-navy-700 w-2/5">{row.label}</td>
-              <td className="py-2.5 px-5 text-gray-600">{row.value}</td>
+              <td className="py-2.5 px-5 text-slate-800">{row.value}</td>
             </tr>
           ))}
         </tbody>

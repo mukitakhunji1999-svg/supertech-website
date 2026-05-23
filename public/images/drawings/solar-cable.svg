@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 360" role="img" aria-label="Solar DC cable cross-section">
+  <defs>
+    <linearGradient id="g1" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#f8fafc"/><stop offset="100%" stop-color="#e2e8f0"/></linearGradient>
+  </defs>
+  <rect width="540" height="360" fill="url(#g1)"/>
+
+  <!-- Solar cable cross-section (single-core, large) -->
+  <circle cx="270" cy="180" r="110" fill="#1e293b" stroke="#0a4277" stroke-width="3"/>
+  <circle cx="270" cy="180" r="92" fill="#dc2626" stroke="#0a4277" stroke-width="2"/>
+  <circle cx="270" cy="180" r="72" fill="#1e293b" stroke="#0a4277" stroke-width="1.5"/>
+  <circle cx="270" cy="180" r="55" fill="#94a3b8" stroke="#0a4277" stroke-width="1.5"/>
+  <!-- Tinned copper strands -->
+  <g fill="#e2e8f0" stroke="#0a4277" stroke-width="0.5">
+    <circle cx="270" cy="180" r="6"/>
+    <circle cx="258" cy="180" r="6"/>
+    <circle cx="282" cy="180" r="6"/>
+    <circle cx="270" cy="168" r="6"/>
+    <circle cx="270" cy="192" r="6"/>
+    <circle cx="252" cy="168" r="6"/>
+    <circle cx="288" cy="168" r="6"/>
+    <circle cx="252" cy="192" r="6"/>
+    <circle cx="288" cy="192" r="6"/>
+    <circle cx="240" cy="180" r="6"/>
+    <circle cx="300" cy="180" r="6"/>
+    <circle cx="246" cy="156" r="6"/>
+    <circle cx="294" cy="156" r="6"/>
+    <circle cx="246" cy="204" r="6"/>
+    <circle cx="294" cy="204" r="6"/>
+    <circle cx="270" cy="156" r="6"/>
+    <circle cx="270" cy="204" r="6"/>
+  </g>
+
+  <!-- Labels -->
+  <g font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" fill="#0a4277">
+    <text x="40" y="290" font-size="11">Outer sheath</text>
+    <text x="40" y="305" font-size="10" fill="#475569">(XLPO black, UV stable)</text>
+    <line x1="120" y1="285" x2="170" y2="270" stroke="#0a4277" stroke-width="1.5"/>
+
+    <text x="40" y="330" font-size="11">Insulation</text>
+    <text x="40" y="345" font-size="10" fill="#475569">(XLPO red, halogen free)</text>
+    <line x1="120" y1="325" x2="180" y2="265" stroke="#0a4277" stroke-width="1.5"/>
+
+    <text x="430" y="290" font-size="11">Tinned copper</text>
+    <text x="430" y="305" font-size="10" fill="#475569">conductor (Class 5)</text>
+    <line x1="425" y1="285" x2="370" y2="265" stroke="#0a4277" stroke-width="1.5"/>
+
+    <text x="270" y="30" text-anchor="middle" font-weight="700" font-size="13">SUPERTECH Solar AC/DC Cable (1500 V DC)</text>
+    <text x="270" y="50" text-anchor="middle" font-size="10" fill="#475569">EN 50618 / TUV 2 PfG 1169 / IEC 62930 certified</text>
+  </g>
+</svg>

@@ -33,7 +33,7 @@ export default async function AdminLoginPage({
         <div className="mb-6 flex items-center gap-3">
           <Image src={siteConfig.logoPath} alt="SUPERTECH" width={48} height={48} className="h-12 w-12 object-contain" />
           <div>
-            <p className="font-display text-sm font-bold uppercase tracking-[0.18em] text-slate-500">Admin Console</p>
+            <p className="font-display text-sm font-bold uppercase tracking-[0.18em] text-slate-800">Admin Console</p>
             <h1 className="font-display text-lg font-extrabold text-slate-900">SUPERTECH WATER SOLUTION</h1>
           </div>
         </div>
@@ -60,7 +60,7 @@ export default async function AdminLoginPage({
           >
             Sign in
           </button>
-          <p className="text-center text-xs text-slate-500">
+          <p className="text-center text-xs text-slate-800">
             The password is set via the <code className="rounded bg-slate-100 px-1 py-0.5 font-mono">ADMIN_PASSWORD</code> environment variable.
           </p>
         </form>

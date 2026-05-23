@@ -27,7 +27,7 @@ export function FloatingInquiryCta() {
           </Link>
           <Link
             href={`tel:${tel}`}
-            className="inline-flex items-center gap-2 rounded-full border border-primary-700/25 bg-white px-4 py-2 font-display text-[0.8125rem] font-bold text-primary-700 transition hover:border-primary-500 hover:bg-primary-50 active:scale-[0.98]"
+            className="inline-flex items-center gap-2 rounded-full border border-primary-700/25 bg-white px-4 py-2 font-display text-[0.8125rem] font-bold text-navy-800 transition hover:border-primary-500 hover:bg-primary-50 active:scale-[0.98]"
           >
             <Phone className="h-4 w-4 shrink-0" />
             Call
@@ -40,7 +40,7 @@ export function FloatingInquiryCta() {
   return (
     <Link
       href="/rfq"
-      className="fixed bottom-6 left-4 z-40 flex items-center gap-2 rounded-full border border-primary-200 bg-white px-4 py-2.5 text-sm font-bold text-primary-700 shadow-nav transition hover:border-primary-400 hover:shadow-card-hover md:left-8"
+      className="fixed bottom-6 left-4 z-40 flex items-center gap-2 rounded-full border border-primary-200 bg-white px-4 py-2.5 text-sm font-bold text-navy-800 shadow-nav transition hover:border-primary-400 hover:shadow-card-hover md:left-8"
     >
       <MessageSquareText className="h-4 w-4 shrink-0" />
       <span className="max-w-[10rem] leading-tight md:max-w-none">RFQ</span>

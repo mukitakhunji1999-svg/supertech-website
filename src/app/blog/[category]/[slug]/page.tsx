@@ -85,14 +85,14 @@ export default async function BlogPostPage({ params }: BlogPostParams) {
                 {p.keywords.slice(0, 10).map((k) => (
                   <span
                     key={k}
-                    className="rounded-full border border-primary-200 bg-primary-50 px-3 py-1 text-xs font-semibold text-primary-700"
+                    className="rounded-full border border-primary-200 bg-primary-50 px-3 py-1 text-xs font-semibold text-navy-800"
                   >
                     {k}
                   </span>
                 ))}
               </div>
 
-              <article className="space-y-6 text-sm leading-relaxed text-gray-600 md:text-base">
+              <article className="space-y-6 text-sm leading-relaxed text-slate-800 md:text-base">
                 {p.sections?.length
                   ? p.sections.map((s) => (
                       <section key={s.id} id={s.id} className="scroll-mt-28">
@@ -132,7 +132,7 @@ export default async function BlogPostPage({ params }: BlogPostParams) {
       {related.length > 0 ? (
         <section className="section-white">
           <div className="container py-12 md:py-16">
-            <div className="mb-2 text-xs font-black uppercase tracking-widest text-primary-700">Related</div>
+            <div className="mb-2 text-xs font-black uppercase tracking-widest text-navy-800">Related</div>
             <h2 className="mb-7 text-2xl font-black text-navy-700 md:text-3xl">More from {c.name}</h2>
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
               {related.map((r) => (

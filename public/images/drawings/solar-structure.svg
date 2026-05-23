@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 540" role="img" aria-label="Solar mounting structure">
+  <defs>
+    <linearGradient id="g1" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#bae6fd"/><stop offset="100%" stop-color="#f8fafc"/></linearGradient>
+    <linearGradient id="gPanel" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#1e3a8a"/><stop offset="100%" stop-color="#0c1d4d"/></linearGradient>
+    <linearGradient id="gEarth" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#a78b6f"/><stop offset="100%" stop-color="#5a4530"/></linearGradient>
+  </defs>
+  <rect width="720" height="540" fill="url(#g1)"/>
+
+  <!-- Ground -->
+  <rect x="0" y="420" width="720" height="120" fill="url(#gEarth)"/>
+  <line x1="0" y1="420" x2="720" y2="420" stroke="#5a4530" stroke-width="2"/>
+
+  <!-- Foundation blocks -->
+  <rect x="100" y="395" width="50" height="50" fill="#94a3b8" stroke="#0a4277" stroke-width="2"/>
+  <rect x="570" y="395" width="50" height="50" fill="#94a3b8" stroke="#0a4277" stroke-width="2"/>
+
+  <!-- Front legs -->
+  <line x1="125" y1="395" x2="180" y2="290" stroke="#475569" stroke-width="6"/>
+  <line x1="595" y1="395" x2="540" y2="290" stroke="#475569" stroke-width="6"/>
+
+  <!-- Back legs (longer) -->
+  <line x1="125" y1="395" x2="240" y2="130" stroke="#475569" stroke-width="6"/>
+  <line x1="595" y1="395" x2="480" y2="130" stroke="#475569" stroke-width="6"/>
+
+  <!-- Diagonal bracing -->
+  <line x1="180" y1="290" x2="240" y2="130" stroke="#475569" stroke-width="4"/>
+  <line x1="540" y1="290" x2="480" y2="130" stroke="#475569" stroke-width="4"/>
+
+  <!-- Horizontal rafters (front and back) -->
+  <line x1="180" y1="290" x2="540" y2="290" stroke="#475569" stroke-width="5"/>
+  <line x1="240" y1="130" x2="480" y2="130" stroke="#475569" stroke-width="5"/>
+
+  <!-- PV panel on top -->
+  <polygon points="180,290 540,290 480,130 240,130" fill="url(#gPanel)" stroke="#0a4277" stroke-width="2.5"/>
+
+  <!-- Cells grid -->
+  <g stroke="#3b82f6" stroke-width="1" fill="none">
+    <!-- Vertical lines (along panel slope) -->
+    <line x1="270" y1="290" x2="300" y2="130"/>
+    <line x1="320" y1="290" x2="335" y2="130"/>
+    <line x1="370" y1="290" x2="370" y2="130"/>
+    <line x1="420" y1="290" x2="405" y2="130"/>
+    <line x1="470" y1="290" x2="440" y2="130"/>
+    <line x1="520" y1="290" x2="475" y2="130"/>
+    <!-- Horizontal lines -->
+    <line x1="220" y1="237" x2="500" y2="237"/>
+    <line x1="200" y1="184" x2="520" y2="184"/>
+  </g>
+
+  <!-- Tilt angle indicator -->
+  <path d="M180 290 A 30 30 0 0 1 200 270" stroke="#dc2626" stroke-width="2" fill="none"/>
+  <text x="215" y="285" font-size="11" fill="#dc2626" font-weight="700" font-family="sans-serif">25° tilt</text>
+
+  <!-- Bolts on structure (visual detail) -->
+  <g fill="#0a4277">
+    <circle cx="180" cy="290" r="3"/>
+    <circle cx="540" cy="290" r="3"/>
+    <circle cx="240" cy="130" r="3"/>
+    <circle cx="480" cy="130" r="3"/>
+  </g>
+
+  <!-- Labels -->
+  <g font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" fill="#0a4277">
+    <text x="360" y="32" text-anchor="middle" font-size="14" font-weight="800">SUPERTECH Solar Mounting Structure</text>
+    <text x="360" y="52" text-anchor="middle" font-size="11" fill="#475569">Hot-dip galvanised, MNRE compliant, 25-year design life</text>
+    <text x="60" y="290">Front rafter</text>
+    <line x1="115" y1="290" x2="175" y2="290" stroke="#0a4277" stroke-width="1.5"/>
+    <text x="60" y="130">Back rafter</text>
+    <line x1="115" y1="130" x2="235" y2="130" stroke="#0a4277" stroke-width="1.5"/>
+    <text x="640" y="420">Foundation</text>
+    <text x="640" y="435" font-size="10" fill="#475569">(RCC block)</text>
+    <text x="635" y="290">Bracing</text>
+    <line x1="610" y1="285" x2="555" y2="265" stroke="#0a4277" stroke-width="1.5"/>
+    <text x="360" y="510" text-anchor="middle" font-size="11" font-weight="700" fill="#0a4277">Ground-mount solar structure (4-leg, ~30-module table)</text>
+  </g>
+</svg>

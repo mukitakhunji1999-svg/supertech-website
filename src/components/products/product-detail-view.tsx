@@ -97,7 +97,7 @@ export function ProductDetailView({
                     <CardDescription>Project and industry usage examples.</CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <ul className="space-y-1.5 text-sm text-gray-600">
+                    <ul className="space-y-1.5 text-sm text-slate-800">
                       {product.applications.map((a) => (
                         <li key={a} className="flex items-start gap-2">
                           <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary-500" />
@@ -113,7 +113,7 @@ export function ProductDetailView({
                     <CardDescription>Built for export-grade reliability.</CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <ul className="space-y-1.5 text-sm text-gray-600">
+                    <ul className="space-y-1.5 text-sm text-slate-800">
                       {product.features.map((f) => (
                         <li key={f} className="flex items-start gap-2">
                           <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary-500" />
@@ -126,7 +126,7 @@ export function ProductDetailView({
               </div>
 
               <div className="mt-8">
-                <div className="mb-4 text-xs font-black uppercase tracking-widest text-primary-700">FAQs</div>
+                <div className="mb-4 text-xs font-black uppercase tracking-widest text-navy-800">FAQs</div>
                 <Accordion type="single" collapsible className="space-y-3">
                   {faqs.map((f) => (
                     <AccordionItem key={f.question} value={f.question}>
@@ -141,8 +141,8 @@ export function ProductDetailView({
             <div className="space-y-4 lg:col-span-5">
               <SpecTable rows={product.specifications} />
               <Card className="p-5">
-                <div className="mb-2 text-xs font-black uppercase tracking-widest text-primary-700">Datasheet</div>
-                <p className="mb-4 text-sm text-gray-600">
+                <div className="mb-2 text-xs font-black uppercase tracking-widest text-navy-800">Datasheet</div>
+                <p className="mb-4 text-sm text-slate-800">
                   Configuration-specific datasheets and pump curves are shared on request with RFQ for tender and EPC submissions.
                 </p>
                 <div className="grid gap-3">
@@ -163,7 +163,7 @@ export function ProductDetailView({
 
       <section className="section-white">
         <div className="container py-12 md:py-16">
-          <div className="mb-2 text-xs font-black uppercase tracking-widest text-primary-700">Technical content</div>
+          <div className="mb-2 text-xs font-black uppercase tracking-widest text-navy-800">Technical content</div>
           <h2 className="mb-8 text-2xl font-black text-navy-700 md:text-3xl">
             {product.seo.primaryKeyword} — technical overview
           </h2>
@@ -171,7 +171,7 @@ export function ProductDetailView({
             {longform.map((s) => (
               <article key={s.title} className="rounded-xl border border-gray-200 bg-white p-6 shadow-card">
                 <h3 className="mb-2 text-base font-bold text-navy-700">{s.title}</h3>
-                <p className="text-sm leading-relaxed text-gray-600">{s.body}</p>
+                <p className="text-sm leading-relaxed text-slate-800">{s.body}</p>
               </article>
             ))}
           </div>
@@ -181,7 +181,7 @@ export function ProductDetailView({
       {related.length > 0 ? (
         <section className="section-gray">
           <div className="container py-12 md:py-16">
-            <div className="mb-2 text-xs font-black uppercase tracking-widest text-primary-700">Related products</div>
+            <div className="mb-2 text-xs font-black uppercase tracking-widest text-navy-800">Related products</div>
             <h2 className="mb-7 text-2xl font-black text-navy-700 md:text-3xl">More in {category.name}</h2>
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
               {related.map((p) => (

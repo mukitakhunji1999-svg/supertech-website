@@ -22,26 +22,26 @@ export function SiteFooter() {
                 {siteConfig.name}
               </span>
             </div>
-            <p className="mb-5 text-sm leading-relaxed text-gray-600">
+            <p className="mb-5 text-sm leading-relaxed text-slate-800">
               Premium manufacturer and exporter of pumps, motors, solar pumping systems, valves, pipes, cables, panels,
               and accessories. Built for India, Middle East, and Africa.
             </p>
-            <div className="space-y-2.5 text-sm text-gray-600">
+            <div className="space-y-2.5 text-sm text-slate-800">
               <div className="flex items-start gap-2.5">
-                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary-700" />
+                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-navy-800" />
                 <span>{siteConfig.contact.location}</span>
               </div>
               {siteConfig.contact.phones.map((p) => (
                 <div key={p} className="flex items-center gap-2.5">
-                  <Phone className="h-4 w-4 shrink-0 text-primary-700" />
-                  <a href={`tel:${p}`} className="transition-colors hover:text-primary-700">
+                  <Phone className="h-4 w-4 shrink-0 text-navy-800" />
+                  <a href={`tel:${p}`} className="transition-colors hover:text-navy-800">
                     {p}
                   </a>
                 </div>
               ))}
               <div className="flex items-center gap-2.5">
-                <Mail className="h-4 w-4 shrink-0 text-primary-700" />
-                <a href={`mailto:${siteConfig.contact.email}`} className="transition-colors hover:text-primary-700">
+                <Mail className="h-4 w-4 shrink-0 text-navy-800" />
+                <a href={`mailto:${siteConfig.contact.email}`} className="transition-colors hover:text-navy-800">
                   {siteConfig.contact.email}
                 </a>
               </div>
@@ -49,21 +49,21 @@ export function SiteFooter() {
           </div>
 
           <div className="lg:col-span-3">
-            <div className="mb-4 text-xs font-black uppercase tracking-widest text-primary-700">Products</div>
+            <div className="mb-4 text-xs font-black uppercase tracking-widest text-navy-800">Products</div>
             <div className="space-y-2 text-sm">
               {productGroups.slice(0, 6).map((g) => (
-                <Link key={g.slug} href="/products" className="block text-gray-600 transition-colors hover:text-primary-700">
+                <Link key={g.slug} href="/products" className="block text-slate-800 transition-colors hover:text-navy-800">
                   {g.name}
                 </Link>
               ))}
-              <Link href="/products" className="mt-2 block font-semibold text-primary-700 hover:text-primary-800">
+              <Link href="/products" className="mt-2 block font-semibold text-navy-800 hover:text-navy-900">
                 Browse all →
               </Link>
             </div>
           </div>
 
           <div className="lg:col-span-2">
-            <div className="mb-4 text-xs font-black uppercase tracking-widest text-primary-700">Company</div>
+            <div className="mb-4 text-xs font-black uppercase tracking-widest text-navy-800">Company</div>
             <div className="space-y-2 text-sm">
               {[
                 { href: "/about", label: "About Us" },
@@ -76,7 +76,7 @@ export function SiteFooter() {
                 { href: "/resources", label: "Technical resources" },
                 { href: "/callback", label: "Request callback" }
               ].map((l) => (
-                <Link key={l.href} href={l.href} className="block text-gray-600 transition-colors hover:text-primary-700">
+                <Link key={l.href} href={l.href} className="block text-slate-800 transition-colors hover:text-navy-800">
                   {l.label}
                 </Link>
               ))}
@@ -84,10 +84,10 @@ export function SiteFooter() {
           </div>
 
           <div className="lg:col-span-3">
-            <div className="mb-4 text-xs font-black uppercase tracking-widest text-primary-700">Export markets</div>
+            <div className="mb-4 text-xs font-black uppercase tracking-widest text-navy-800">Export markets</div>
             <div className="mb-5 grid grid-cols-2 gap-2 text-sm">
               {siteConfig.markets.map((m) => (
-                <Link key={m} href="/locations" className="text-gray-600 transition-colors hover:text-primary-700">
+                <Link key={m} href="/locations" className="text-slate-800 transition-colors hover:text-navy-800">
                   {m}
                 </Link>
               ))}
@@ -103,18 +103,18 @@ export function SiteFooter() {
       </div>
 
       <div className="border-t border-gray-200 bg-primary-50/50">
-        <div className="container flex flex-col items-center justify-between gap-3 py-4 text-xs text-gray-500 sm:flex-row">
+        <div className="container flex flex-col items-center justify-between gap-3 py-4 text-xs text-slate-800 sm:flex-row">
           <div>
             © {new Date().getFullYear()} {siteConfig.legalName}. All rights reserved.
           </div>
           <div className="flex items-center gap-4">
-            <Link href="/privacy" className="transition-colors hover:text-primary-700">
+            <Link href="/privacy" className="transition-colors hover:text-navy-800">
               Privacy
             </Link>
-            <Link href="/terms" className="transition-colors hover:text-primary-700">
+            <Link href="/terms" className="transition-colors hover:text-navy-800">
               Terms
             </Link>
-            <Link href="/sitemap.xml" className="transition-colors hover:text-primary-700">
+            <Link href="/sitemap.xml" className="transition-colors hover:text-navy-800">
               Sitemap
             </Link>
           </div>

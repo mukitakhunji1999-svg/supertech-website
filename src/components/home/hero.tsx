@@ -48,7 +48,7 @@ export function HomeHero() {
               exit={{ opacity: 0, y: -6 }}
               transition={{ duration: 0.4, ease: slideEase }}
             >
-              <span className="inline-flex items-center gap-2 text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-primary-700">
+              <span className="inline-flex items-center gap-2 text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-navy-800">
                 <span className="h-px w-6 bg-primary-700" aria-hidden />
                 {slide.tag}
               </span>
@@ -57,7 +57,7 @@ export function HomeHero() {
                 {slide.title}
               </h1>
 
-              <p className="mt-5 max-w-md text-[1rem] leading-[1.65] text-slate-600">
+              <p className="mt-5 max-w-md text-[1rem] leading-[1.65] text-slate-800">
                 {slide.sub}
               </p>
 
@@ -71,7 +71,7 @@ export function HomeHero() {
                 </Link>
                 <Link
                   href={slide.secondary.href}
-                  className="inline-flex items-center gap-1.5 rounded-lg px-3 py-2.5 font-display text-sm font-semibold text-navy-700 transition-colors hover:text-primary-700"
+                  className="inline-flex items-center gap-1.5 rounded-lg px-3 py-2.5 font-display text-sm font-semibold text-navy-700 transition-colors hover:text-navy-800"
                 >
                   {slide.secondary.label}
                 </Link>
@@ -83,7 +83,7 @@ export function HomeHero() {
           <ul className="mt-7 flex flex-wrap items-center gap-x-4 gap-y-2 text-[13px] font-medium text-navy-700">
             {trustHighlights.map((t) => (
               <li key={t} className="inline-flex items-center gap-1.5">
-                <span className="flex h-4 w-4 items-center justify-center rounded-full bg-primary-50 text-primary-700">
+                <span className="flex h-4 w-4 items-center justify-center rounded-full bg-primary-50 text-navy-800">
                   <Check className="h-3 w-3" strokeWidth={3} />
                 </span>
                 {t}
@@ -152,7 +152,7 @@ export function HomeHero() {
               <button
                 type="button"
                 onClick={prev}
-                className="flex h-9 w-9 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-600 transition-colors hover:border-slate-300 hover:text-navy-700"
+                className="flex h-9 w-9 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-800 transition-colors hover:border-slate-300 hover:text-navy-700"
                 aria-label="Previous slide"
               >
                 <ChevronLeft className="h-4 w-4" />
@@ -160,7 +160,7 @@ export function HomeHero() {
               <button
                 type="button"
                 onClick={next}
-                className="flex h-9 w-9 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-600 transition-colors hover:border-slate-300 hover:text-navy-700"
+                className="flex h-9 w-9 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-800 transition-colors hover:border-slate-300 hover:text-navy-700"
                 aria-label="Next slide"
               >
                 <ChevronRight className="h-4 w-4" />

@@ -47,11 +47,11 @@ export default function AboutPage() {
         <div className="container py-14 md:py-20">
           <div className="grid gap-12 lg:grid-cols-2 items-start">
             <div>
-              <div className="text-xs font-black tracking-widest text-primary-700 uppercase mb-2">Vision & Mission</div>
+              <div className="text-xs font-black tracking-widest text-navy-800 uppercase mb-2">Vision & Mission</div>
               <h2 className="text-2xl font-black text-navy-700 md:text-3xl mb-4">
                 Engineering Trust Through Performance, Documentation & Export-Grade Execution
               </h2>
-              <div className="space-y-4 text-gray-600 text-sm leading-relaxed">
+              <div className="space-y-4 text-slate-800 text-sm leading-relaxed">
                 <p>
                   <span className="font-bold text-navy-700">Vision:</span> To become a global benchmark in water pumping
                   and industrial flow solutions across India, Middle East, and Africa.
@@ -73,7 +73,7 @@ export default function AboutPage() {
             </div>
             <div>
               <Card className="p-6">
-                <div className="text-xs font-black tracking-widest text-primary-700 uppercase mb-3">Export Markets</div>
+                <div className="text-xs font-black tracking-widest text-navy-800 uppercase mb-3">Export Markets</div>
                 <div className="grid grid-cols-2 gap-2">
                   {siteConfig.markets.map((m) => (
                     <div key={m} className="flex items-center gap-2 rounded-lg border border-gray-100 bg-gray-50 px-3 py-2.5 text-sm font-semibold text-navy-700">
@@ -81,7 +81,7 @@ export default function AboutPage() {
                     </div>
                   ))}
                 </div>
-                <div className="mt-5 text-sm text-gray-500">
+                <div className="mt-5 text-sm text-slate-800">
                   Share your project duty point, voltage, and installation constraints for optimised product selection.
                 </div>
                 <Button asChild className="mt-5 w-full"><Link href="/rfq">Start an Export Inquiry</Link></Button>
@@ -95,7 +95,7 @@ export default function AboutPage() {
       <section className="section-gray">
         <div className="container py-14 md:py-16">
           <div className="text-center mb-10">
-            <div className="text-xs font-black tracking-widest text-primary-700 uppercase mb-2">Infrastructure</div>
+            <div className="text-xs font-black tracking-widest text-navy-800 uppercase mb-2">Infrastructure</div>
             <h2 className="text-2xl font-black text-navy-700 md:text-3xl">Factory Setup & Capability</h2>
           </div>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">

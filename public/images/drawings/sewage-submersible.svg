@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 720" role="img" aria-label="Sewage submersible pump">
+  <defs>
+    <linearGradient id="g1" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#f8fafc"/><stop offset="100%" stop-color="#e2e8f0"/></linearGradient>
+    <linearGradient id="gMotor" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#0f6cbd"/><stop offset="100%" stop-color="#062a4d"/></linearGradient>
+    <linearGradient id="gPump" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#1bb6e6"/><stop offset="100%" stop-color="#0f6cbd"/></linearGradient>
+  </defs>
+  <rect width="360" height="720" fill="url(#g1)"/>
+
+  <g fill="none" stroke="#0a4277" stroke-width="2.5">
+    <!-- Lifting handle on top -->
+    <path d="M150 30 Q180 5 210 30"/>
+    <line x1="150" y1="30" x2="150" y2="50"/>
+    <line x1="210" y1="30" x2="210" y2="50"/>
+
+    <!-- Motor housing (top, cylindrical) -->
+    <rect x="90" y="50" width="180" height="220" rx="20"/>
+    <line x1="90" y1="80" x2="270" y2="80"/>
+    <line x1="90" y1="240" x2="270" y2="240"/>
+
+    <!-- Cooling jacket fins (vertical) -->
+    <line x1="105" y1="80" x2="105" y2="240"/>
+    <line x1="125" y1="80" x2="125" y2="240"/>
+    <line x1="145" y1="80" x2="145" y2="240"/>
+    <line x1="165" y1="80" x2="165" y2="240"/>
+    <line x1="185" y1="80" x2="185" y2="240"/>
+    <line x1="205" y1="80" x2="205" y2="240"/>
+    <line x1="225" y1="80" x2="225" y2="240"/>
+    <line x1="245" y1="80" x2="245" y2="240"/>
+    <line x1="255" y1="80" x2="255" y2="240"/>
+
+    <!-- Side delivery outlet -->
+    <rect x="265" y="300" width="60" height="40" rx="3"/>
+    <line x1="270" y1="310" x2="320" y2="310" stroke-width="1.5"/>
+    <line x1="270" y1="320" x2="320" y2="320" stroke-width="1.5"/>
+    <line x1="270" y1="330" x2="320" y2="330" stroke-width="1.5"/>
+
+    <!-- Pump volute housing -->
+    <rect x="80" y="270" width="200" height="180" rx="15"/>
+    <!-- Volute shape inside -->
+    <circle cx="180" cy="360" r="65"/>
+
+    <!-- Suction (bottom, with strainer) -->
+    <path d="M100 450 L80 510 L280 510 L260 450 Z"/>
+    <g stroke="#0a4277" stroke-width="1.5">
+      <line x1="115" y1="460" x2="118" y2="500"/>
+      <line x1="140" y1="460" x2="143" y2="500"/>
+      <line x1="165" y1="460" x2="168" y2="500"/>
+      <line x1="195" y1="460" x2="198" y2="500"/>
+      <line x1="220" y1="460" x2="223" y2="500"/>
+      <line x1="245" y1="460" x2="248" y2="500"/>
+    </g>
+    <line x1="80" y1="490" x2="280" y2="490"/>
+    <line x1="80" y1="500" x2="280" y2="500"/>
+
+    <!-- Stand legs -->
+    <rect x="100" y="510" width="20" height="30" rx="2"/>
+    <rect x="240" y="510" width="20" height="30" rx="2"/>
+  </g>
+
+  <rect x="92" y="52" width="176" height="216" rx="18" fill="url(#gMotor)" opacity="0.14"/>
+  <rect x="82" y="272" width="196" height="176" rx="13" fill="url(#gPump)" opacity="0.12"/>
+  <circle cx="180" cy="360" r="63" fill="url(#gPump)" opacity="0.28"/>
+
+  <!-- Vortex impeller representation -->
+  <g stroke="#0a4277" stroke-width="1.5" fill="none">
+    <path d="M180 305 Q200 330 215 360 Q200 390 180 415"/>
+    <path d="M180 305 Q160 330 145 360 Q160 390 180 415"/>
+  </g>
+
+  <!-- Cable -->
+  <path d="M60 100 Q40 200 60 400 Q40 550 60 690" stroke="#0a4277" stroke-width="2" fill="none"/>
+  <rect x="55" y="60" width="10" height="50" rx="2" fill="#0a0a0a" stroke="#0a4277" stroke-width="1"/>
+
+  <g font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" fill="#0a4277">
+    <text x="180" y="20" text-anchor="middle" font-weight="700">Lifting handle</text>
+    <text x="290" y="160" >Motor</text>
+    <text x="290" y="175" font-size="10" fill="#475569">(IP68, F class)</text>
+    <text x="290" y="290" font-weight="700">Delivery ’</text>
+    <text x="290" y="360">Volute</text>
+    <text x="290" y="375" font-size="10" fill="#475569">+ vortex impeller</text>
+    <text x="290" y="480">Strainer</text>
+    <text x="290" y="495" font-size="10" fill="#475569">(suction port)</text>
+    <text x="22" y="100">Cable</text>
+    <text x="180" y="690" text-anchor="middle" font-weight="700" font-size="12">SUPERTECH Sewage Submersible Pump</text>
+  </g>
+</svg>

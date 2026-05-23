@@ -13,7 +13,7 @@ export function HomeQuoteSection() {
           <p className="section-lede mx-auto">
             Share duty point, voltage, installation context, and destination. Our team responds with selection notes
             and export-ready pricing. For a guided layout, open the{" "}
-            <Link href="/rfq" className="font-semibold text-primary-700 underline-offset-2 hover:underline">
+            <Link href="/rfq" className="font-semibold text-navy-800 underline-offset-2 hover:underline">
               full RFQ page
             </Link>
             .

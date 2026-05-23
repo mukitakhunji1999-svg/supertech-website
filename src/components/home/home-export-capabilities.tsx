@@ -39,7 +39,7 @@ export function HomeExportCapabilities() {
               className="flex gap-4 rounded-xl border border-slate-200 bg-white px-5 py-4 transition-colors hover:border-slate-300"
             >
               <span
-                className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-primary-50 text-primary-700"
+                className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-md bg-primary-50 text-navy-800"
                 aria-hidden
               >
                 <Check className="h-3.5 w-3.5" />
@@ -48,7 +48,7 @@ export function HomeExportCapabilities() {
                 <strong className="font-display block text-[0.95rem] font-semibold tracking-tight text-navy-700">
                   {item.title}
                 </strong>
-                <p className="mt-1 text-[13px] leading-relaxed text-slate-600">{item.body}</p>
+                <p className="mt-1 text-[13px] leading-relaxed text-slate-800">{item.body}</p>
               </div>
             </div>
           ))}

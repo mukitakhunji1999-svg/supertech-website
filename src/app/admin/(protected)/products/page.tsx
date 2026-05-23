@@ -12,11 +12,11 @@ export default async function AdminProductsPage() {
     <div className="space-y-8">
       <header className="flex flex-wrap items-end justify-between gap-3">
         <div>
-          <p className="font-display text-xs font-bold uppercase tracking-[0.18em] text-blue-700">Products</p>
+          <p className="font-display text-xs font-bold uppercase tracking-[0.18em] text-navy-800">Products</p>
           <h1 className="mt-1 font-display text-3xl font-extrabold tracking-tight text-slate-900">
             {total} product{total === 1 ? "" : "s"}
           </h1>
-          <p className="mt-1.5 text-sm text-slate-600">
+          <p className="mt-1.5 text-sm text-slate-800">
             Add, edit and remove products. Changes appear instantly on the homepage.
           </p>
         </div>
@@ -33,14 +33,14 @@ export default async function AdminProductsPage() {
           <section key={tab.id}>
             <div className="mb-3 flex items-baseline justify-between">
               <h2 className="font-display text-lg font-extrabold text-slate-900">{tab.label}</h2>
-              <span className="text-sm text-slate-500">
+              <span className="text-sm text-slate-800">
                 {tab.items.length} item{tab.items.length === 1 ? "" : "s"}
               </span>
             </div>
             {tab.items.length === 0 ? (
-              <div className="rounded-xl border border-dashed border-slate-300 bg-white px-4 py-8 text-center text-sm text-slate-500">
+              <div className="rounded-xl border border-dashed border-slate-300 bg-white px-4 py-8 text-center text-sm text-slate-800">
                 No products in this category yet.{" "}
-                <Link href={`/admin/products/new?tab=${tab.id}`} className="font-semibold text-blue-700 hover:underline">
+                <Link href={`/admin/products/new?tab=${tab.id}`} className="font-semibold text-navy-800 hover:underline">
                   Add the first one →
                 </Link>
               </div>
@@ -67,12 +67,12 @@ export default async function AdminProductsPage() {
                     </div>
                     <div className="flex flex-1 flex-col p-4">
                       <h3 className="font-display text-base font-bold text-slate-900">{p.title}</h3>
-                      <p className="mt-1 line-clamp-2 text-xs text-slate-600">{p.description}</p>
-                      <p className="mt-1.5 truncate text-[11px] font-mono text-slate-500">{p.id}</p>
+                      <p className="mt-1 line-clamp-2 text-xs text-slate-800">{p.description}</p>
+                      <p className="mt-1.5 truncate text-[11px] font-mono text-slate-800">{p.id}</p>
                       <div className="mt-3 flex items-center gap-2 border-t border-slate-100 pt-3">
                         <Link
                           href={`/admin/products/${p.id}/edit`}
-                          className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-md border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-700 transition hover:border-blue-300 hover:bg-blue-50 hover:text-blue-700"
+                          className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-md border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-700 transition hover:border-blue-300 hover:bg-blue-50 hover:text-navy-800"
                         >
                           <Edit className="h-3.5 w-3.5" /> Edit
                         </Link>

@@ -3,15 +3,16 @@
 :root {
   --header-stack: 7rem;
 
-  /* Refined surface palette — neutral first, blue used as accent */
+  /* Refined surface palette — neutral first, dark ink for all text */
   --bg: #ffffff;
   --bg-muted: #f8fafc;
   --bg-tint: #f5f9fd;
   --border: #e5e9f0;
   --border-strong: #d6dce6;
-  --ink: #0f2744;
-  --ink-muted: #475569;
-  --ink-soft: #64748b;
+  /* Ink scale is now uniformly dark across the site (only firm name uses gradient color) */
+  --ink: #0c1f36;        /* deepest body text */
+  --ink-muted: #1e293b;  /* secondary text, was #475569 */
+  --ink-soft: #334155;   /* tertiary text / borders, was #64748b */
   --brand: #0f6cbd;
   --brand-strong: #0a4277;
 }
@@ -143,10 +144,10 @@ body {
   align-items: center;
   font-family: var(--font-poppins), system-ui, sans-serif;
   font-size: 0.7rem;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.16em;
-  color: var(--brand);
+  color: var(--ink);
 }
 
 .section-title {
@@ -172,12 +173,12 @@ body {
   gap: 6px;
   font-size: 0.875rem;
   font-weight: 600;
-  color: var(--brand);
+  color: var(--ink);
   transition: gap 0.2s ease, color 0.2s ease;
 }
 .explore-link:hover {
   gap: 10px;
-  color: var(--brand-strong);
+  color: var(--ink);
 }
 
 .card-img-wrap {

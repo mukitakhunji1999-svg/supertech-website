@@ -38,7 +38,7 @@ export function SiteHeader() {
         {/* ─── Slim utility strip (hidden when scrolled) ───────────────── */}
         <div
           className={cn(
-            "hidden border-b border-slate-200 bg-white text-xs text-slate-500 transition-[max-height,opacity] duration-300 sm:block",
+            "hidden border-b border-slate-200 bg-white text-xs text-slate-800 transition-[max-height,opacity] duration-300 sm:block",
             scrolled ? "max-h-0 overflow-hidden opacity-0" : "max-h-10 opacity-100"
           )}
         >
@@ -65,7 +65,7 @@ export function SiteHeader() {
               <span className="font-medium text-emerald-700">Government supplier</span>
               <Link
                 href="/#contact"
-                className="font-semibold text-primary-700 transition-colors hover:text-primary-800"
+                className="font-semibold text-navy-800 transition-colors hover:text-navy-900"
               >
                 Export inquiry →
               </Link>
@@ -147,7 +147,7 @@ export function SiteHeader() {
                   <div key={item.href} className="group relative">
                     <button
                       type="button"
-                      className="inline-flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-slate-50 hover:text-navy-700"
+                      className="inline-flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-slate-800 transition-colors hover:bg-slate-50 hover:text-navy-700"
                     >
                       {item.label}
                       <ChevronDown className="h-3.5 w-3.5 opacity-60 transition-transform group-hover:rotate-180" />
@@ -157,7 +157,7 @@ export function SiteHeader() {
                         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
                           {productGroups.map((g) => (
                             <div key={g.slug}>
-                              <p className="mb-2 px-2 text-[10px] font-semibold uppercase tracking-widest text-slate-500">
+                              <p className="mb-2 px-2 text-[10px] font-semibold uppercase tracking-widest text-slate-800">
                                 {g.name}
                               </p>
                               <ul className="space-y-0.5">
@@ -165,7 +165,7 @@ export function SiteHeader() {
                                   <li key={cat.slug}>
                                     <Link
                                       href={`/products/${cat.slug}`}
-                                      className="block rounded-md px-2 py-1.5 text-[13px] text-slate-600 transition-colors hover:bg-slate-50 hover:text-navy-700"
+                                      className="block rounded-md px-2 py-1.5 text-[13px] text-slate-800 transition-colors hover:bg-slate-50 hover:text-navy-700"
                                     >
                                       {cat.name}
                                     </Link>
@@ -175,10 +175,10 @@ export function SiteHeader() {
                             </div>
                           ))}
                         </div>
-                        <div className="mt-4 flex flex-wrap items-center justify-between gap-3 border-t border-slate-200 pt-3 text-xs text-slate-500">
+                        <div className="mt-4 flex flex-wrap items-center justify-between gap-3 border-t border-slate-200 pt-3 text-xs text-slate-800">
                           <Link
                             href="/products"
-                            className="font-semibold text-primary-700 transition-colors hover:text-primary-800"
+                            className="font-semibold text-navy-800 transition-colors hover:text-navy-900"
                           >
                             View full catalogue →
                           </Link>
@@ -191,7 +191,7 @@ export function SiteHeader() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="rounded-md px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-slate-50 hover:text-navy-700"
+                    className="rounded-md px-3 py-2 text-sm font-medium text-slate-800 transition-colors hover:bg-slate-50 hover:text-navy-700"
                   >
                     {item.label}
                   </Link>
@@ -203,7 +203,7 @@ export function SiteHeader() {
             <div className="flex shrink-0 items-center gap-2">
               <Link
                 href="/search"
-                className="hidden h-9 w-9 items-center justify-center rounded-md text-slate-500 transition-colors hover:bg-slate-50 hover:text-navy-700 md:flex"
+                className="hidden h-9 w-9 items-center justify-center rounded-md text-slate-800 transition-colors hover:bg-slate-50 hover:text-navy-700 md:flex"
                 aria-label="Search"
               >
                 <Search className="h-4 w-4" />

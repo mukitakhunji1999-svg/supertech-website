@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 720" role="img" aria-label="Dewatering submersible pump">
+  <defs>
+    <linearGradient id="g1" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#f8fafc"/><stop offset="100%" stop-color="#e2e8f0"/></linearGradient>
+    <linearGradient id="gMotor" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#0f6cbd"/><stop offset="100%" stop-color="#062a4d"/></linearGradient>
+    <linearGradient id="gPump" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#1bb6e6"/><stop offset="100%" stop-color="#0f6cbd"/></linearGradient>
+  </defs>
+  <rect width="360" height="720" fill="url(#g1)"/>
+
+  <g fill="none" stroke="#0a4277" stroke-width="2.5">
+    <!-- Top discharge outlet (vertical pipe with camlock connector) -->
+    <rect x="140" y="10" width="80" height="40" rx="3"/>
+    <line x1="155" y1="10" x2="155" y2="50"/>
+    <line x1="205" y1="10" x2="205" y2="50"/>
+    <line x1="180" y1="0" x2="180" y2="50" stroke-width="5"/>
+
+    <!-- Lifting handle -->
+    <path d="M120 50 Q90 30 80 50 L80 130"/>
+    <path d="M240 50 Q270 30 280 50 L280 130"/>
+
+    <!-- Motor (with cooling jacket) -->
+    <rect x="80" y="50" width="200" height="240" rx="14"/>
+    <line x1="80" y1="90" x2="280" y2="90"/>
+    <line x1="80" y1="270" x2="280" y2="270"/>
+    <g stroke="#0a4277" stroke-width="1.5">
+      <line x1="100" y1="90" x2="100" y2="270"/>
+      <line x1="120" y1="90" x2="120" y2="270"/>
+      <line x1="140" y1="90" x2="140" y2="270"/>
+      <line x1="160" y1="90" x2="160" y2="270"/>
+      <line x1="180" y1="90" x2="180" y2="270"/>
+      <line x1="200" y1="90" x2="200" y2="270"/>
+      <line x1="220" y1="90" x2="220" y2="270"/>
+      <line x1="240" y1="90" x2="240" y2="270"/>
+      <line x1="260" y1="90" x2="260" y2="270"/>
+    </g>
+
+    <!-- Pump body -->
+    <rect x="100" y="290" width="160" height="270" rx="14"/>
+    <line x1="100" y1="350" x2="260" y2="350"/>
+    <line x1="100" y1="410" x2="260" y2="410"/>
+
+    <!-- Bottom strainer (suction) -->
+    <path d="M120 560 L100 620 L260 620 L240 560 Z"/>
+    <g stroke="#0a4277" stroke-width="1.5">
+      <line x1="125" y1="568" x2="128" y2="610"/>
+      <line x1="145" y1="568" x2="148" y2="610"/>
+      <line x1="165" y1="568" x2="168" y2="610"/>
+      <line x1="195" y1="568" x2="198" y2="610"/>
+      <line x1="215" y1="568" x2="218" y2="610"/>
+      <line x1="235" y1="568" x2="238" y2="610"/>
+    </g>
+
+    <!-- Stand legs (small) -->
+    <rect x="105" y="620" width="20" height="20" rx="2"/>
+    <rect x="235" y="620" width="20" height="20" rx="2"/>
+  </g>
+
+  <rect x="82" y="52" width="196" height="236" rx="12" fill="url(#gMotor)" opacity="0.15"/>
+  <rect x="102" y="292" width="156" height="266" rx="12" fill="url(#gPump)" opacity="0.15"/>
+
+  <!-- Cable from top -->
+  <rect x="30" y="55" width="35" height="20" rx="3" fill="#0a0a0a" stroke="#0a4277" stroke-width="1.5"/>
+  <path d="M40 75 Q20 200 40 400 Q20 550 40 690" stroke="#0a4277" stroke-width="2" fill="none"/>
+
+  <g font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" fill="#0a4277">
+    <text x="180" y="40" text-anchor="middle" font-weight="600">Camlock discharge</text>
+    <text x="160" y="170">Motor</text>
+    <text x="160" y="185" font-size="10" fill="#475569">(F class, IP68)</text>
+    <text x="180" y="430" text-anchor="middle" font-weight="600">Pump body</text>
+    <text x="290" y="430" font-size="10" fill="#475569">(high-chrome)</text>
+    <text x="290" y="600">Strainer</text>
+    <text x="290" y="615" font-size="10" fill="#475569">(suction)</text>
+    <text x="80" y="50" font-size="9">Cable</text>
+    <text x="80" y="40" font-size="9">gland</text>
+    <text x="180" y="700" text-anchor="middle" font-weight="700" font-size="12">SUPERTECH Dewatering Submersible Pump</text>
+  </g>
+</svg>

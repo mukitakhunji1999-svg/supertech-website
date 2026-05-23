@@ -86,14 +86,14 @@ export function StickyFilterBar({ groups }: Props) {
           <div className="flex items-center gap-2 lg:ml-auto">
             {/* Search */}
             <form onSubmit={onSubmitSearch} className="relative flex-1 lg:w-64 lg:flex-initial">
-              <Search className="pointer-events-none absolute left-2.5 top-1/2 h-3.5 w-3.5 -translate-y-1/2 text-slate-400" />
+              <Search className="pointer-events-none absolute left-2.5 top-1/2 h-3.5 w-3.5 -translate-y-1/2 text-slate-800" />
               <input
                 type="search"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Search products"
                 aria-label="Search products"
-                className="h-9 w-full rounded-md border border-slate-200 bg-white pl-8 pr-3 text-sm text-navy-700 outline-none placeholder:text-slate-400 focus:border-primary-400 focus:ring-2 focus:ring-primary-100"
+                className="h-9 w-full rounded-md border border-slate-200 bg-white pl-8 pr-3 text-sm text-navy-700 outline-none placeholder:text-slate-800 focus:border-primary-400 focus:ring-2 focus:ring-primary-100"
               />
             </form>
 

@@ -36,37 +36,37 @@ export function HomeContactTeaser() {
               <h3 className="font-display text-lg font-semibold tracking-tight text-navy-700">
                 {siteConfig.name}
               </h3>
-              <p className="mt-2 text-[13px] leading-relaxed text-slate-600">
+              <p className="mt-2 text-[13px] leading-relaxed text-slate-800">
                 Manufacturer · Industrial pump supplier · Exporter · Government supplier
               </p>
 
               <ul className="mt-5 space-y-3 text-sm">
                 {siteConfig.contact.phones.map((p) => (
                   <li key={p} className="flex items-center gap-3">
-                    <span className="flex h-8 w-8 items-center justify-center rounded-md bg-slate-100 text-slate-500">
+                    <span className="flex h-8 w-8 items-center justify-center rounded-md bg-slate-100 text-slate-800">
                       <Phone className="h-3.5 w-3.5" />
                     </span>
                     <Link
                       href={`tel:${p.replace(/\D/g, "")}`}
-                      className="font-medium text-navy-700 transition-colors hover:text-primary-700"
+                      className="font-medium text-navy-700 transition-colors hover:text-navy-800"
                     >
                       {p}
                     </Link>
                   </li>
                 ))}
                 <li className="flex items-center gap-3">
-                  <span className="flex h-8 w-8 items-center justify-center rounded-md bg-slate-100 text-slate-500">
+                  <span className="flex h-8 w-8 items-center justify-center rounded-md bg-slate-100 text-slate-800">
                     <Mail className="h-3.5 w-3.5" />
                   </span>
                   <Link
                     href={`mailto:${siteConfig.contact.email}`}
-                    className="font-medium text-navy-700 transition-colors hover:text-primary-700"
+                    className="font-medium text-navy-700 transition-colors hover:text-navy-800"
                   >
                     {siteConfig.contact.email}
                   </Link>
                 </li>
                 <li className="flex items-center gap-3">
-                  <span className="flex h-8 w-8 items-center justify-center rounded-md bg-slate-100 text-slate-500">
+                  <span className="flex h-8 w-8 items-center justify-center rounded-md bg-slate-100 text-slate-800">
                     <MapPin className="h-3.5 w-3.5" />
                   </span>
                   <span className="font-medium text-navy-700">{siteConfig.contact.location}</span>

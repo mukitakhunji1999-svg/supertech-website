@@ -27,7 +27,7 @@ export function ProductForm({ mode, tabs, initial, action }: Props) {
         <div>
           <Link
             href="/admin/products"
-            className="inline-flex items-center gap-1 text-sm font-medium text-slate-500 transition hover:gap-1.5 hover:text-slate-800"
+            className="inline-flex items-center gap-1 text-sm font-medium text-slate-800 transition hover:gap-1.5 hover:text-slate-800"
           >
             <ArrowLeft className="h-4 w-4" /> Back to products
           </Link>
@@ -155,7 +155,7 @@ export function ProductForm({ mode, tabs, initial, action }: Props) {
 
         {/* Right: image */}
         <div className="space-y-4 rounded-2xl border border-slate-200 bg-white p-6">
-          <h2 className="font-display text-sm font-bold uppercase tracking-wide text-slate-500">Product image</h2>
+          <h2 className="font-display text-sm font-bold uppercase tracking-wide text-slate-800">Product image</h2>
           <div className="relative aspect-[4/3] overflow-hidden rounded-xl border border-slate-200 bg-slate-50">
             {previewSrc ? (
               <Image
@@ -167,7 +167,7 @@ export function ProductForm({ mode, tabs, initial, action }: Props) {
                 unoptimized={previewSrc.startsWith("data:")}
               />
             ) : (
-              <div className="flex h-full flex-col items-center justify-center gap-2 text-slate-500">
+              <div className="flex h-full flex-col items-center justify-center gap-2 text-slate-800">
                 <ImagePlus className="h-8 w-8" />
                 <span className="text-xs">No image yet</span>
               </div>
@@ -175,7 +175,7 @@ export function ProductForm({ mode, tabs, initial, action }: Props) {
           </div>
           <input type="hidden" name="imageSrc" value={initial?.imageSrc ?? ""} />
           <label className="block">
-            <span className="mb-1.5 block text-xs font-semibold uppercase tracking-wide text-slate-500">
+            <span className="mb-1.5 block text-xs font-semibold uppercase tracking-wide text-slate-800">
               Upload new image
             </span>
             <input
@@ -189,9 +189,9 @@ export function ProductForm({ mode, tabs, initial, action }: Props) {
                 reader.onload = () => setPreviewSrc(String(reader.result));
                 reader.readAsDataURL(file);
               }}
-              className="block w-full cursor-pointer rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm file:mr-3 file:cursor-pointer file:rounded-md file:border-0 file:bg-blue-50 file:px-3 file:py-1.5 file:font-semibold file:text-blue-700 hover:file:bg-blue-100"
+              className="block w-full cursor-pointer rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm file:mr-3 file:cursor-pointer file:rounded-md file:border-0 file:bg-blue-50 file:px-3 file:py-1.5 file:font-semibold file:text-navy-800 hover:file:bg-blue-100"
             />
-            <span className="mt-1.5 block text-xs text-slate-500">JPG / PNG / WEBP / GIF · max 5 MB</span>
+            <span className="mt-1.5 block text-xs text-slate-800">JPG / PNG / WEBP / GIF · max 5 MB</span>
           </label>
           {state.fieldErrors?.imageSrc && (
             <p className="text-sm font-medium text-red-700">{state.fieldErrors.imageSrc}</p>
@@ -217,7 +217,7 @@ function Field({
     <label className="block">
       <span className="mb-1.5 block text-sm font-medium text-slate-700">{label}</span>
       {children}
-      {help && !error && <span className="mt-1 block text-xs text-slate-500">{help}</span>}
+      {help && !error && <span className="mt-1 block text-xs text-slate-800">{help}</span>}
       {error && <span className="mt-1 block text-xs font-medium text-red-700">{error}</span>}
     </label>
   );

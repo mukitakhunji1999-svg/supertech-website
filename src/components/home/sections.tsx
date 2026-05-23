@@ -58,13 +58,13 @@ export function HomeProductCategories() {
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {top.map((c) => (
             <Link key={c.slug} href={`/products/${c.slug}`} className="card-soft group flex flex-col p-5">
-              <div className="mb-3 inline-flex h-9 w-9 items-center justify-center rounded-md bg-primary-50 text-primary-700">
+              <div className="mb-3 inline-flex h-9 w-9 items-center justify-center rounded-md bg-primary-50 text-navy-800">
                 <Factory className="h-4 w-4" />
               </div>
-              <h3 className="font-display text-[0.95rem] font-semibold tracking-tight text-navy-700 transition-colors group-hover:text-primary-700">
+              <h3 className="font-display text-[0.95rem] font-semibold tracking-tight text-navy-700 transition-colors group-hover:text-navy-800">
                 {c.name}
               </h3>
-              <p className="mt-1.5 line-clamp-2 text-[13px] leading-relaxed text-slate-600">{c.intro}</p>
+              <p className="mt-1.5 line-clamp-2 text-[13px] leading-relaxed text-slate-800">{c.intro}</p>
               <span className="explore-link mt-4">
                 Explore <ArrowRight className="h-3.5 w-3.5" />
               </span>
@@ -97,11 +97,11 @@ export function HomeManufacturingExcellence() {
     <section className="section-white">
       <div className="container py-14 md:py-20">
         <div className="max-w-4xl">
-            <div className="text-xs font-black tracking-widest text-primary-700 uppercase mb-2">Manufacturing Excellence</div>
+            <div className="text-xs font-black tracking-widest text-navy-800 uppercase mb-2">Manufacturing Excellence</div>
             <h2 className="text-2xl font-black text-navy-700 md:text-3xl leading-snug">
               Built for Global Duty Cycles, Government Tenders & EPC Execution
             </h2>
-            <p className="mt-4 text-gray-500 leading-relaxed">
+            <p className="mt-4 text-slate-800 leading-relaxed">
               From raw material control to final testing, SUPERTECH WATER SOLUTION follows an export-grade manufacturing
               discipline: consistent processes, traceable documentation, and serviceability — engineered for
               infrastructure, industrial, and government buyers.
@@ -110,11 +110,11 @@ export function HomeManufacturingExcellence() {
               {items.map((i) => (
                 <div key={i.title} className="flex gap-3">
                   <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary-50">
-                    <i.icon className="h-4 w-4 text-primary-700" />
+                    <i.icon className="h-4 w-4 text-navy-800" />
                   </div>
                   <div>
                     <div className="text-sm font-bold text-navy-700">{i.title}</div>
-                    <div className="text-xs text-gray-500 mt-0.5 leading-relaxed">{i.desc}</div>
+                    <div className="text-xs text-slate-800 mt-0.5 leading-relaxed">{i.desc}</div>
                   </div>
                 </div>
               ))}
@@ -166,7 +166,7 @@ export function HomeExportSection() {
             >
               <span className="text-2xl leading-none">{m.flag}</span>
               <div className="mt-1.5 font-display text-sm font-semibold text-navy-700">{m.name}</div>
-              <div className="text-[11px] leading-tight text-slate-600">{m.sub}</div>
+              <div className="text-[11px] leading-tight text-slate-800">{m.sub}</div>
             </Link>
           ))}
         </div>
@@ -202,14 +202,14 @@ export function HomeWhyChooseUs() {
     <section className="section-gray">
       <div className="container py-14 md:py-20">
         <div className="text-center mb-10">
-          <div className="text-xs font-black tracking-widest text-primary-700 uppercase mb-2">Why Choose SUPERTECH</div>
+          <div className="text-xs font-black tracking-widest text-navy-800 uppercase mb-2">Why Choose SUPERTECH</div>
           <h2 className="text-2xl font-black text-navy-700 md:text-3xl">Premium Industrial Engineering. Built for Long Life.</h2>
         </div>
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {items.map((i) => (
             <Card key={i.title} className="text-center p-6">
               <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary-50">
-                <i.icon className="h-6 w-6 text-primary-700" />
+                <i.icon className="h-6 w-6 text-navy-800" />
               </div>
               <CardTitle className="text-center mb-2">{i.title}</CardTitle>
               <CardDescription className="text-center">{i.desc}</CardDescription>
@@ -228,9 +228,9 @@ export function HomePartsShowcase() {
       <div className="container py-14 md:py-20">
         <div className="mb-10 flex items-end justify-between gap-4">
           <div>
-            <div className="text-xs font-black tracking-widest text-primary-700 uppercase mb-2">Spare Parts & Accessories</div>
+            <div className="text-xs font-black tracking-widest text-navy-800 uppercase mb-2">Spare Parts & Accessories</div>
             <h2 className="text-2xl font-black text-navy-700 md:text-3xl">Genuine Spare Parts for Lifecycle Value</h2>
-            <p className="mt-2 text-sm text-gray-500 max-w-2xl">
+            <p className="mt-2 text-sm text-slate-800 max-w-2xl">
               Impellers, diffusers, shafts, bushes, cable joints and accessories — supplied for serviceability, EPC maintenance and export projects.
             </p>
           </div>
@@ -251,7 +251,7 @@ export function HomePartsShowcase() {
                 />
               </div>
               <div className="p-4">
-                <div className="text-[11px] font-black tracking-widest text-primary-700 uppercase mb-1">{img.tag}</div>
+                <div className="text-[11px] font-black tracking-widest text-navy-800 uppercase mb-1">{img.tag}</div>
                 <div className="text-sm font-semibold text-navy-700">{img.alt}</div>
               </div>
             </div>
@@ -273,17 +273,17 @@ export function HomeTestimonials() {
     <section className="section-gray">
       <div className="container py-14 md:py-20">
         <div className="text-center mb-10">
-          <div className="text-xs font-black tracking-widest text-primary-700 uppercase mb-2">Client Testimonials</div>
+          <div className="text-xs font-black tracking-widest text-navy-800 uppercase mb-2">Client Testimonials</div>
           <h2 className="text-2xl font-black text-navy-700 md:text-3xl">Trusted by Projects & Procurement Teams</h2>
         </div>
         <div className="grid gap-5 md:grid-cols-3">
           {items.map((t) => (
             <Card key={t.name} className="p-6">
               <Quote className="h-6 w-6 text-primary-300 mb-3" />
-              <p className="text-sm text-gray-600 leading-relaxed mb-4">{t.text}</p>
+              <p className="text-sm text-slate-800 leading-relaxed mb-4">{t.text}</p>
               <div>
                 <div className="text-sm font-bold text-navy-700">{t.name}</div>
-                <div className="text-xs text-primary-600 font-medium">{t.role}</div>
+                <div className="text-xs text-navy-800 font-medium">{t.role}</div>
               </div>
             </Card>
           ))}
@@ -329,7 +329,7 @@ export function HomeFAQ() {
                 <AccordionTrigger className="font-display text-[0.95rem] font-semibold text-navy-700 hover:no-underline">
                   {f.q}
                 </AccordionTrigger>
-                <AccordionContent className="text-[13.5px] leading-relaxed text-slate-500">
+                <AccordionContent className="text-[13.5px] leading-relaxed text-slate-800">
                   {f.a}
                 </AccordionContent>
               </AccordionItem>
@@ -365,7 +365,7 @@ export function HomeIndustriesStrip() {
             <article key={i.name} className="card-soft p-5">
               <div className="mb-2 text-2xl leading-none">{i.icon}</div>
               <h3 className="font-display text-[0.95rem] font-semibold tracking-tight text-navy-700">{i.name}</h3>
-              <p className="mt-1 text-[13px] leading-relaxed text-slate-600">{i.desc}</p>
+              <p className="mt-1 text-[13px] leading-relaxed text-slate-800">{i.desc}</p>
             </article>
           ))}
         </div>
@@ -406,9 +406,9 @@ export function HomeTrustStrip() {
     <section className="section-white border-y border-primary-700/10">
       <div className="container py-14 md:py-16">
         <div className="mb-10 text-center">
-          <div className="mb-2 text-xs font-black uppercase tracking-widest text-primary-700">Trust & capability</div>
+          <div className="mb-2 text-xs font-black uppercase tracking-widest text-navy-800">Trust & capability</div>
           <h2 className="text-2xl font-black text-navy-700 md:text-3xl">Built for industrial procurement, not retail impulse buys</h2>
-          <p className="mx-auto mt-3 max-w-2xl text-sm text-gray-600">
+          <p className="mx-auto mt-3 max-w-2xl text-sm text-slate-800">
             SUPERTECH WATER SOLUTION focuses on B2B reliability: documentation, export readiness, and engineering-led selection for pumps, motors, solar systems, valves, panels, pipes, and cables.
           </p>
         </div>

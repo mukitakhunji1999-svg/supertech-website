@@ -73,7 +73,7 @@ export default async function LocationLandingPage({ params }: LocationParams) {
 
       <section className="section-white">
         <div className="container py-12 md:py-16">
-          <div className="text-xs font-black tracking-widest text-primary-700 uppercase mb-2">Products Available</div>
+          <div className="text-xs font-black tracking-widest text-navy-800 uppercase mb-2">Products Available</div>
           <h2 className="text-2xl font-black text-navy-700 md:text-3xl mb-7">
             Complete Industrial Product Range for {l.name}
           </h2>
@@ -95,11 +95,11 @@ export default async function LocationLandingPage({ params }: LocationParams) {
       <section className="section-gray">
         <div className="container py-12 md:py-16">
           <div className="rounded-xl border border-primary-100 bg-primary-50 p-8">
-            <div className="text-xs font-black tracking-widest text-primary-700 uppercase mb-2">Export Documentation</div>
+            <div className="text-xs font-black tracking-widest text-navy-800 uppercase mb-2">Export Documentation</div>
             <h2 className="text-xl font-black text-navy-700 md:text-2xl mb-3">
               Serving {l.name} Procurement Teams with Export-Ready Quotations
             </h2>
-            <p className="text-sm text-gray-600 max-w-3xl leading-relaxed mb-6">
+            <p className="text-sm text-slate-800 max-w-3xl leading-relaxed mb-6">
               {l.heroLine} Our team provides export-ready quotations, technical schedules, and duty-point-specific
               product selection for procurement teams in {l.name}. Contact us for EPC, government tender, and export
               project supply.

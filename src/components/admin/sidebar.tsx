@@ -19,7 +19,7 @@ export function AdminSidebar() {
       <div className="flex items-center gap-2.5 border-b border-slate-200 px-5 py-4">
         <Image src="/logo.png" alt="SUPERTECH" width={36} height={36} className="h-9 w-9 object-contain" />
         <div className="flex flex-col leading-tight">
-          <span className="font-display text-[11px] font-bold uppercase tracking-[0.15em] text-slate-500">Admin</span>
+          <span className="font-display text-[11px] font-bold uppercase tracking-[0.15em] text-slate-800">Admin</span>
           <span className="font-display text-sm font-extrabold text-slate-900">SUPERTECH</span>
         </div>
       </div>
@@ -34,8 +34,8 @@ export function AdminSidebar() {
               className={cn(
                 "flex items-center gap-2.5 rounded-lg px-3 py-2 text-sm font-medium transition",
                 active
-                  ? "bg-blue-50 text-blue-700"
-                  : "text-slate-600 hover:bg-slate-50 hover:text-slate-900"
+                  ? "bg-blue-50 text-navy-800"
+                  : "text-slate-800 hover:bg-slate-50 hover:text-slate-900"
               )}
             >
               <Icon className="h-4 w-4 shrink-0" />
@@ -49,14 +49,14 @@ export function AdminSidebar() {
           href="/"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2.5 rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition hover:bg-slate-50 hover:text-slate-900"
+          className="flex items-center gap-2.5 rounded-lg px-3 py-2 text-sm font-medium text-slate-800 transition hover:bg-slate-50 hover:text-slate-900"
         >
           <ExternalLink className="h-4 w-4" /> View website
         </Link>
         <form action="/admin/logout" method="post">
           <button
             type="submit"
-            className="flex w-full cursor-pointer items-center gap-2.5 rounded-lg px-3 py-2 text-left text-sm font-medium text-slate-600 transition hover:bg-red-50 hover:text-red-700"
+            className="flex w-full cursor-pointer items-center gap-2.5 rounded-lg px-3 py-2 text-left text-sm font-medium text-slate-800 transition hover:bg-red-50 hover:text-red-700"
           >
             <LogOut className="h-4 w-4" /> Sign out
           </button>

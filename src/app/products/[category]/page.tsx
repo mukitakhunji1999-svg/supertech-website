@@ -5,8 +5,10 @@ import { PageHero } from "@/components/site/page-hero";
 import { Button } from "@/components/ui/button";
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { CategoryFilters } from "@/components/products/category-filters";
+import { TechnicalSpecsView } from "@/components/products/technical-specs-view";
 import { allCategories } from "@/lib/products/product-groups";
 import { getProductsByCategory } from "@/lib/products/catalog";
+import { getTechnicalSpec } from "@/lib/products/technical-specs";
 import { siteConfig } from "@/lib/site-config";
 
 type CategoryParams = { params: Promise<{ category: string }> };
@@ -31,6 +33,10 @@ export default async function ProductCategoryPage({ params }: CategoryParams) {
   if (!cat) return notFound();
   const items = getProductsByCategory(cat.slug);
 
+  // Surface the flagship technical spec for this category (if any product has one).
+  const flagship = items.find((p) => p.technicalSpecKey);
+  const flagshipSpec = flagship?.technicalSpecKey ? getTechnicalSpec(flagship.technicalSpecKey) : undefined;
+
   return (
     <>
       <PageHero
@@ -44,8 +50,22 @@ export default async function ProductCategoryPage({ params }: CategoryParams) {
         ]}
       />
 
+      {/* Flagship product technical data — shown immediately so "View more" reveals real specs */}
+      {flagshipSpec && <TechnicalSpecsView spec={flagshipSpec} />}
+
       <section className="section-gray">
         <div className="container py-14 md:py-20">
+          <div className="mb-6">
+            <h2 className="font-display text-xl font-bold tracking-tight text-navy-700 md:text-2xl">
+              {flagshipSpec ? "All configurations & variants" : `Browse ${cat.name}`}
+            </h2>
+            <p className="mt-1 text-sm text-slate-800">
+              {flagshipSpec
+                ? "Compare specific models and variants in this category, or request a custom configuration via RFQ."
+                : "Explore the catalogue in this family, or request RFQ support for a specific duty point."}
+            </p>
+          </div>
+
           <div className="mb-8 flex flex-col gap-3 sm:flex-row">
             <Button asChild>
               <Link href="/rfq">Request Quotation</Link>
@@ -75,11 +95,11 @@ export default async function ProductCategoryPage({ params }: CategoryParams) {
       <section className="section-white">
         <div className="container py-12 md:py-16">
           <div className="rounded-xl border border-primary-100 bg-primary-50 p-8">
-            <div className="mb-2 text-xs font-black uppercase tracking-widest text-primary-700">Export Markets</div>
+            <div className="mb-2 text-xs font-black uppercase tracking-widest text-navy-800">Export Markets</div>
             <h2 className="mb-3 text-xl font-black text-navy-700 md:text-2xl">
               {cat.name} for India, UAE, Saudi Arabia & Export Markets
             </h2>
-            <p className="max-w-3xl text-sm leading-relaxed text-gray-600">
+            <p className="max-w-3xl text-sm leading-relaxed text-slate-800">
               This category hub supports procurement teams searching for "{cat.name.toLowerCase()} manufacturer",
               "{cat.name.toLowerCase()} exporter from India", and location-specific queries across GCC and Africa. Use the RFQ
               form to share duty point and destination country for accurate selection and quotation.

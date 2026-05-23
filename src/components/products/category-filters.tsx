@@ -37,7 +37,7 @@ export function CategoryFilters({
   return (
     <div className="grid gap-6">
       <div className="relative max-w-2xl">
-        <Search className="pointer-events-none absolute left-4 top-3.5 h-4 w-4 text-gray-400" />
+        <Search className="pointer-events-none absolute left-4 top-3.5 h-4 w-4 text-slate-800" />
         <Input
           value={q}
           onChange={(e) => setQ(e.target.value)}
@@ -60,7 +60,7 @@ export function CategoryFilters({
       </div>
 
       {!filtered.length ? (
-        <div className="text-sm text-gray-500">
+        <div className="text-sm text-slate-800">
           No matches. Try searching by application (e.g., irrigation), country (e.g., UAE), or product type (e.g., solar).
         </div>
       ) : null}

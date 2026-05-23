@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 720" role="img" aria-label="V6 6-inch / V8 8-inch borewell submersible pump set">
+  <defs>
+    <linearGradient id="g1" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#f8fafc"/><stop offset="100%" stop-color="#e2e8f0"/></linearGradient>
+    <linearGradient id="gMotor" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#0f6cbd"/><stop offset="100%" stop-color="#062a4d"/></linearGradient>
+    <linearGradient id="gPump" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#1bb6e6"/><stop offset="100%" stop-color="#0f6cbd"/></linearGradient>
+  </defs>
+  <rect width="320" height="720" fill="url(#g1)"/>
+  <g fill="none" stroke="#0a4277" stroke-width="2.5">
+    <path d="M110 30 L210 30 L218 60 L102 60 Z"/>
+    <line x1="155" y1="20" x2="165" y2="20" stroke-width="3"/><line x1="160" y1="0" x2="160" y2="30" stroke-width="3"/>
+    <rect x="80" y="60" width="160" height="290" rx="6"/>
+    <line x1="80" y1="110" x2="240" y2="110"/><line x1="80" y1="155" x2="240" y2="155"/><line x1="80" y1="200" x2="240" y2="200"/><line x1="80" y1="245" x2="240" y2="245"/><line x1="80" y1="290" x2="240" y2="290"/>
+    <path d="M85 350 L78 378 L242 378 L235 350 Z"/>
+    <g stroke="#0a4277" stroke-width="1.5"><line x1="95" y1="356" x2="100" y2="372"/><line x1="115" y1="356" x2="120" y2="372"/><line x1="140" y1="356" x2="145" y2="372"/><line x1="170" y1="356" x2="175" y2="372"/><line x1="200" y1="356" x2="205" y2="372"/><line x1="220" y1="356" x2="225" y2="372"/></g>
+    <rect x="120" y="382" width="80" height="24" rx="2"/>
+    <rect x="80" y="410" width="160" height="258" rx="8"/>
+    <rect x="85" y="671" width="150" height="22" rx="4"/>
+  </g>
+  <rect x="83" y="63" width="154" height="284" rx="4" fill="url(#gPump)" opacity="0.12"/>
+  <rect x="83" y="413" width="154" height="252" rx="6" fill="url(#gMotor)" opacity="0.14"/>
+  <line x1="160" y1="60" x2="160" y2="382" stroke="#0a4277" stroke-width="2.5" stroke-dasharray="3 3"/>
+  <line x1="160" y1="410" x2="160" y2="665" stroke="#0a4277" stroke-width="2.5" stroke-dasharray="3 3"/>
+  <path d="M58 240 Q38 360 58 470 Q38 600 58 690" stroke="#0a4277" stroke-width="2" fill="none"/>
+  <g font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" fill="#0a4277">
+    <text x="250" y="40">Delivery outlet</text>
+    <text x="250" y="110">Heavy-duty</text><text x="250" y="125">multi-stage</text><text x="250" y="140">pump section</text>
+    <text x="250" y="220">CI impellers</text>
+    <text x="250" y="370">SS strainer</text>
+    <text x="250" y="485">Submersible motor</text>
+    <text x="250" y="500" fill="#475569" font-size="10">3-phase, WF</text>
+    <text x="250" y="595">Heavy stator</text>
+    <text x="250" y="685">Cable inlet</text>
+    <text x="20" y="40" font-weight="700" font-size="12">V6 / V8</text>
+    <text x="20" y="55" font-size="9" fill="#475569">150200 mm</text>
+    <text x="20" y="68" font-size="9" fill="#475569">borewell</text>
+    <text x="160" y="710" text-anchor="middle" font-weight="700" font-size="11">SUPERTECH V6 / V8 Series</text>
+  </g>
+</svg>

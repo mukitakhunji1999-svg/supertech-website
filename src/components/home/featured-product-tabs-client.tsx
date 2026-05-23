@@ -58,8 +58,8 @@ export function HomeFeaturedProductTabsClient({ tabs }: { tabs: FeaturedTab[] })
               className={cn(
                 "relative cursor-pointer px-4 py-2.5 font-display text-sm font-medium tracking-tight transition-colors",
                 i === active
-                  ? "text-primary-700"
-                  : "text-slate-500 hover:text-navy-700"
+                  ? "text-navy-800"
+                  : "text-slate-800 hover:text-navy-700"
               )}
             >
               {t.label}
@@ -86,7 +86,7 @@ export function HomeFeaturedProductTabsClient({ tabs }: { tabs: FeaturedTab[] })
               className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
             >
               {tab.items.length === 0 && (
-                <p className="col-span-full rounded-xl border border-dashed border-slate-200 bg-slate-50 px-6 py-12 text-center text-sm text-slate-500">
+                <p className="col-span-full rounded-xl border border-dashed border-slate-200 bg-slate-50 px-6 py-12 text-center text-sm text-slate-800">
                   No products in this category yet.
                 </p>
               )}
@@ -108,13 +108,13 @@ export function HomeFeaturedProductTabsClient({ tabs }: { tabs: FeaturedTab[] })
                     <h3 className="font-display text-base font-semibold tracking-tight text-navy-700">
                       {item.title}
                     </h3>
-                    <p className="mt-1.5 line-clamp-2 text-[13px] leading-relaxed text-slate-600">
+                    <p className="mt-1.5 line-clamp-2 text-[13px] leading-relaxed text-slate-800">
                       {item.description}
                     </p>
                     <Link
                       href={item.href}
                       aria-label={`View more about ${item.title}`}
-                      className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary-700 transition-[gap,color] duration-200 hover:gap-1.5 hover:text-primary-800"
+                      className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-navy-800 transition-[gap,color] duration-200 hover:gap-1.5 hover:text-navy-900"
                     >
                       View more
                       <ArrowRight className="h-3.5 w-3.5" />

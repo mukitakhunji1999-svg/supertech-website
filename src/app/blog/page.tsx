@@ -25,7 +25,7 @@ export default function BlogIndexPage() {
 
       <section className="section-gray">
         <div className="container py-12 md:py-16">
-          <div className="text-xs font-black tracking-widest text-primary-700 uppercase mb-4">Categories</div>
+          <div className="text-xs font-black tracking-widest text-navy-800 uppercase mb-4">Categories</div>
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             {blogCategories.map((c) => (
               <Link key={c.slug} href={`/blog/${c.slug}`}>
@@ -45,7 +45,7 @@ export default function BlogIndexPage() {
         <div className="container py-12 md:py-16">
           <div className="mb-8 flex items-end justify-between gap-4">
             <div>
-              <div className="text-xs font-black tracking-widest text-primary-700 uppercase mb-1">Latest Articles</div>
+              <div className="text-xs font-black tracking-widest text-navy-800 uppercase mb-1">Latest Articles</div>
               <h2 className="text-2xl font-black text-navy-700">Recent Industrial Guides</h2>
             </div>
             <Button asChild variant="outline" size="sm">
@@ -57,7 +57,7 @@ export default function BlogIndexPage() {
               <Link key={p.slug} href={`/blog/${p.categorySlug}/${p.slug}`}>
                 <Card className="h-full hover:border-primary-300">
                   <CardHeader>
-                    <div className="text-[11px] font-black tracking-widest text-primary-700 uppercase mb-1">{p.categorySlug.replace(/-/g," ")}</div>
+                    <div className="text-[11px] font-black tracking-widest text-navy-800 uppercase mb-1">{p.categorySlug.replace(/-/g," ")}</div>
                     <CardTitle>{p.title}</CardTitle>
                     <CardDescription>{p.excerpt}</CardDescription>
                   </CardHeader>

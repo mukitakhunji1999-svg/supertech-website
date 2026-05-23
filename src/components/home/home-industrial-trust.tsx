@@ -49,11 +49,11 @@ function StatCell({
   const n = useAnimatedCount(end, active);
   return (
     <div className="border-l border-slate-200 px-5 first:border-l-0 first:pl-0 sm:px-6">
-      <div className="font-display text-3xl font-bold tracking-tight text-primary-700 md:text-4xl">
+      <div className="font-display text-3xl font-bold tracking-tight text-navy-800 md:text-4xl">
         {n}
         {suffix && <span>{suffix}</span>}
       </div>
-      <div className="mt-1 text-xs font-medium uppercase tracking-wider text-slate-500">{label}</div>
+      <div className="mt-1 text-xs font-medium uppercase tracking-wider text-slate-800">{label}</div>
     </div>
   );
 }
@@ -76,10 +76,10 @@ export function HomeIndustrialTrust() {
               key={t.title}
               className="group rounded-xl border border-slate-200 bg-white px-5 py-4 transition-colors hover:border-primary-200 hover:bg-blue-50/40"
             >
-              <strong className="font-display block text-[0.95rem] font-semibold tracking-tight text-navy-700 transition-colors group-hover:text-primary-800">
+              <strong className="font-display block text-[0.95rem] font-semibold tracking-tight text-navy-700 transition-colors group-hover:text-navy-900">
                 {t.title}
               </strong>
-              <span className="mt-1 block text-[13px] leading-relaxed text-slate-600">{t.sub}</span>
+              <span className="mt-1 block text-[13px] leading-relaxed text-slate-800">{t.sub}</span>
             </div>
           ))}
         </div>

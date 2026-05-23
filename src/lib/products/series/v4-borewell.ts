@@ -14,8 +14,43 @@ import type { TechnicalSpec } from "../technical-specs";
 export const v4BorewellSubmersible: TechnicalSpec = {
   key: "v4-borewell-submersible",
   title: "V4 — 100 mm (4\") Borewell Submersible Pump Set",
+  shortLabel: "V4 Borewell Submersible Pump",
+  productPath: "/products/borewell-submersible-pumps/v4-borewell-submersible-pump",
+  family: "Pumps",
   summary:
     "Premium 4-inch borewell submersible pump set engineered for stable performance, sand resistance, and long service life across agriculture, municipal water supply, industrial, and high-rise applications. Available in Oil Filled (OF) and Water Filled (WF) motor configurations.",
+  characteristics: [
+    {
+      label: "Motor Rating",
+      units: [
+        { unit: "HP", value: "0.5 to 10" },
+        { unit: "kW", value: "0.37 to 7.5" }
+      ]
+    },
+    { label: "Stages", units: [{ unit: "No.", value: "4 to 50" }] },
+    { label: "Head Range", units: [{ unit: "Metres", value: "10 to 400" }] },
+    { label: "Discharge", units: [{ unit: "LPM", value: "30 to 400" }] },
+    {
+      label: "Outlet",
+      units: [
+        { unit: "mm", value: "32 / 38 / 50 / 65" },
+        { unit: "inch", value: "1¼ / 1½ / 2 / 2½" }
+      ]
+    },
+    { label: "Speed", units: [{ unit: "RPM", value: "2880" }] },
+    { label: "Frequency", units: [{ unit: "Hz", value: "50" }] },
+    { label: "Supply", units: [{ unit: "Volt", value: "200–240 (1Φ) / 380–415 (3Φ)" }] },
+    { label: "Bore", units: [{ unit: "mm", value: "Minimum 100 mm" }] },
+    {
+      label: "Applications",
+      units: [
+        {
+          unit: "Use",
+          value: "Domestic, Agriculture, Industrial, Sprinkler, Fire fighting, High-rise buildings"
+        }
+      ]
+    }
+  ],
   applications: [
     "Domestic & municipal water supply",
     "Agriculture water supply",

@@ -13,11 +13,11 @@ export default async function AdminDashboardPage() {
   return (
     <div className="space-y-8">
       <header>
-        <p className="font-display text-xs font-bold uppercase tracking-[0.18em] text-blue-700">Admin dashboard</p>
+        <p className="font-display text-xs font-bold uppercase tracking-[0.18em] text-navy-800">Admin dashboard</p>
         <h1 className="mt-1 font-display text-3xl font-extrabold tracking-tight text-slate-900">
           Welcome back
         </h1>
-        <p className="mt-1.5 text-sm text-slate-600">
+        <p className="mt-1.5 text-sm text-slate-800">
           Manage products, hero slides and site settings from one place.
         </p>
       </header>
@@ -55,7 +55,7 @@ export default async function AdminDashboardPage() {
               className="flex items-center justify-between rounded-lg border border-slate-200 bg-slate-50 px-4 py-3"
             >
               <span className="font-medium text-slate-700">{t.label}</span>
-              <span className="rounded-full bg-white px-2.5 py-0.5 text-sm font-bold text-blue-700 shadow-sm">
+              <span className="rounded-full bg-white px-2.5 py-0.5 text-sm font-bold text-navy-800 shadow-sm">
                 {t.count}
               </span>
             </div>
@@ -97,11 +97,11 @@ function DashCard({
       className="group flex flex-col gap-4 rounded-2xl border border-slate-200 bg-white p-5 transition hover:-translate-y-0.5 hover:border-blue-300 hover:shadow-[0_12px_32px_rgba(15,108,189,0.10)]"
     >
       <div className="flex items-center justify-between">
-        <span className="text-xs font-semibold uppercase tracking-wide text-slate-500">{label}</span>
-        <span className="rounded-lg bg-blue-50 p-2 text-blue-700">{icon}</span>
+        <span className="text-xs font-semibold uppercase tracking-wide text-slate-800">{label}</span>
+        <span className="rounded-lg bg-blue-50 p-2 text-navy-800">{icon}</span>
       </div>
       <span className="font-display text-3xl font-extrabold text-slate-900">{value}</span>
-      <span className="inline-flex items-center gap-1 text-sm font-semibold text-blue-700 transition group-hover:gap-1.5">
+      <span className="inline-flex items-center gap-1 text-sm font-semibold text-navy-800 transition group-hover:gap-1.5">
         {cta} <ArrowRight className="h-4 w-4" />
       </span>
     </Link>

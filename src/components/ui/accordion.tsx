@@ -31,7 +31,7 @@ export const AccordionTrigger = React.forwardRef<
       {...props}
     >
       <span>{children}</span>
-      <ChevronDown className="h-4 w-4 text-slate-500 shrink-0 transition group-data-[state=open]:rotate-180" />
+      <ChevronDown className="h-4 w-4 text-slate-800 shrink-0 transition group-data-[state=open]:rotate-180" />
     </AccordionPrimitive.Trigger>
   </AccordionPrimitive.Header>
 ));
@@ -42,7 +42,7 @@ export const AccordionContent = React.forwardRef<
   React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Content>
 >(({ className, children, ...props }, ref) => (
   <AccordionPrimitive.Content ref={ref} className="overflow-hidden" {...props}>
-    <div className={cn("border-t border-gray-100 px-5 py-4 text-sm text-gray-600 leading-relaxed", className)}>
+    <div className={cn("border-t border-gray-100 px-5 py-4 text-sm text-slate-800 leading-relaxed", className)}>
       {children}
     </div>
   </AccordionPrimitive.Content>

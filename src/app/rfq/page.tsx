@@ -31,7 +31,7 @@ export default function RFQPage() {
                   <CardDescription>Include these details for the most accurate quotation.</CardDescription>
                 </CardHeader>
                 <div className="px-6 pb-5">
-                  <ul className="space-y-2 text-sm text-gray-600">
+                  <ul className="space-y-2 text-sm text-slate-800">
                     {[
                       "Product required (e.g., borewell submersible, solar pumping, control panel)",
                       "Duty point: flow + head (include friction losses if known)",

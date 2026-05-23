@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480" role="img" aria-label="Pressure booster pump system">
+  <defs>
+    <linearGradient id="g1" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#f8fafc"/><stop offset="100%" stop-color="#e2e8f0"/></linearGradient>
+    <linearGradient id="gPump" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#1bb6e6"/><stop offset="100%" stop-color="#0f6cbd"/></linearGradient>
+    <linearGradient id="gMotor" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#0f6cbd"/><stop offset="100%" stop-color="#062a4d"/></linearGradient>
+  </defs>
+  <rect width="720" height="480" fill="url(#g1)"/>
+
+  <!-- Common base/skid -->
+  <rect x="60" y="380" width="600" height="40" rx="3" fill="#94a3b8" stroke="#0a4277" stroke-width="2.5"/>
+
+  <!-- Three vertical inline pumps (each = motor on top, pump body bottom) -->
+  <g>
+    <!-- Pump 1 -->
+    <g transform="translate(140 100)">
+      <rect x="0" y="0" width="60" height="100" rx="6" stroke="#0a4277" stroke-width="2.5" fill="white"/>
+      <rect x="2" y="2" width="56" height="96" rx="4" fill="url(#gMotor)" opacity="0.16"/>
+      <rect x="-10" y="100" width="80" height="30" rx="2" stroke="#0a4277" stroke-width="2" fill="white"/>
+      <rect x="-8" y="102" width="76" height="26" rx="1" fill="url(#gMotor)" opacity="0.1"/>
+      <rect x="0" y="130" width="60" height="130" rx="6" stroke="#0a4277" stroke-width="2.5" fill="white"/>
+      <rect x="2" y="132" width="56" height="126" rx="4" fill="url(#gPump)" opacity="0.18"/>
+      <line x1="0" y1="160" x2="60" y2="160" stroke="#0a4277" stroke-width="1.5"/>
+      <line x1="0" y1="190" x2="60" y2="190" stroke="#0a4277" stroke-width="1.5"/>
+      <line x1="0" y1="220" x2="60" y2="220" stroke="#0a4277" stroke-width="1.5"/>
+    </g>
+    <!-- Pump 2 -->
+    <g transform="translate(330 100)">
+      <rect x="0" y="0" width="60" height="100" rx="6" stroke="#0a4277" stroke-width="2.5" fill="white"/>
+      <rect x="2" y="2" width="56" height="96" rx="4" fill="url(#gMotor)" opacity="0.16"/>
+      <rect x="-10" y="100" width="80" height="30" rx="2" stroke="#0a4277" stroke-width="2" fill="white"/>
+      <rect x="-8" y="102" width="76" height="26" rx="1" fill="url(#gMotor)" opacity="0.1"/>
+      <rect x="0" y="130" width="60" height="130" rx="6" stroke="#0a4277" stroke-width="2.5" fill="white"/>
+      <rect x="2" y="132" width="56" height="126" rx="4" fill="url(#gPump)" opacity="0.18"/>
+      <line x1="0" y1="160" x2="60" y2="160" stroke="#0a4277" stroke-width="1.5"/>
+      <line x1="0" y1="190" x2="60" y2="190" stroke="#0a4277" stroke-width="1.5"/>
+      <line x1="0" y1="220" x2="60" y2="220" stroke="#0a4277" stroke-width="1.5"/>
+    </g>
+    <!-- Pump 3 -->
+    <g transform="translate(520 100)">
+      <rect x="0" y="0" width="60" height="100" rx="6" stroke="#0a4277" stroke-width="2.5" fill="white"/>
+      <rect x="2" y="2" width="56" height="96" rx="4" fill="url(#gMotor)" opacity="0.16"/>
+      <rect x="-10" y="100" width="80" height="30" rx="2" stroke="#0a4277" stroke-width="2" fill="white"/>
+      <rect x="-8" y="102" width="76" height="26" rx="1" fill="url(#gMotor)" opacity="0.1"/>
+      <rect x="0" y="130" width="60" height="130" rx="6" stroke="#0a4277" stroke-width="2.5" fill="white"/>
+      <rect x="2" y="132" width="56" height="126" rx="4" fill="url(#gPump)" opacity="0.18"/>
+      <line x1="0" y1="160" x2="60" y2="160" stroke="#0a4277" stroke-width="1.5"/>
+      <line x1="0" y1="190" x2="60" y2="190" stroke="#0a4277" stroke-width="1.5"/>
+      <line x1="0" y1="220" x2="60" y2="220" stroke="#0a4277" stroke-width="1.5"/>
+    </g>
+  </g>
+
+  <!-- Suction manifold (bottom, horizontal) -->
+  <rect x="60" y="350" width="600" height="20" rx="3" fill="#cbd5e1" stroke="#0a4277" stroke-width="2.5"/>
+  <line x1="170" y1="360" x2="170" y2="370" stroke="#0a4277" stroke-width="1.5"/>
+  <line x1="360" y1="360" x2="360" y2="370" stroke="#0a4277" stroke-width="1.5"/>
+  <line x1="550" y1="360" x2="550" y2="370" stroke="#0a4277" stroke-width="1.5"/>
+  <text x="55" y="365" text-anchor="end" font-size="11" fill="#0a4277" font-family="sans-serif">SUCTION</text>
+
+  <!-- Delivery manifold (top, horizontal) -->
+  <rect x="60" y="70" width="600" height="20" rx="3" fill="#cbd5e1" stroke="#0a4277" stroke-width="2.5"/>
+  <line x1="170" y1="90" x2="170" y2="100" stroke="#0a4277" stroke-width="1.5"/>
+  <line x1="360" y1="90" x2="360" y2="100" stroke="#0a4277" stroke-width="1.5"/>
+  <line x1="550" y1="90" x2="550" y2="100" stroke="#0a4277" stroke-width="1.5"/>
+  <text x="55" y="85" text-anchor="end" font-size="11" fill="#0a4277" font-family="sans-serif">DELIVERY</text>
+
+  <!-- NRVs on each delivery -->
+  <g>
+    <circle cx="170" cy="105" r="6" fill="#fbbf24" stroke="#0a4277" stroke-width="1.5"/>
+    <circle cx="360" cy="105" r="6" fill="#fbbf24" stroke="#0a4277" stroke-width="1.5"/>
+    <circle cx="550" cy="105" r="6" fill="#fbbf24" stroke="#0a4277" stroke-width="1.5"/>
+  </g>
+  <text x="170" y="125" text-anchor="middle" font-size="8" fill="#475569" font-family="sans-serif">NRV</text>
+  <text x="360" y="125" text-anchor="middle" font-size="8" fill="#475569" font-family="sans-serif">NRV</text>
+  <text x="550" y="125" text-anchor="middle" font-size="8" fill="#475569" font-family="sans-serif">NRV</text>
+
+  <!-- Pressure transmitter on delivery manifold -->
+  <rect x="630" y="40" width="30" height="40" rx="2" fill="white" stroke="#0a4277" stroke-width="2"/>
+  <line x1="645" y1="80" x2="645" y2="80" stroke="#0a4277" stroke-width="2"/>
+  <line x1="645" y1="60" x2="645" y2="100" stroke="#0a4277" stroke-width="3"/>
+  <text x="645" y="35" text-anchor="middle" font-size="9" fill="#0a4277" font-family="sans-serif" font-weight="700">PT</text>
+
+  <!-- Pump labels -->
+  <text x="170" y="290" text-anchor="middle" font-size="11" fill="#0a4277" font-weight="700" font-family="sans-serif">PUMP 1</text>
+  <text x="360" y="290" text-anchor="middle" font-size="11" fill="#0a4277" font-weight="700" font-family="sans-serif">PUMP 2</text>
+  <text x="550" y="290" text-anchor="middle" font-size="11" fill="#0a4277" font-weight="700" font-family="sans-serif">PUMP 3</text>
+
+  <!-- Title -->
+  <text x="360" y="30" text-anchor="middle" font-size="14" font-weight="800" fill="#0a4277" font-family="sans-serif">SUPERTECH Pressure Booster System (3-pump cascade)</text>
+  <text x="360" y="455" text-anchor="middle" font-size="11" fill="#475569" font-family="sans-serif">Common skid " SS manifold " VFD or pressure-switch control</text>
+</svg>

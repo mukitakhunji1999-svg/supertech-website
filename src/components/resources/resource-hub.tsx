@@ -112,8 +112,8 @@ export function ResourceHub() {
             <Link key={it.id} href={it.href} className="group block">
               <Card className="h-full transition hover:border-primary-300 hover:shadow-card-hover">
                 <CardHeader>
-                  <div className="text-[10px] font-black uppercase tracking-widest text-primary-700">{it.filter}</div>
-                  <CardTitle className="text-base group-hover:text-primary-700">{it.title}</CardTitle>
+                  <div className="text-[10px] font-black uppercase tracking-widest text-navy-800">{it.filter}</div>
+                  <CardTitle className="text-base group-hover:text-navy-800">{it.title}</CardTitle>
                   <CardDescription>{it.description}</CardDescription>
                 </CardHeader>
               </Card>

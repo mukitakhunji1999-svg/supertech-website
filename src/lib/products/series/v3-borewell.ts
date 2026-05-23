@@ -11,8 +11,40 @@ import type { TechnicalSpec } from "../technical-specs";
 export const v3BorewellSubmersible: TechnicalSpec = {
   key: "v3-borewell-submersible",
   title: "V3 — 75 & 80 mm (3\") Borewell Submersible Pump Set",
+  shortLabel: "V3 Borewell Submersible Pump",
+  productPath: "/products/borewell-submersible-pumps/v3-borewell-submersible-pump",
+  family: "Pumps",
   summary:
     "Compact 3-inch borewell submersible pump set for narrow borewells, engineered for sprinkler / drip irrigation, civil and domestic water supply, pressure boosting, and small fire fighting systems. Oil Filled (OF) and Water Filled (WF) motor variants.",
+  characteristics: [
+    {
+      label: "Motor Rating",
+      units: [
+        { unit: "HP", value: "0.5 to 1.5" },
+        { unit: "kW", value: "0.37 to 1.1" }
+      ]
+    },
+    { label: "Stages", units: [{ unit: "No.", value: "7 to 30" }] },
+    { label: "Head Range", units: [{ unit: "Metres", value: "9 to 78" }] },
+    { label: "Discharge", units: [{ unit: "LPM", value: "20 to 104" }] },
+    {
+      label: "Outlet",
+      units: [
+        { unit: "mm", value: "32" },
+        { unit: "inch", value: "1¼" }
+      ]
+    },
+    { label: "Speed", units: [{ unit: "RPM", value: "2880" }] },
+    { label: "Frequency", units: [{ unit: "Hz", value: "50" }] },
+    { label: "Supply", units: [{ unit: "Volt", value: "200–240 (1Φ)" }] },
+    { label: "Bore", units: [{ unit: "mm", value: "75 mm or 80 mm" }] },
+    {
+      label: "Applications",
+      units: [
+        { unit: "Use", value: "Domestic, Farm, Gardens, Sprinkler/Drip irrigation, Pressure boosting" }
+      ]
+    }
+  ],
   applications: [
     "Domestic & municipal water supply",
     "Sprinkler & drip irrigation",

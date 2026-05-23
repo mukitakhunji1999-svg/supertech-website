@@ -21,11 +21,11 @@ export function SettingsForm({ initial, action }: Props) {
     <form action={formAction} className="space-y-6">
       <header className="flex flex-wrap items-center justify-between gap-3">
         <div>
-          <p className="font-display text-xs font-bold uppercase tracking-[0.18em] text-blue-700">Site settings</p>
+          <p className="font-display text-xs font-bold uppercase tracking-[0.18em] text-navy-800">Site settings</p>
           <h1 className="mt-1 font-display text-3xl font-extrabold tracking-tight text-slate-900">
             Contact &amp; brand
           </h1>
-          <p className="mt-1.5 text-sm text-slate-600">
+          <p className="mt-1.5 text-sm text-slate-800">
             These details are used across the website footer, contact page and structured SEO data.
           </p>
         </div>
@@ -55,7 +55,7 @@ export function SettingsForm({ initial, action }: Props) {
 
       <div className="grid gap-6 lg:grid-cols-2">
         <div className="space-y-5 rounded-2xl border border-slate-200 bg-white p-6">
-          <h2 className="font-display text-sm font-bold uppercase tracking-wide text-slate-500">Brand</h2>
+          <h2 className="font-display text-sm font-bold uppercase tracking-wide text-slate-800">Brand</h2>
           <Field label="Business name" error={state.fieldErrors?.name}>
             <input
               type="text"
@@ -86,7 +86,7 @@ export function SettingsForm({ initial, action }: Props) {
         </div>
 
         <div className="space-y-5 rounded-2xl border border-slate-200 bg-white p-6">
-          <h2 className="font-display text-sm font-bold uppercase tracking-wide text-slate-500">Contact</h2>
+          <h2 className="font-display text-sm font-bold uppercase tracking-wide text-slate-800">Contact</h2>
           <Field label="Public email" error={state.fieldErrors?.email}>
             <input
               type="email"
@@ -134,7 +134,7 @@ export function SettingsForm({ initial, action }: Props) {
                 <button
                   type="button"
                   onClick={() => setPhones((p) => [...p, ""])}
-                  className="inline-flex items-center gap-1.5 rounded-md border border-dashed border-slate-300 bg-white px-3 py-1.5 text-xs font-semibold text-slate-600 transition hover:border-blue-300 hover:text-blue-700"
+                  className="inline-flex items-center gap-1.5 rounded-md border border-dashed border-slate-300 bg-white px-3 py-1.5 text-xs font-semibold text-slate-800 transition hover:border-blue-300 hover:text-navy-800"
                 >
                   <Plus className="h-3.5 w-3.5" /> Add another phone
                 </button>
@@ -165,7 +165,7 @@ function Field({
     <label className="block">
       <span className="mb-1.5 block text-sm font-medium text-slate-700">{label}</span>
       {children}
-      {help && !error && <span className="mt-1 block text-xs text-slate-500">{help}</span>}
+      {help && !error && <span className="mt-1 block text-xs text-slate-800">{help}</span>}
       {error && <span className="mt-1 block text-xs font-medium text-red-700">{error}</span>}
     </label>
   );

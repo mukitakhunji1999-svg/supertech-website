@@ -66,14 +66,14 @@ export function BlogArticleChrome({
         {toc.length > 0 ? (
           <aside className="hidden lg:block">
             <div className="sticky top-28 rounded-xl border border-gray-200 bg-white p-4 text-sm shadow-card">
-              <div className="text-xs font-black uppercase tracking-widest text-primary-700">On this page</div>
+              <div className="text-xs font-black uppercase tracking-widest text-navy-800">On this page</div>
               <ul className="mt-3 space-y-2">
                 {toc.map((t) => (
                   <li key={t.id}>
                     <a
                       href={`#${t.id}`}
                       className={`block rounded-md px-2 py-1 transition ${
-                        active === t.id ? "bg-primary-50 font-semibold text-primary-800" : "text-gray-600 hover:text-primary-700"
+                        active === t.id ? "bg-primary-50 font-semibold text-navy-900" : "text-slate-800 hover:text-navy-800"
                       }`}
                     >
                       {t.label}

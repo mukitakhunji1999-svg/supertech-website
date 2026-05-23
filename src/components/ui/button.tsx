@@ -17,7 +17,7 @@ const buttonVariants = cva(
         secondary:
           "bg-navy-700 text-white hover:bg-navy-800",
         white:
-          "bg-white text-primary-700 border border-slate-200 hover:border-slate-300 hover:bg-slate-50"
+          "bg-white text-navy-800 border border-slate-200 hover:border-slate-300 hover:bg-slate-50"
       },
       size: {
         default: "h-10 px-5",

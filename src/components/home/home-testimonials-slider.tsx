@@ -39,7 +39,7 @@ export function HomeTestimonialsSlider() {
     <RevealSection id="testimonials" className="section-white scroll-mt-[5.5rem] sm:scroll-mt-[8rem] py-14 md:py-20">
       <div className="container">
         <div className="mb-10 max-w-3xl">
-          <p className="font-display text-xs font-bold uppercase tracking-[0.2em] text-primary-700">Testimonials</p>
+          <p className="font-display text-xs font-bold uppercase tracking-[0.2em] text-navy-800">Testimonials</p>
           <h2 className="mt-2 font-display text-2xl font-extrabold tracking-tight text-navy-700 md:text-3xl">
             What technical buyers say
           </h2>
@@ -50,7 +50,7 @@ export function HomeTestimonialsSlider() {
             <button
               type="button"
               onClick={prev}
-              className="hidden shrink-0 border-r border-primary-700/10 bg-primary-50/50 px-3 text-primary-700 transition hover:bg-primary-100 sm:flex sm:items-center"
+              className="hidden shrink-0 border-r border-primary-700/10 bg-primary-50/50 px-3 text-navy-800 transition hover:bg-primary-100 sm:flex sm:items-center"
               aria-label="Previous testimonial"
             >
               <ChevronLeft className="h-6 w-6" />
@@ -68,7 +68,7 @@ export function HomeTestimonialsSlider() {
                   <blockquote className="font-display text-lg font-medium leading-snug text-navy-800 md:text-xl">
                     “{slide.quote}”
                   </blockquote>
-                  <cite className="mt-6 block text-sm font-semibold not-italic text-gray-600">{slide.cite}</cite>
+                  <cite className="mt-6 block text-sm font-semibold not-italic text-slate-800">{slide.cite}</cite>
                 </motion.div>
               </AnimatePresence>
             </div>
@@ -76,7 +76,7 @@ export function HomeTestimonialsSlider() {
             <button
               type="button"
               onClick={next}
-              className="hidden shrink-0 border-l border-primary-700/10 bg-primary-50/50 px-3 text-primary-700 transition hover:bg-primary-100 sm:flex sm:items-center"
+              className="hidden shrink-0 border-l border-primary-700/10 bg-primary-50/50 px-3 text-navy-800 transition hover:bg-primary-100 sm:flex sm:items-center"
               aria-label="Next testimonial"
             >
               <ChevronRight className="h-6 w-6" />

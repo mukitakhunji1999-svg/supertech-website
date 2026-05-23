@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 360" role="img" aria-label="uPVC column pipe joint detail">
+  <defs>
+    <linearGradient id="g1" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#f8fafc"/><stop offset="100%" stop-color="#e2e8f0"/></linearGradient>
+    <linearGradient id="gPipe" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#94a3b8"/><stop offset="100%" stop-color="#475569"/></linearGradient>
+  </defs>
+  <rect width="540" height="360" fill="url(#g1)"/>
+
+  <!-- Top pipe (with socket) -->
+  <g stroke="#0a4277" stroke-width="2.5" fill="none">
+    <rect x="80" y="60" width="380" height="60" rx="3"/>
+    <rect x="200" y="55" width="140" height="70" rx="4"/>
+    <line x1="200" y1="60" x2="200" y2="120"/>
+    <line x1="340" y1="60" x2="340" y2="120"/>
+  </g>
+  <rect x="82" y="62" width="376" height="56" rx="2" fill="url(#gPipe)" opacity="0.18"/>
+  <!-- Threads on socket -->
+  <g stroke="#0a4277" stroke-width="1.5" fill="none">
+    <line x1="208" y1="60" x2="213" y2="120"/>
+    <line x1="222" y1="60" x2="227" y2="120"/>
+    <line x1="236" y1="60" x2="241" y2="120"/>
+    <line x1="250" y1="60" x2="255" y2="120"/>
+    <line x1="264" y1="60" x2="269" y2="120"/>
+    <line x1="278" y1="60" x2="283" y2="120"/>
+    <line x1="292" y1="60" x2="297" y2="120"/>
+    <line x1="306" y1="60" x2="311" y2="120"/>
+    <line x1="320" y1="60" x2="325" y2="120"/>
+  </g>
+
+  <!-- O-ring -->
+  <ellipse cx="350" cy="90" rx="8" ry="28" fill="#0a4277" opacity="0.8"/>
+
+  <!-- Bottom pipe (with spigot) -->
+  <g stroke="#0a4277" stroke-width="2.5" fill="none">
+    <rect x="80" y="200" width="380" height="60" rx="3"/>
+    <line x1="80" y1="200" x2="80" y2="260"/>
+  </g>
+  <rect x="82" y="202" width="376" height="56" rx="2" fill="url(#gPipe)" opacity="0.18"/>
+  <!-- Threads on spigot -->
+  <g stroke="#0a4277" stroke-width="1.5" fill="none">
+    <line x1="92" y1="200" x2="97" y2="260"/>
+    <line x1="106" y1="200" x2="111" y2="260"/>
+    <line x1="120" y1="200" x2="125" y2="260"/>
+    <line x1="134" y1="200" x2="139" y2="260"/>
+    <line x1="148" y1="200" x2="153" y2="260"/>
+    <line x1="162" y1="200" x2="167" y2="260"/>
+    <line x1="176" y1="200" x2="181" y2="260"/>
+    <line x1="190" y1="200" x2="195" y2="260"/>
+  </g>
+
+  <!-- Arrows / labels -->
+  <g font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" fill="#0a4277">
+    <text x="270" y="50" text-anchor="middle" font-weight="700">SOCKET (Female threaded)</text>
+    <text x="270" y="290" text-anchor="middle" font-weight="700">SPIGOT (Male threaded)</text>
+    <text x="475" y="93">O-ring (EPDM)</text>
+    <line x1="365" y1="90" x2="470" y2="90" stroke="#0a4277" stroke-width="1.5"/>
+    <text x="475" y="155">’ Joint connection</text>
+    <text x="475" y="170" font-size="10" fill="#475569">(thread + O-ring seal)</text>
+    <text x="20" y="93">Pipe OD</text>
+    <text x="20" y="233">Pipe OD</text>
+    <text x="270" y="340" text-anchor="middle" font-weight="700" font-size="13">SUPERTECH uPVC Column Pipe Joint</text>
+  </g>
+
+  <!-- Connection arrows showing assembly -->
+  <g stroke="#22c55e" stroke-width="2" fill="none">
+    <path d="M150 175 L150 195" stroke-width="3"/>
+    <polygon points="146,193 154,193 150,205" fill="#22c55e" stroke="none"/>
+  </g>
+  <text x="160" y="190" font-size="10" fill="#22c55e" font-weight="600" font-family="sans-serif">Screw together</text>
+</svg>

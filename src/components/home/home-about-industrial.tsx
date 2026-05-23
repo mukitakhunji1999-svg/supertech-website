@@ -67,7 +67,7 @@ export function HomeAboutIndustrial() {
               <h3 className="font-display text-[0.95rem] font-semibold tracking-tight text-navy-700">
                 {c.title}
               </h3>
-              <p className="mt-2 text-[0.9rem] leading-relaxed text-slate-500">{c.body}</p>
+              <p className="mt-2 text-[0.9rem] leading-relaxed text-slate-800">{c.body}</p>
             </article>
           ))}
         </div>

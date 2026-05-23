@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 360" role="img" aria-label="Gate valve cross-section">
+  <defs>
+    <linearGradient id="g1" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#f8fafc"/><stop offset="100%" stop-color="#e2e8f0"/></linearGradient>
+    <linearGradient id="gValve" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#0f6cbd"/><stop offset="100%" stop-color="#062a4d"/></linearGradient>
+  </defs>
+  <rect width="540" height="360" fill="url(#g1)"/>
+  <g fill="none" stroke="#0a4277" stroke-width="2.5">
+    <path d="M120 200 L420 200 L420 280 L120 280 Z"/>
+    <path d="M230 130 L310 130 L320 200 L220 200 Z"/>
+    <line x1="270" y1="30" x2="270" y2="130" stroke-width="4"/>
+    <circle cx="270" cy="30" r="22" stroke-width="2"/>
+    <circle cx="270" cy="30" r="2" fill="#0a4277"/>
+    <line x1="248" y1="30" x2="292" y2="30"/>
+    <line x1="270" y1="8" x2="270" y2="52"/>
+    <rect x="245" y="135" width="50" height="65" rx="3"/>
+    <path d="M260 200 L260 260 L280 260 L280 200 Z"/>
+    <line x1="120" y1="225" x2="120" y2="255" stroke-width="4"/>
+    <rect x="100" y="195" width="20" height="90" rx="3"/>
+    <line x1="420" y1="225" x2="420" y2="255" stroke-width="4"/>
+    <rect x="420" y="195" width="20" height="90" rx="3"/>
+  </g>
+  <path d="M122 202 L418 202 L418 278 L122 278 Z" fill="url(#gValve)" opacity="0.12"/>
+  <path d="M260 202 L260 258 L280 258 L280 202 Z" fill="url(#gValve)" opacity="0.5"/>
+  <g font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" fill="#0a4277">
+    <text x="200" y="240" font-weight="600">FLOW ”</text>
+    <text x="60" y="240">Inlet</text>
+    <text x="445" y="240">Outlet</text>
+    <text x="300" y="35">Hand-wheel</text>
+    <text x="310" y="170">Stem &amp; bonnet</text>
+    <text x="290" y="320">Wedge / disc</text>
+    <text x="290" y="335" font-size="10" fill="#475569">(slides down to close)</text>
+    <text x="270" y="65" text-anchor="middle" font-weight="700" font-size="13">SUPERTECH Gate (Sluice) Valve</text>
+  </g>
+</svg>

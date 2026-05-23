@@ -69,7 +69,7 @@ export function LeadForm({
   return (
     <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-card">
       <div className="text-lg font-black text-navy-700">{title}</div>
-      <div className="mt-1 text-sm text-gray-500">{subtitle}</div>
+      <div className="mt-1 text-sm text-slate-800">{subtitle}</div>
 
       <form className="mt-6 grid gap-3" onSubmit={form.handleSubmit(onSubmit)}>
         <input type="hidden" value={type} {...form.register("type")} />

@@ -45,7 +45,7 @@ export default function ProductsIndexPage() {
                 <Link
                   key={x.href}
                   href={x.href}
-                  className="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3.5 py-2 font-display text-sm font-semibold text-navy-700 transition-colors hover:border-primary-300 hover:bg-blue-50 hover:text-primary-700"
+                  className="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3.5 py-2 font-display text-sm font-semibold text-navy-700 transition-colors hover:border-primary-300 hover:bg-blue-50 hover:text-navy-800"
                 >
                   {x.label}
                   <ArrowRight className="h-3.5 w-3.5" />
@@ -92,10 +92,10 @@ export default function ProductsIndexPage() {
                   {g.categories.map((c) => (
                     <Link key={c.slug} href={`/products/${c.slug}`} className="group block">
                       <div className="card-soft p-4">
-                        <div className="font-display text-sm font-semibold tracking-tight text-navy-700 transition-colors group-hover:text-primary-700">
+                        <div className="font-display text-sm font-semibold tracking-tight text-navy-700 transition-colors group-hover:text-navy-800">
                           {c.name}
                         </div>
-                        <div className="mt-1 line-clamp-2 text-[12.5px] leading-relaxed text-slate-600">
+                        <div className="mt-1 line-clamp-2 text-[12.5px] leading-relaxed text-slate-800">
                           {c.intro}
                         </div>
                         <span className="explore-link mt-3 text-xs">

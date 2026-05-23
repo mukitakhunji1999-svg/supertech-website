@@ -63,7 +63,7 @@ export function ProductComparison() {
   return (
     <div className="grid gap-8">
       <div>
-        <p className="text-sm text-gray-500 mb-3">Select up to 4 products to compare specifications side-by-side.</p>
+        <p className="text-sm text-slate-800 mb-3">Select up to 4 products to compare specifications side-by-side.</p>
         <Input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search product to add..." className="max-w-xl" />
       </div>
 
@@ -76,7 +76,7 @@ export function ProductComparison() {
                 <CardTitle className="text-base">{p.name}</CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
-                <div className="text-sm text-gray-500">{p.shortDescription}</div>
+                <div className="text-sm text-slate-800">{p.shortDescription}</div>
                 <Button type="button" variant={active ? "default" : "outline"} onClick={() => toggle(p.id)} className="w-full">
                   {active ? "Selected ✓" : "Add to Compare"}
                 </Button>
@@ -92,7 +92,7 @@ export function ProductComparison() {
       <section className="rounded-xl border border-gray-200 bg-white p-6 md:p-8 shadow-card">
         <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
           <div>
-            <div className="text-xs font-black tracking-widest text-primary-700 uppercase mb-1">Comparison</div>
+            <div className="text-xs font-black tracking-widest text-navy-800 uppercase mb-1">Comparison</div>
             <div className="text-xl font-black text-navy-700">Specification Comparison</div>
           </div>
           <Button type="button" variant="outline" onClick={() => setSelected([])}>Clear All</Button>
@@ -106,7 +106,7 @@ export function ProductComparison() {
                   key={p.id}
                   type="button"
                   onClick={() => setSelected((prev) => prev.filter((x) => x !== p.id))}
-                  className="inline-flex items-center gap-2 rounded-full border border-primary-200 bg-primary-50 px-4 py-1.5 text-xs font-semibold text-primary-700 transition hover:bg-primary-100"
+                  className="inline-flex items-center gap-2 rounded-full border border-primary-200 bg-primary-50 px-4 py-1.5 text-xs font-semibold text-navy-800 transition hover:bg-primary-100"
                 >
                   {p.name} <X className="h-3.5 w-3.5" />
                 </button>
@@ -129,7 +129,7 @@ export function ProductComparison() {
                       <td className="px-4 py-3 font-semibold text-navy-700">{label}</td>
                       {selectedProducts.map((p) => {
                         const v = p.specifications.find((r) => r.label === label)?.value ?? "—";
-                        return <td key={p.id + label} className="px-4 py-3 text-gray-600">{v}</td>;
+                        return <td key={p.id + label} className="px-4 py-3 text-slate-800">{v}</td>;
                       })}
                     </tr>
                   ))}
@@ -138,7 +138,7 @@ export function ProductComparison() {
             </div>
           </>
         ) : (
-          <div className="text-sm text-gray-500">
+          <div className="text-sm text-slate-800">
             Add products above to generate a comparison table. For procurement, share duty point and destination via RFQ for configuration-level matching.
           </div>
         )}
