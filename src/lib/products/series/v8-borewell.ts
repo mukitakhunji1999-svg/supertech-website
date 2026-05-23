@@ -97,7 +97,7 @@ export const v8BorewellSubmersible: TechnicalSpec = {
       ]
     }
   ],
-  drawingSrc: "/images/drawings/v6-borewell-submersible.png",
+  drawingSrc: "/images/drawings/v8-borewell-submersible.png",
   drawingAlt: "V8 8-inch borewell submersible pump set — schematic cross-section",
   footnotes: [
     "Three-phase only. Star-delta, soft-starter, or VFD strongly recommended for safe starting.",
