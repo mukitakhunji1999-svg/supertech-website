@@ -5,6 +5,7 @@ import { AnalyticsIdentity } from "@/components/seo/analytics-identity";
 import { FloatingInquiryCta } from "@/components/site/floating-inquiry-cta";
 import { SiteFooter } from "@/components/site/footer";
 import { SiteHeader } from "@/components/site/header";
+import { SplashIntro } from "@/components/site/splash-intro";
 import { organizationSchema, websiteSchema } from "@/lib/seo/schema";
 import { siteConfig } from "@/lib/site-config";
 import "./globals.css";
@@ -67,6 +68,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <JsonLd id="ld-organization" data={organizationSchema()} />
         <JsonLd id="ld-website" data={websiteSchema()} />
         <AnalyticsIdentity />
+        <SplashIntro />
         <SiteHeader />
         <main>
           {children}
