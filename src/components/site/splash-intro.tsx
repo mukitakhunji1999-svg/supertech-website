@@ -6,8 +6,8 @@ import { useEffect, useState } from "react";
 import { siteConfig } from "@/lib/site-config";
 
 const SESSION_KEY = "supertech-splash-seen";
-const DISPLAY_MS = 1900;
-const FADE_MS = 650;
+const DISPLAY_MS = 3500;
+const FADE_MS = 900;
 
 export function SplashIntro() {
   const [show, setShow] = useState(true);
@@ -88,11 +88,11 @@ export function SplashIntro() {
             className="relative flex flex-col items-center px-6 text-center"
           >
             <motion.div
-              initial={{ scale: 0.78, opacity: 0 }}
+              initial={{ opacity: 0, scale: 0.75 }}
               animate={{
-                scale: 1,
                 opacity: 1,
-                transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.1 }
+                scale: 1,
+                transition: { duration: 1.2, ease: [0.22, 1, 0.36, 1], delay: 0.1 }
               }}
               className="relative"
             >
@@ -100,11 +100,11 @@ export function SplashIntro() {
               <Image
                 src={siteConfig.logoPath}
                 alt={`${siteConfig.name} logo`}
-                width={320}
-                height={320}
+                width={512}
+                height={512}
                 priority
-                sizes="(max-width: 640px) 40vw, (max-width: 1024px) 30vw, 20vw"
-                className="h-[clamp(7rem,22vmin,15rem)] w-[clamp(7rem,22vmin,15rem)] object-contain drop-shadow-[0_8px_24px_rgba(15,108,189,0.28)]"
+                sizes="(max-width: 640px) 55vw, (max-width: 1024px) 40vw, 30vw"
+                className="h-[clamp(12rem,35vmin,24rem)] w-[clamp(12rem,35vmin,24rem)] object-contain drop-shadow-[0_12px_32px_rgba(15,108,189,0.32)]"
               />
             </motion.div>
 
