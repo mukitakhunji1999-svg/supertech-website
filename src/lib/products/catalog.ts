@@ -887,6 +887,7 @@ export const products: Product[] = [
       { label: "Warranty", value: "12 yr product / 25 yr linear performance" }
     ],
     technicalSpecKey: "solar-pv-module",
+    brochureKey: "solar-pv-module-datasheet",
     seo: {
       primaryKeyword: "solar PV module manufacturer",
       secondaryKeywords: ["mono-PERC solar panel", "bifacial PV module", "ALMM solar module"]
@@ -1071,6 +1072,7 @@ export const products: Product[] = [
       { label: "Seat", value: "EPDM / NBR / Viton / PTFE" }
     ],
     technicalSpecKey: "butterfly-valve",
+    brochureKey: "butterfly-valve-datasheet",
     seo: {
       primaryKeyword: "butterfly valve manufacturer",
       secondaryKeywords: ["wafer butterfly valve", "DI body butterfly valve", "EN 593 valve"]
@@ -1123,6 +1125,7 @@ export const products: Product[] = [
       { label: "Stem type", value: "NRS (buried) / OS&Y (above ground)" }
     ],
     technicalSpecKey: "gate-valve",
+    brochureKey: "gate-valve-datasheet",
     seo: {
       primaryKeyword: "gate valve manufacturer",
       secondaryKeywords: ["sluice valve supplier", "resilient seated gate valve", "EN 1171 gate valve"]
@@ -1149,6 +1152,7 @@ export const products: Product[] = [
       { label: "Seat", value: "PTFE / RPTFE / Devlon / PEEK" }
     ],
     technicalSpecKey: "ball-valve",
+    brochureKey: "ball-valves-datasheet",
     seo: {
       primaryKeyword: "ball valve manufacturer",
       secondaryKeywords: ["SS 316 ball valve", "industrial ball valve supplier", "API 6D ball valve"]

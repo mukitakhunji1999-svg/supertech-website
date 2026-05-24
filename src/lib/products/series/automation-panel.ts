@@ -81,7 +81,7 @@ export const automationPanel: TechnicalSpec = {
       ]
     }
   ],
-  drawingSrc: "/images/drawings/control-panel.png",
+  drawingSrc: "/images/drawings/plc-panel.png",
   drawingAlt: "PLC-based automation panel — typical layout",
   footnotes: [
     "Specify number of pumps, control strategy (cascade / lead-lag / pressure / level), and SCADA protocol at RFQ stage.",

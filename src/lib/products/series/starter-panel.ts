@@ -93,7 +93,7 @@ export const starterPanel: TechnicalSpec = {
       ]
     }
   ],
-  drawingSrc: "/images/drawings/control-panel.png",
+  drawingSrc: "/images/drawings/mcc-panel.jpg",
   drawingAlt: "Motor starter panel — typical wiring layout",
   footnotes: [
     "Star-Delta only applicable for motors with all 6 stator terminals accessible (delta-rated at supply voltage).",

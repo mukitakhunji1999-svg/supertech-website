@@ -92,7 +92,7 @@ export const vfdPanel: TechnicalSpec = {
       ]
     }
   ],
-  drawingSrc: "/images/drawings/control-panel.png",
+  drawingSrc: "/images/drawings/vfd-panel.jpeg",
   drawingAlt: "Variable frequency drive (VFD) panel — typical layout",
   footnotes: [
     "Specify motor rating, supply voltage, control mode, & communication protocol at RFQ stage.",

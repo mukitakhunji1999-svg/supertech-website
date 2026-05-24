@@ -10,7 +10,17 @@ import { getBrochure, brochures } from "@/lib/resources/brochures";
 type BrochureParams = { params: Promise<{ key: string }> };
 
 export function generateStaticParams() {
-  return brochures.map((b) => ({ key: b.key }));
+  // Dedupe — the brochures array may contain duplicate keys (auto-generated
+  // product brochure + manual datasheet entry that overrides it).
+  const seen = new Set<string>();
+  const params: Array<{ key: string }> = [];
+  for (const b of brochures) {
+    if (!seen.has(b.key)) {
+      seen.add(b.key);
+      params.push({ key: b.key });
+    }
+  }
+  return params;
 }
 
 export async function generateMetadata({ params }: BrochureParams): Promise<Metadata> {
@@ -42,21 +52,41 @@ export default async function BrochureDownloadPage({ params }: BrochureParams) {
         <div className="container py-12 md:py-16">
           <div className="grid gap-10 lg:grid-cols-2">
             <div className="space-y-5">
-              <Card>
-                <CardHeader>
-                  <CardTitle>How Downloads Work</CardTitle>
-                  <CardDescription>
-                    Submit your details to receive the brochure pack and selection support for your project.
-                  </CardDescription>
-                </CardHeader>
-              </Card>
+              {b.filePath ? (
+                <Card>
+                  <CardHeader>
+                    <CardTitle>Download Datasheet</CardTitle>
+                    <CardDescription>
+                      Open or save the official PDF datasheet for {b.title.replace(/ — .*$/, "")}.
+                    </CardDescription>
+                  </CardHeader>
+                  <div className="flex flex-wrap gap-3 px-6 pb-6">
+                    <Button asChild>
+                      <a href={b.filePath} target="_blank" rel="noopener noreferrer" download>
+                        Download PDF
+                      </a>
+                    </Button>
+                    <Button asChild variant="outline">
+                      <a href={b.filePath} target="_blank" rel="noopener noreferrer">
+                        View in browser
+                      </a>
+                    </Button>
+                  </div>
+                </Card>
+              ) : (
+                <Card>
+                  <CardHeader>
+                    <CardTitle>How Downloads Work</CardTitle>
+                    <CardDescription>
+                      Submit your details to receive the brochure pack and selection support for your project.
+                    </CardDescription>
+                  </CardHeader>
+                </Card>
+              )}
               <div className="flex flex-wrap gap-3">
                 <Button asChild><Link href="/rfq">Need Pricing? Request RFQ</Link></Button>
                 <Button asChild variant="outline"><Link href="/contact">Contact Sales</Link></Button>
               </div>
-              <p className="text-xs text-slate-800">
-                Note: Place PDF brochures in <code className="text-slate-700">public/brochures/</code> and map the file path in <code className="text-slate-700">src/lib/resources/brochures.ts</code>.
-              </p>
             </div>
 
             <LeadForm

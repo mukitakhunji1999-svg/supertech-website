@@ -12,6 +12,7 @@ import { generateProductLongform } from "@/lib/seo/longform";
 import { breadcrumbSchema, faqSchema, productSchema } from "@/lib/seo/schema";
 import { siteConfig } from "@/lib/site-config";
 import { getTechnicalSpec } from "@/lib/products/technical-specs";
+import { getBrochure } from "@/lib/resources/brochures";
 
 export type BreadcrumbItem = { label: string; href?: string };
 
@@ -38,6 +39,8 @@ export function ProductDetailView({
   const titleText = displayTitle ?? product.name;
   const longform = generateProductLongform(product);
   const technicalSpec = product.technicalSpecKey ? getTechnicalSpec(product.technicalSpecKey) : undefined;
+  const brochure = product.brochureKey ? getBrochure(product.brochureKey) : undefined;
+  const datasheetUrl = brochure?.filePath; // direct PDF if available
 
   const faqs = [
     {
@@ -89,9 +92,21 @@ export function ProductDetailView({
                     WhatsApp sales
                   </Link>
                 </Button>
-                <Button asChild variant="outline">
-                  <Link href="/resources/brochures">Brochures</Link>
-                </Button>
+                {datasheetUrl ? (
+                  <Button asChild variant="outline">
+                    <a href={datasheetUrl} target="_blank" rel="noopener noreferrer" download>
+                      Download Datasheet (PDF)
+                    </a>
+                  </Button>
+                ) : brochure ? (
+                  <Button asChild variant="outline">
+                    <Link href={`/resources/brochures/${brochure.key}`}>Brochure & Datasheet</Link>
+                  </Button>
+                ) : (
+                  <Button asChild variant="outline">
+                    <Link href="/resources/brochures">Brochures</Link>
+                  </Button>
+                )}
               </div>
 
               <div className="grid gap-4 md:grid-cols-2">
@@ -147,12 +162,22 @@ export function ProductDetailView({
               <Card className="p-5">
                 <div className="mb-2 text-xs font-black uppercase tracking-widest text-navy-800">Datasheet</div>
                 <p className="mb-4 text-sm text-slate-800">
-                  Configuration-specific datasheets and pump curves are shared on request with RFQ for tender and EPC submissions.
+                  {datasheetUrl
+                    ? `Official ${product.name} datasheet available for direct download (PDF).`
+                    : "Configuration-specific datasheets and pump curves are shared on request with RFQ for tender and EPC submissions."}
                 </p>
                 <div className="grid gap-3">
-                  <Button asChild>
-                    <Link href="/resources/datasheets">Technical resources</Link>
-                  </Button>
+                  {datasheetUrl ? (
+                    <Button asChild>
+                      <a href={datasheetUrl} target="_blank" rel="noopener noreferrer" download>
+                        Download PDF Datasheet
+                      </a>
+                    </Button>
+                  ) : (
+                    <Button asChild>
+                      <Link href="/resources/datasheets">Technical resources</Link>
+                    </Button>
+                  )}
                   <Button asChild variant="outline">
                     <Link href="/locations">Export & locations</Link>
                   </Button>

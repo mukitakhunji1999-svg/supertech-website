@@ -90,7 +90,7 @@ export const openwellSubmersible: TechnicalSpec = {
       ]
     }
   ],
-  drawingSrc: "/images/drawings/openwell-submersible.png",
+  drawingSrc: "/images/drawings/openwell-submersible.jpg",
   drawingAlt: "Openwell submersible pump — schematic cross-section",
   footnotes: [
     "Pump must remain fully submerged in water during operation.",
