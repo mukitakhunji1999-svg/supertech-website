@@ -5,7 +5,7 @@
 export type HeroSlideHref =
   | "/products"
   | "/products/submersible-pumps"
-  | "/products/industrial-valves"
+  | "/products/butterfly-valves"
   | "/products/control-panels"
   | "/products/solar-pumping-systems"
   | "/resources"
@@ -60,7 +60,7 @@ export const heroSlides: HeroSlideConfig[] = [
     imageFit: "contain",
     aspectClass: "aspect-[15/4]",
     accent: "cyan",
-    primary: { label: "Browse valves", href: "/products/industrial-valves" },
+    primary: { label: "Browse valves", href: "/products/butterfly-valves" },
     secondary: { label: "Valve enquiry", href: "/contact" }
   },
   {

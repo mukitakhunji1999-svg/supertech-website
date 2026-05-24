@@ -761,32 +761,11 @@ export const products: Product[] = [
       secondaryKeywords: ["OF motor manufacturer", "horizontal submersible motor", "oil bath motor supplier"]
     }
   },
-  {
-    id: "three-phase-motor",
-    name: "3-Phase Induction Motor",
-    slug: "three-phase-induction-motor",
-    categorySlug: ensureCategory("three-phase-motors"),
-    shortDescription:
-      "Industrial 3-phase squirrel cage induction motor for pumps, blowers, compressors, and general machinery duty. IE2 standard, IE3 / IE4 on request.",
-    applications: ["Pumps", "Blowers", "Compressors", "Conveyors", "Machine tools", "HVAC"],
-    features: [
-      "Squirrel cage construction",
-      "Class F insulation with Class B temperature rise",
-      "TEFC IP55 enclosure",
-      "IE2 / IE3 / IE4 efficiency options"
-    ],
-    specifications: [
-      { label: "Output range", value: "0.37 kW (0.5 HP) to 75 kW (100 HP)" },
-      { label: "Poles", value: "2 / 4 / 6 / 8" },
-      { label: "Protection", value: "IP55" },
-      { label: "Standards", value: "IS 12615 / IEC 60034" }
-    ],
-    technicalSpecKey: "induction-motor",
-    seo: {
-      primaryKeyword: "3 phase induction motor",
-      secondaryKeywords: ["squirrel cage motor", "IE3 motor supplier", "industrial motor manufacturer"]
-    }
-  },
+  // Note: a duplicate "three-phase-induction-motor" entry used to live here.
+  // It pointed at the same TechnicalSpec as the canonical `induction-motor`
+  // and lived under a `three-phase-motors` category that contained nothing
+  // else. Removed during catalogue cleanup so 3-phase shoppers land on the
+  // unified `/products/induction-motors/induction-motor` page.
   {
     id: "single-phase-motor",
     name: "Single Phase Induction Motor",

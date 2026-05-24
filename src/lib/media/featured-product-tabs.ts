@@ -20,14 +20,6 @@ export const featuredProductTabs: FeaturedProductTab[] = [
     label: "Pumps",
     items: [
       {
-        title: "Submersible pumps",
-        description: "Deep-well hydraulics with motor pairing for continuous agricultural and municipal duty.",
-        imageSrc: "/images/productimages/Submersible%20Pumps.jpeg",
-        imageAlt: "Submersible pumps",
-        href: "/products/submersible-pumps",
-        ctaLabel: "View technical page →"
-      },
-      {
         title: "Borewell pumps",
         description: "High-head configurations for borehole extraction with export-grade materials.",
         imageSrc: "/images/productimages/Borewell%20Submersible%20Pumps.jpeg",
@@ -60,35 +52,11 @@ export const featuredProductTabs: FeaturedProductTab[] = [
         ctaLabel: "Enquire →"
       },
       {
-        title: "Slurry pumps",
-        description: "Abrasive-service hydraulics for mining and process slurries.",
-        imageSrc: "/images/productimages/Slurry%20Pumps.jpeg",
-        imageAlt: "Slurry pumps",
-        href: "/products/slurry-pumps",
-        ctaLabel: "Enquire →"
-      },
-      {
         title: "Booster pumps",
         description: "Pressure boosting for towers, campuses and industrial headers.",
         imageSrc: "/images/productimages/Pressure%20Booster%20Pumps.jpeg",
         imageAlt: "Booster pumps",
         href: "/products/pressure-booster-pumps",
-        ctaLabel: "Enquire →"
-      },
-      {
-        title: "Solar pumps",
-        description: "AC/DC solar pumping with controller integration for remote irrigation.",
-        imageSrc: "/images/productimages/Solar%20Pumps.jpeg",
-        imageAlt: "Solar pumps",
-        href: "/products/solar-pumps",
-        ctaLabel: "Solar line →"
-      },
-      {
-        title: "Fire fighting pumps",
-        description: "UL/FM-class discussions and NFPA-oriented layouts on request.",
-        imageSrc: "/images/productimages/Fire%20fighting%20Pumps.jpeg",
-        imageAlt: "Fire fighting pumps",
-        href: "/products/fire-fighting-pumps",
         ctaLabel: "Enquire →"
       },
       {
@@ -122,11 +90,11 @@ export const featuredProductTabs: FeaturedProductTab[] = [
         ctaLabel: "Details →"
       },
       {
-        title: "Pneumatic valves",
-        description: "Actuation-ready packages for skid builders.",
+        title: "Non-return valves",
+        description: "Swing, dual-plate and silent disc-lift check valves for pump discharge protection.",
         imageSrc: "/images/productimages/Valves/Pneumatic%20valve.jpeg",
-        imageAlt: "Pneumatic valves",
-        href: "/products/industrial-valves",
+        imageAlt: "Non-return valves (NRV)",
+        href: "/products/nrv-valves",
         ctaLabel: "Details →"
       },
       {
@@ -136,36 +104,6 @@ export const featuredProductTabs: FeaturedProductTab[] = [
         imageAlt: "Gate valves",
         href: "/products/gate-valves",
         ctaLabel: "Details →"
-      }
-    ]
-  },
-  {
-    id: "pipes",
-    label: "Pipes",
-    items: [
-      {
-        title: "HDPE pipes",
-        description: "Fusion-weldable pressure piping for buried networks.",
-        imageSrc: "/images/productimages/PIPES/HDPE%20pipes.jpeg",
-        imageAlt: "HDPE pipes",
-        href: "/products",
-        ctaLabel: "Browse catalogue →"
-      },
-      {
-        title: "PVC pipes",
-        description: "Schedule-rated conduit for civil water distribution.",
-        imageSrc: "/images/productimages/PIPES/PVC%20Pipes.jpeg",
-        imageAlt: "PVC pipes",
-        href: "/products",
-        ctaLabel: "Browse catalogue →"
-      },
-      {
-        title: "CPVC pipes",
-        description: "Elevated temperature service for hot-water risers.",
-        imageSrc: "/images/productimages/PIPES/CPVC%20pipes.jpeg",
-        imageAlt: "CPVC pipes",
-        href: "/products",
-        ctaLabel: "Browse catalogue →"
       }
     ]
   },
