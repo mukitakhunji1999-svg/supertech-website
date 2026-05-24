@@ -34,11 +34,28 @@ export default function ContactPage() {
               <h2 className="text-2xl font-black text-navy-700 mb-6">We Respond Fast to Genuine Inquiries</h2>
 
               <div className="space-y-4">
-                {[
-                  { icon: MapPin, label: "Location", value: siteConfig.contact.location },
-                  { icon: Mail, label: "Email", value: siteConfig.contact.email, href: `mailto:${siteConfig.contact.email}` },
-                  ...siteConfig.contact.phones.map((p) => ({ icon: Phone, label: "Phone / WhatsApp", value: p, href: `tel:${p}` }))
-                ].map((item, i) => (
+                {(
+                  [
+                    { icon: MapPin, label: "Location", value: siteConfig.contact.location },
+                    ...siteConfig.contact.emails.map((m, idx) => ({
+                      icon: Mail,
+                      label: idx === 0 ? "Email (primary)" : "Email",
+                      value: m,
+                      href: `mailto:${m}`
+                    })),
+                    ...siteConfig.contact.phones.map((p) => ({
+                      icon: Phone,
+                      label: "Phone / WhatsApp",
+                      value: p,
+                      href: `tel:${p}`
+                    }))
+                  ] as Array<{
+                    icon: typeof MapPin;
+                    label: string;
+                    value: string;
+                    href?: string;
+                  }>
+                ).map((item, i) => (
                   <div key={i} className="flex items-start gap-4 rounded-xl border border-gray-200 bg-white p-4 shadow-card">
                     <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary-50">
                       <item.icon className="h-5 w-5 text-navy-800" />

@@ -54,17 +54,19 @@ export function HomeContactTeaser() {
                     </Link>
                   </li>
                 ))}
-                <li className="flex items-center gap-3">
-                  <span className="flex h-8 w-8 items-center justify-center rounded-md bg-slate-100 text-slate-800">
-                    <Mail className="h-3.5 w-3.5" />
-                  </span>
-                  <Link
-                    href={`mailto:${siteConfig.contact.email}`}
-                    className="font-medium text-navy-700 transition-colors hover:text-navy-800"
-                  >
-                    {siteConfig.contact.email}
-                  </Link>
-                </li>
+                {siteConfig.contact.emails.map((mail, idx) => (
+                  <li key={mail} className="flex items-center gap-3">
+                    <span className="flex h-8 w-8 items-center justify-center rounded-md bg-slate-100 text-slate-800">
+                      {idx === 0 ? <Mail className="h-3.5 w-3.5" /> : <span className="h-3.5 w-3.5" aria-hidden />}
+                    </span>
+                    <Link
+                      href={`mailto:${mail}`}
+                      className="break-all font-medium text-navy-700 transition-colors hover:text-navy-800"
+                    >
+                      {mail}
+                    </Link>
+                  </li>
+                ))}
                 <li className="flex items-center gap-3">
                   <span className="flex h-8 w-8 items-center justify-center rounded-md bg-slate-100 text-slate-800">
                     <MapPin className="h-3.5 w-3.5" />

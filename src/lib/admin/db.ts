@@ -23,7 +23,11 @@ export type ProductsData = {
 export type SiteSettings = {
   name: string;
   tagline: string;
+  /** Primary email — kept for backwards-compatibility with the admin form. */
   email: string;
+  /** Optional list of public-facing emails (primary first). When present, the
+   *  admin UI shows the full list; otherwise consumers fall back to `email`. */
+  emails?: string[];
   phones: string[];
   whatsapp: string;
   address: string;

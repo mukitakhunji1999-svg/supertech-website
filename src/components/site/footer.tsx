@@ -39,12 +39,18 @@ export function SiteFooter() {
                   </a>
                 </div>
               ))}
-              <div className="flex items-center gap-2.5">
-                <Mail className="h-4 w-4 shrink-0 text-navy-800" />
-                <a href={`mailto:${siteConfig.contact.email}`} className="transition-colors hover:text-navy-800">
-                  {siteConfig.contact.email}
-                </a>
-              </div>
+              {siteConfig.contact.emails.map((mail, idx) => (
+                <div key={mail} className="flex items-center gap-2.5">
+                  {idx === 0 ? (
+                    <Mail className="h-4 w-4 shrink-0 text-navy-800" />
+                  ) : (
+                    <span className="h-4 w-4 shrink-0" aria-hidden />
+                  )}
+                  <a href={`mailto:${mail}`} className="break-all transition-colors hover:text-navy-800">
+                    {mail}
+                  </a>
+                </div>
+              ))}
             </div>
           </div>
 

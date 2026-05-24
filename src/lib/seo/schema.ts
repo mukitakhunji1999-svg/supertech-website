@@ -10,6 +10,20 @@ export function organizationSchema() {
     logo: `${siteConfig.url}${siteConfig.logoPath}`,
     email: siteConfig.contact.email,
     telephone: siteConfig.contact.phones,
+    contactPoint: [
+      ...siteConfig.contact.emails.map((m) => ({
+        "@type": "ContactPoint",
+        email: m,
+        contactType: "sales",
+        areaServed: ["IN", "AE", "SA", "QA", "OM", "KW", "BH", "Africa"]
+      })),
+      ...siteConfig.contact.phones.map((p) => ({
+        "@type": "ContactPoint",
+        telephone: p,
+        contactType: "sales",
+        availableLanguage: ["en", "hi", "gu"]
+      }))
+    ],
     address: {
       "@type": "PostalAddress",
       addressLocality: "Ahmedabad",
