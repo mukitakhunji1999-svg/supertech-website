@@ -43,14 +43,17 @@ export function SiteHeader() {
           )}
         >
           <div className="container flex h-10 items-center justify-between gap-4">
-            <div className="flex items-center gap-5">
-              <a
-                href={`mailto:${siteConfig.contact.email}`}
-                className="font-medium transition-colors hover:text-navy-700"
-              >
-                {siteConfig.contact.email}
-              </a>
-              {siteConfig.contact.phones.slice(0, 1).map((p) => (
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-1 lg:gap-x-5">
+              {siteConfig.contact.emails.map((mail) => (
+                <a
+                  key={mail}
+                  href={`mailto:${mail}`}
+                  className="font-medium transition-colors hover:text-navy-700"
+                >
+                  {mail}
+                </a>
+              ))}
+              {siteConfig.contact.phones.map((p) => (
                 <a
                   key={p}
                   href={`tel:${p}`}
