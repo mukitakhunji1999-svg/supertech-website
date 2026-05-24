@@ -19,8 +19,8 @@ const IMG_DIR = "/images/spare-parts";
 
 export const sparePartItems: SparePartItem[] = [
   // ── Bushes & bearings ──────────────────────────────────────────
-  { id: "brass-bush",          name: "Brass Bush",                series: "Universal", description: "Precision-machined brass bush for shaft alignment and wear protection." },
-  { id: "t-bush-brass",        name: "T-Bush (Brass)",            series: "Universal", description: "T-shaped brass guide bush for stage assemblies." },
+  { id: "ltb-bush",            name: "LTB Bush",                   series: "Universal", description: "Precision-machined LTB (Leaded Tin Bronze) bush for shaft alignment and wear protection." },
+  { id: "t-bush-ltb",          name: "T-Bush (LTB)",               series: "Universal", description: "T-shaped LTB (Leaded Tin Bronze) guide bush for stage assemblies." },
   { id: "carbon-bush",         name: "Carbon Bush",                series: "Universal", description: "Self-lubricating carbon bush for low-friction shaft journals." },
   { id: "carbon-bearing",      name: "Carbon Bearing",             series: "Universal", description: "Carbon bearing for high-temperature, water-lubricated service." },
   { id: "pump-ss-rubber-bush", name: "Pump SS / Rubber Bush",      series: "Universal", description: "Stainless-steel-cased rubber bush — vibration damping & wear life." },

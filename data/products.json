@@ -4,7 +4,8 @@
     { "id": "valves", "label": "Valves" },
     { "id": "panels", "label": "Panels" },
     { "id": "cables", "label": "Cables" },
-    { "id": "solar", "label": "Solar" }
+    { "id": "solar", "label": "Solar" },
+    { "id": "spare-parts", "label": "Spare Parts" }
   ],
   "products": [
     { "id": "borewell-pumps", "tabId": "pumps", "order": 1, "title": "Borewell pumps", "description": "High-head configurations for borehole extraction with export-grade materials.", "imageSrc": "/images/productimages/Borewell%20Submersible%20Pumps.jpeg", "imageAlt": "Borewell pumps", "href": "/products/borewell-submersible-pumps" },
@@ -23,6 +24,14 @@
     { "id": "submersible-cables", "tabId": "cables", "order": 1, "title": "Submersible cables", "description": "Elastomeric jackets for downhole electrical integrity.", "imageSrc": "/images/productimages/CABLES/Submersible%20cables.jpeg", "imageAlt": "Submersible cables", "href": "/products/submersible-flat-cables" },
     { "id": "industrial-cables", "tabId": "cables", "order": 2, "title": "Industrial cables", "description": "Power, control and shielded constructions for plants.", "imageSrc": "/images/productimages/CABLES/Industrial%20cables.jpeg", "imageAlt": "Industrial cables", "href": "/products/industrial-cables" },
     { "id": "solar-pv-panels", "tabId": "solar", "order": 1, "title": "Solar PV panels", "description": "High-irradiance modules for pumping and rooftop programmes.", "imageSrc": "/images/productimages/SOLAR/Solar%20PV%20panels.jpeg", "imageAlt": "Solar PV panels", "href": "/products/solar-pv-modules" },
-    { "id": "solar-pumping-systems", "tabId": "solar", "order": 2, "title": "Solar pumping systems", "description": "Integrated arrays, controllers and pump hydraulics.", "imageSrc": "/images/productimages/SOLAR/Solar%20pumping%20systems.jpeg", "imageAlt": "Solar pumping systems", "href": "/products/solar-pumping-systems" }
+    { "id": "solar-pumping-systems", "tabId": "solar", "order": 2, "title": "Solar pumping systems", "description": "Integrated arrays, controllers and pump hydraulics.", "imageSrc": "/images/productimages/SOLAR/Solar%20pumping%20systems.jpeg", "imageAlt": "Solar pumping systems", "href": "/products/solar-pumping-systems" },
+    { "id": "sp-impellers", "tabId": "spare-parts", "order": 1, "title": "Impellers", "description": "Closed-shroud submersible impellers — balanced and inspected.", "imageSrc": "/images/spare-parts/impellers.png", "imageAlt": "Pump impellers spare part", "href": "/products/spare-parts" },
+    { "id": "sp-diffuser", "tabId": "spare-parts", "order": 2, "title": "Diffuser", "description": "Stage diffuser for stable head-rise and hydraulic efficiency.", "imageSrc": "/images/spare-parts/diffuser.png", "imageAlt": "Pump stage diffuser", "href": "/products/spare-parts" },
+    { "id": "sp-v6-top-bowl", "tabId": "spare-parts", "order": 3, "title": "V6 Top Bowl", "description": "V6 top-stage bowl casting for submersible pump sets.", "imageSrc": "/images/spare-parts/v6-top-bowl.png", "imageAlt": "V6 top bowl casting", "href": "/products/spare-parts" },
+    { "id": "sp-v4-coupling", "tabId": "spare-parts", "order": 4, "title": "V4 Coupling", "description": "V4 series pump-to-motor coupling with keyed shaft engagement.", "imageSrc": "/images/spare-parts/v4-coupling.png", "imageAlt": "V4 pump-to-motor coupling", "href": "/products/spare-parts" },
+    { "id": "sp-mechanical-seal", "tabId": "spare-parts", "order": 5, "title": "Mechanical / Oil Seal", "description": "Mechanical face seal and oil seal kit for pump shaft sealing.", "imageSrc": "/images/spare-parts/mechanical-seal-oil-seal.png", "imageAlt": "Mechanical and oil seal kit", "href": "/products/spare-parts" },
+    { "id": "sp-strainer", "tabId": "spare-parts", "order": 6, "title": "Strainer", "description": "Suction strainer for submersible pump inlet protection.", "imageSrc": "/images/spare-parts/strainer.png", "imageAlt": "Pump suction strainer", "href": "/products/spare-parts" },
+    { "id": "sp-ltb-bush", "tabId": "spare-parts", "order": 7, "title": "LTB Bush", "description": "Precision-machined LTB (Leaded Tin Bronze) bush for shaft alignment and wear protection.", "imageSrc": "/images/spare-parts/ltb-bush.png", "imageAlt": "LTB bush spare part", "href": "/products/spare-parts" },
+    { "id": "sp-v4-nrv", "tabId": "spare-parts", "order": 8, "title": "V4 NRV", "description": "Integral non-return valve for V4 pump discharge head.", "imageSrc": "/images/spare-parts/v4-nrv.png", "imageAlt": "V4 non-return valve", "href": "/products/spare-parts" }
   ]
 }
