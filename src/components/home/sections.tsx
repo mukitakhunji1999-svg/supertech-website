@@ -44,7 +44,7 @@ export function HomeProductCategories() {
             <p className="eyebrow">Our products</p>
             <h2 className="section-title mt-2">A complete industrial portfolio</h2>
             <p className="section-lede">
-              Pumps · Motors · Solar · Valves · Panels · Pipes &amp; Cables
+              Pumps · Motors · Solar · Valves · Panels · Pipes &amp; Cables · Spare Parts
             </p>
           </div>
           <Link
@@ -235,7 +235,7 @@ export function HomePartsShowcase() {
             </p>
           </div>
           <Button asChild variant="outline" size="sm" className="hidden md:inline-flex shrink-0">
-            <Link href="/rfq">Request Spare Parts <ArrowRight className="h-3.5 w-3.5" /></Link>
+            <Link href="/products/spare-parts">Browse Spare Parts <ArrowRight className="h-3.5 w-3.5" /></Link>
           </Button>
         </div>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">

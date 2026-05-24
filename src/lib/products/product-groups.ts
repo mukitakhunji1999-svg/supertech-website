@@ -80,6 +80,17 @@ export const productGroups: ProductGroup[] = [
       { slug: "vfd-panels", name: "VFD Panels", intro: "VFD panels for energy efficiency, pressure stability, and smooth motor control." },
       { slug: "pump-controllers", name: "Pump Controllers", intro: "Smart controllers for dry-run safety, level control, and performance monitoring." }
     ]
+  },
+  {
+    slug: "spare-parts",
+    name: "Spare Parts",
+    categories: [
+      {
+        slug: "spare-parts",
+        name: "Pump & Motor Spare Parts",
+        intro: "Genuine OEM spare parts for V3, V4, V6 and SP series pump sets — impellers, diffusers, bowls, housings, couplings, bushes, seals, NRVs and motor rewinding consumables."
+      }
+    ]
   }
 ];
 
