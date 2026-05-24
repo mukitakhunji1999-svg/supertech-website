@@ -10,15 +10,15 @@ export function SiteFooter() {
       <div className="container py-14 md:py-16">
         <div className="grid gap-10 lg:grid-cols-12">
           <div className="lg:col-span-4">
-            <div className="mb-5 flex flex-nowrap items-center gap-3 sm:gap-4">
+            <div className="mb-5 flex items-center gap-3 sm:gap-4">
               <Image
                 src={siteConfig.logoPath}
                 alt=""
-                width={360}
+                width={96}
                 height={96}
-                className="h-14 w-auto max-h-14 shrink-0 object-contain object-left sm:h-16 sm:max-h-16"
+                className="h-16 w-16 shrink-0 object-contain sm:h-20 sm:w-20"
               />
-              <span className="font-display min-w-0 bg-gradient-to-r from-primary-700 via-primary-600 to-navy-800 bg-clip-text text-sm font-extrabold leading-snug tracking-tight text-transparent sm:text-lg md:text-xl whitespace-nowrap">
+              <span className="font-display bg-gradient-to-r from-primary-700 via-primary-600 to-navy-800 bg-clip-text text-base font-extrabold leading-tight tracking-tight text-transparent sm:text-lg md:text-xl">
                 {siteConfig.name}
               </span>
             </div>
@@ -48,7 +48,7 @@ export function SiteFooter() {
             </div>
           </div>
 
-          <div className="lg:col-span-3">
+          <div className="lg:col-span-2">
             <div className="mb-4 text-xs font-black uppercase tracking-widest text-navy-800">Products</div>
             <div className="space-y-2 text-sm">
               {productGroups.slice(0, 6).map((g) => (
@@ -62,7 +62,7 @@ export function SiteFooter() {
             </div>
           </div>
 
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-3">
             <div className="mb-4 text-xs font-black uppercase tracking-widest text-navy-800">Company</div>
             <div className="space-y-2 text-sm">
               {[
